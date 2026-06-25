@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuckyTools release history, plugin updates, and version notes.">
+    <title>Updates | LuckyTools</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=2">
+    <link rel="stylesheet" href="assets/css/style.css?v=28">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="container">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 10px;">
+                <img src="assets/images/logo-demo.png" alt="LuckyTools logo" class="header-logo">
+                LuckyTools
+            </a>
+        </div>
+        <nav>
+            <a href="about.html">About</a>
+            <div class="nav-eco-link" style="margin-left: 30px;">
+                <a href="ecosystem.html" style="margin-left: 0; opacity: 1; color: var(--accent-color);">Ecosystem</a>
+                <span class="free-badge">FREE PLUGINS!!</span>
+            </div>
+            <a href="releases.html" aria-current="page">Updates</a>
+            <a href="contact.html">Contact</a>
+            <a href="licenses.html">Licenses</a>
+            <div class="nav-eco-link" style="margin-left: 30px;">
+                <a href="guide.html" style="margin-left: 0; opacity: 1; color: var(--accent-color);">Guide</a>
+                <span class="free-badge">LEARN!!</span>
+            </div>
+        </nav>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <a href="index.html">Home</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="about.html">About</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="ecosystem.html">Ecosystem</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="releases.html" style="color: var(--accent-color);">Updates</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="contact.html">Contact</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="licenses.html">Licenses</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="guide.html">Guide</a>
+    </div>
+
+    <main class="releases-main">
+        <div class="container">
+            <section class="releases-hero">
+                <div class="releases-hero-copy">
+                    <div class="releases-eyebrow">Product updates</div>
+                    <h1>More Curves <span style="color: var(--accent-color);">Updated!</span></h1>
+                    <p>LuckyTools 1.0.1 expands motion control with new animation curves, faster preset workflows, LuckyBeat cutting, LuckyZoom framing helpers, and focused reliability fixes.</p>
+                    <div class="release-status-row">
+                        <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.1</span>
+                        <span class="release-status-pill"><i class="fab fa-windows"></i> Windows</span>
+                        <span class="release-status-pill"><i class="fas fa-video"></i> Premiere Pro 2026+</span>
+                    </div>
+                    <div class="release-update-help">
+                        <i class="fab fa-discord"></i>
+                        <span>Not sure how to update?</span>
+                        <a href="contact.html">Go to Contact</a>
+                        <span>or join the</span>
+                        <a href="https://discord.gg/RTBc93R33X" target="_blank" rel="noopener">Discord server</a>
+                        <span>for help.</span>
+                    </div>
+                </div>
+
+                <div class="release-preview-video releases-hero-video" data-release-video-switcher aria-label="Version 1.0.1 video preview">
+                    <div class="release-preview-stage">
+                        <video class="release-preview-clip is-active" data-release-video="curves" autoplay loop muted playsinline preload="metadata" aria-label="More Curves update preview">
+                            <source src="assets/videos/MORE C GITHUB.mp4" type="video/mp4">
+                        </video>
+                        <video class="release-preview-clip" data-release-video="beat" loop playsinline preload="metadata" aria-label="LuckyBeat preview with audio">
+                            <source src="assets/videos/LUCKYBEAT.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="release-video-tabs" role="group" aria-label="Choose update preview video">
+                        <button class="release-video-tab is-active" type="button" data-release-video-target="curves" aria-pressed="true">
+                            <i class="fas fa-wave-square"></i>
+                            Curves
+                        </button>
+                        <button class="release-video-tab" type="button" data-release-video-target="beat" aria-pressed="false">
+                            <i class="fas fa-volume-high"></i>
+                            LuckyBeat
+                        </button>
+                    </div>
+                    <div class="release-custom-controls" aria-label="Video controls">
+                        <button class="release-control-button" type="button" data-release-play aria-label="Play or pause video">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <span class="release-video-time" data-release-time>0:00 / 0:00</span>
+                        <input class="release-video-seek" type="range" min="0" max="1000" value="0" step="1" data-release-seek aria-label="Seek video">
+                        <button class="release-control-button" type="button" data-release-mute aria-label="Mute or unmute video">
+                            <i class="fas fa-volume-xmark"></i>
+                        </button>
+                        <button class="release-control-button" type="button" data-release-fullscreen aria-label="Open video fullscreen">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="release-timeline" aria-label="Update history">
+                <details class="release-entry release-entry-featured">
+                    <span class="release-marker" aria-hidden="true"></span>
+                    <summary class="release-entry-header">
+                        <div>
+                            <div class="release-version">
+                                <h2>Version 1.0.1</h2>
+                                <span class="release-badge">NEW!</span>
+                            </div>
+                            <p class="release-subtitle">More Curves Updated! A bigger motion, audio, search, and framing update for faster everyday editing.</p>
+                        </div>
+                    </summary>
+
+                    <div class="release-notes release-notes-expanded">
+                        <div class="release-major-group">
+                            <h3><i class="fas fa-star"></i> Highlights</h3>
+                            <ul class="release-major-list">
+                                <li>
+                                    <strong>New animation curves:</strong>
+                                    Elastic, Bounce, and Step curves are now available for creating sharper impacts, reactive movement, stylized timing, and more playful motion.
+                                </li>
+                                <li>
+                                    <strong>Curve previews for every new mode:</strong>
+                                    Each new curve includes a clear visualizer so you can understand the motion shape before applying it.
+                                </li>
+                                <li>
+                                    <strong>Beat Detector added:</strong>
+                                    Analyze music and automatically cut audio to the rhythm, making beat-based edits faster and easier to build.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-wave-square"></i> LuckyCurves</h3>
+                            <ul>
+                                <li>Added Elastic, Bounce, and Step curve families for more expressive animation timing.</li>
+                                <li>Improved accessibility across curve controls and visualizers for clearer navigation and feedback.</li>
+                                <li>Added a button to invert the curve graphic preview.</li>
+                                <li>Added a new button to invert applied keyframes or any existing animated keyframes directly in Effect Controls.</li>
+                                <li>Squash and Stretch curves can now be applied and cleaned more reliably depending on the selected property.</li>
+                                <li>Curve cleanup is more precise when switching between supported property types.</li>
+                            </ul>
+                        </div>
+
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-music"></i> LuckyBeat</h3>
+                            <ul>
+                                <li>Added LuckyBeat, a new beat-based cutting workflow for slicing clips in sync with music rhythm.</li>
+                                <li>Added Toggle Enable/Disable, a new function that alternates enabled and disabled clips sequentially across a multi-clip selection.</li>
+                                <li>Designed for quick music-driven edits, beat chops, rhythmic pacing, and faster timeline preparation.</li>
+                                <li>Helps turn a full track into editable rhythmic segments without manually hunting for every beat.</li>
+                            </ul>
+                        </div>
+
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-gauge-high"></i> Speed Improvements</h3>
+                            <ul>
+                                <li>The search bar now opens faster and feels more responsive when launching LuckySearch.</li>
+                                <li>Preset application is faster when applying the same preset across multiple selected clips.</li>
+                                <li>Reduced waiting time in multi-clip workflows so batch edits feel smoother and more predictable.</li>
+                            </ul>
+                        </div>
+
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-magnifying-glass-plus"></i> LuckyZoom</h3>
+                            <ul>
+                                <li>Fixed special cases where LuckyZoom could fail to apply the effect correctly.</li>
+                                <li>Added framing guides with optional ruler and grid overlays for more accurate composition.</li>
+                                <li>Improved reliability when creating zooms in less common sequence or clip situations.</li>
+                            </ul>
+                        </div>
+
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-screwdriver-wrench"></i> Fixes</h3>
+                            <ul>
+                                <li>Fixed preset application when a preset contains two Transform effects, preserving the correct effect order.</li>
+                                <li>Fixed several smaller bugs reported across daily editing workflows.</li>
+                                <li>Improved consistency when applying and clearing curve data from selected properties.</li>
+                                <li>General stability polish for a cleaner, faster LuckyTools experience.</li>
+                            </ul>
+                        </div>
+
+                        <a class="release-action release-notes-action" href="https://luckytpr.lemonsqueezy.com/checkout/buy/10dc8a74-bb2e-49f5-bf88-4897ba0bfe36">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                            Get LuckyTools
+                        </a>
+                    </div>
+                </details>
+
+                <details class="release-entry">
+                    <span class="release-marker" aria-hidden="true"></span>
+                    <summary class="release-entry-header">
+                        <div>
+                            <div class="release-version">
+                                <h2>Version 1.0.0</h2>
+                                <span class="release-badge release-badge-muted">Initial release</span>
+                            </div>
+                            <p class="release-subtitle">The first official public release of LuckyTools.</p>
+                        </div>
+                    </summary>
+
+                    <div class="release-notes">
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-sparkles"></i> Initial Release</h3>
+                            <ul>
+                                <li>Official launch of the complete LuckyTools editing toolkit.</li>
+                                <li>Unified collection of workflow panels for Adobe Premiere Pro.</li>
+                                <li>Fast access to editing, organization, navigation, and automation tools.</li>
+                            </ul>
+                        </div>
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-shield-halved"></i> Compatibility</h3>
+                            <ul>
+                                <li>Built and optimized for Windows.</li>
+                                <li>Stable support for Adobe Premiere Pro 2026 (v26.0) or newer.</li>
+                                <li>Available for Premiere Pro installations in English or Spanish.</li>
+                            </ul>
+                        </div>
+
+                        <a class="release-action release-notes-action" href="https://luckytpr.lemonsqueezy.com/checkout/buy/10dc8a74-bb2e-49f5-bf88-4897ba0bfe36">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                            Get LuckyTools
+                        </a>
+                    </div>
+                </details>
+            </section>
+
+            <p class="release-footnote">More complete update notes will be added here as new LuckyTools versions become available.</p>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-glow"></div>
+        <div class="footer-bottom">
+            <div class="container footer-container-inner">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo"><i class="fas fa-bolt"></i> LUCKYTOOLS</div>
+                        <p>The ultimate toolkit for Adobe Premiere Pro editors. Automating the tedious, unlocking the creative.</p>
+                        <div class="social-links">
+                            <a href="https://discord.gg/RTBc93R33X" target="_blank" rel="noopener" title="Discord"><i class="fab fa-discord"></i></a>
+                            <a href="https://www.youtube.com/@LuckyTools.contact" target="_blank" rel="noopener" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-nav">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="ecosystem.html">Ecosystem</a></li>
+                            <li><a href="releases.html">Updates</a></li>
+                            <li><a href="guide.html">Guide</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="licenses.html">Licenses</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-support">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="contact.html">Contact Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright-text">
+                    <p>&copy; 2026 LUCKYTOOLS. ALL RIGHTS RESERVED.<br>DESIGNED FOR THE NEXT GENERATION OF EDITORS.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            if (!hamburgerBtn || !mobileNavOverlay) return;
+
+            function openNav() {
+                mobileNavOverlay.style.display = 'flex';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        hamburgerBtn.classList.add('active');
+                        mobileNavOverlay.classList.add('open');
+                        document.body.classList.add('nav-open');
+                    });
+                });
+            }
+
+            function closeNav() {
+                hamburgerBtn.classList.remove('active');
+                mobileNavOverlay.classList.remove('open');
+                document.body.classList.remove('nav-open');
+                setTimeout(() => {
+                    if (!mobileNavOverlay.classList.contains('open')) {
+                        mobileNavOverlay.style.display = 'none';
+                    }
+                }, 420);
+            }
+
+            hamburgerBtn.addEventListener('click', () => {
+                mobileNavOverlay.classList.contains('open') ? closeNav() : openNav();
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && mobileNavOverlay.classList.contains('open')) closeNav();
+            });
+        })();
+
+        (function() {
+            document.querySelectorAll('[data-release-video-switcher]').forEach((switcher) => {
+                const videos = Array.from(switcher.querySelectorAll('[data-release-video]'));
+                const buttons = Array.from(switcher.querySelectorAll('[data-release-video-target]'));
+                const playButton = switcher.querySelector('[data-release-play]');
+                const seekInput = switcher.querySelector('[data-release-seek]');
+                const timeLabel = switcher.querySelector('[data-release-time]');
+                const muteButton = switcher.querySelector('[data-release-mute]');
+                const fullscreenButton = switcher.querySelector('[data-release-fullscreen]');
+                const stage = switcher.querySelector('.release-preview-stage');
+                let activeTarget = 'curves';
+                let isSeeking = false;
+
+                function formatTime(seconds) {
+                    if (!Number.isFinite(seconds)) return '0:00';
+                    const minutes = Math.floor(seconds / 60);
+                    const remaining = Math.floor(seconds % 60).toString().padStart(2, '0');
+                    return `${minutes}:${remaining}`;
+                }
+
+                function activeVideo() {
+                    return videos.find((video) => video.dataset.releaseVideo === activeTarget) || videos[0];
+                }
+
+                function syncControls() {
+                    const video = activeVideo();
+                    const duration = Number.isFinite(video.duration) ? video.duration : 0;
+                    const current = Number.isFinite(video.currentTime) ? video.currentTime : 0;
+
+                    if (seekInput && !isSeeking) {
+                        seekInput.value = duration > 0 ? Math.round((current / duration) * 1000) : 0;
+                    }
+
+                    if (timeLabel) {
+                        timeLabel.textContent = `${formatTime(current)} / ${formatTime(duration)}`;
+                    }
+
+                    if (playButton) {
+                        playButton.innerHTML = video.paused ? '<i class="fas fa-play"></i>' : '<i class="fas fa-pause"></i>';
+                    }
+
+                    if (muteButton) {
+                        muteButton.innerHTML = video.muted ? '<i class="fas fa-volume-xmark"></i>' : '<i class="fas fa-volume-high"></i>';
+                    }
+                }
+
+                function showVideo(target) {
+                    activeTarget = target;
+
+                    videos.forEach((video) => {
+                        const isTarget = video.dataset.releaseVideo === target;
+                        video.classList.toggle('is-active', isTarget);
+
+                        if (isTarget) {
+                            if (target === 'beat') {
+                                video.muted = true;
+                                video.volume = 0.85;
+                                video.play()
+                                    .then(() => { video.muted = false; })
+                                    .catch(() => {
+                                        video.muted = false;
+                                    });
+                            } else {
+                                video.muted = true;
+                                video.volume = 0;
+                                video.play().catch(() => {});
+                            }
+                        } else {
+                            video.pause();
+                            video.muted = true;
+                            video.currentTime = 0;
+                        }
+                    });
+
+                    buttons.forEach((button) => {
+                        const isActive = button.dataset.releaseVideoTarget === target;
+                        button.classList.toggle('is-active', isActive);
+                        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                    });
+
+                    syncControls();
+                }
+
+                buttons.forEach((button) => {
+                    button.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        showVideo(button.dataset.releaseVideoTarget);
+                    });
+                });
+
+                videos.forEach((video) => {
+                    video.addEventListener('loadedmetadata', syncControls);
+                    video.addEventListener('timeupdate', syncControls);
+                    video.addEventListener('play', syncControls);
+                    video.addEventListener('pause', syncControls);
+                    video.addEventListener('volumechange', syncControls);
+                });
+
+                if (playButton) {
+                    playButton.addEventListener('click', () => {
+                        const video = activeVideo();
+                        if (video.paused) {
+                            video.play().catch(() => {});
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }
+
+                if (seekInput) {
+                    seekInput.addEventListener('pointerdown', () => {
+                        isSeeking = true;
+                    });
+
+                    seekInput.addEventListener('input', () => {
+                        const video = activeVideo();
+                        const duration = Number.isFinite(video.duration) ? video.duration : 0;
+                        if (duration > 0) {
+                            video.currentTime = (Number(seekInput.value) / 1000) * duration;
+                            syncControls();
+                        }
+                    });
+
+                    seekInput.addEventListener('change', () => {
+                        isSeeking = false;
+                        syncControls();
+                    });
+
+                    seekInput.addEventListener('pointerup', () => {
+                        isSeeking = false;
+                        syncControls();
+                    });
+                }
+
+                if (muteButton) {
+                    muteButton.addEventListener('click', () => {
+                        const video = activeVideo();
+                        video.muted = !video.muted;
+                    });
+                }
+
+                if (fullscreenButton && stage) {
+                    fullscreenButton.addEventListener('click', () => {
+                        if (document.fullscreenElement) {
+                            document.exitFullscreen?.();
+                        } else {
+                            stage.requestFullscreen?.();
+                        }
+                    });
+                }
+
+                syncControls();
+            });
+        })();
+    </script>
+</body>
+</html>

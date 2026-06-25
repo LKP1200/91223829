@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | LuckyTools</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=2">
+    <link rel="stylesheet" href="assets/css/style.css?v=27">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="container">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 10px;">
+                <img src="assets/images/logo-demo.png" alt="Logo" class="header-logo">
+                LuckyTools
+            </a>
+        </div>
+        <nav>
+            <a href="about.html">About</a>
+            <div class="nav-eco-link" style="margin-left: 30px;">
+                <a href="ecosystem.html" style="margin-left: 0; opacity: 1; color: var(--accent-color);">Ecosystem</a>
+                <span class="free-badge">FREE PLUGINS!!</span>
+            </div>
+            <a href="releases.html">Updates</a>
+            <a href="contact.html">Contact</a>
+            <a href="licenses.html">Licenses</a>
+            <div class="nav-eco-link" style="margin-left: 30px;">
+                <a href="guide.html" style="margin-left: 0; opacity: 1; color: var(--accent-color);">Guide</a>
+                <span class="free-badge">LEARN!!</span>
+            </div>
+        </nav>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <a href="index.html">Home</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="about.html">About</a>
+        <div class="nav-overlay-divider"></div>
+        <div class="nav-eco-link" style="margin-left: 0; margin-bottom: 20px;">
+            <a href="ecosystem.html" style="margin-left: 0; opacity: 1; color: var(--accent-color); font-size: 24px;">Ecosystem</a>
+            <span class="free-badge" style="top: 40px;">FREE PLUGINS!!</span>
+        </div>
+        <div class="nav-overlay-divider"></div>
+        <a href="releases.html">Updates</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="contact.html">Contact</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="licenses.html">Licenses</a>
+        <div class="nav-overlay-divider"></div>
+        <div class="nav-eco-link" style="margin-left: 0; margin-bottom: 20px;">
+            <a href="guide.html" style="margin-left: 0; opacity: 1; color: var(--accent-color); font-size: 24px;">Guide</a>
+            <span class="free-badge" style="top: 40px;">LEARN!!</span>
+        </div>
+    </div>
+
+    <main class="inner-page-main">
+        <div class="container">
+            <div class="page-header-v2">
+                <h1 translate="no">Direct Support</h1>
+                <p>Have questions or need technical assistance? Reach out directly for support. Your feedback drives the evolution of LuckyTools.</p>
+            </div>
+
+            <div class="glass-card-v2 animate-up" style="text-align: center;">
+                <div class="hero-icon" style="font-size: 40px; margin-bottom: 20px;">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 28px; margin-bottom: 16px;">Let's Connect</h2>
+                <p style="color: var(--text-muted); margin-bottom: 40px; max-width: 500px; margin-left: auto; margin-right: auto;">Whether it's a bug report, a feature suggestion, or just a hello, LuckyTools is always evolving based on feedback from fellow editors.</p>
+                
+                <div style="display: flex; flex-direction: row; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://discord.gg/RTBc93R33X" target="_blank" class="social-item-v2" style="width: 250px; justify-content: center; flex-direction: column; gap: 4px; padding: 12px 20px; height: auto;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fab fa-discord"></i> Discord Server
+                        </div>
+                        <span style="font-size: 10px; opacity: 0.6; font-weight: 400; text-transform: uppercase; letter-spacing: 0.5px;">Dedicated Plugin Server</span>
+                    </a>
+
+
+                </div>
+
+                <div class="discount-code" id="discountBox" title="Click to copy code" style="margin-top: 60px;" translate="no" hidden data-deal-hidden="true">
+                    Use code: <span class="code-highlight" id="promoCode">BUSCOEDITOR</span> for the $80 deal!
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Smooth Scroll Reveal Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+        });
+
+        // Click-to-copy for discount code
+        const discountBox = document.getElementById('discountBox');
+        if (discountBox) {
+            discountBox.addEventListener('click', () => {
+                const code = document.getElementById('promoCode').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    const originalText = discountBox.innerHTML;
+                    discountBox.classList.add('copied');
+                    discountBox.innerHTML = '<i class="fas fa-check"></i> ' + code + ' Copied!';
+                    setTimeout(() => {
+                        discountBox.classList.remove('copied');
+                        discountBox.innerHTML = originalText;
+                    }, 2000);
+                });
+            });
+        }
+
+        // --- HAMBURGER MENU ---
+        (function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            if (!hamburgerBtn || !mobileNavOverlay) return;
+
+            function openNav() {
+                mobileNavOverlay.style.display = 'flex';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        hamburgerBtn.classList.add('active');
+                        mobileNavOverlay.classList.add('open');
+                        document.body.classList.add('nav-open');
+                    });
+                });
+            }
+
+            function closeNav() {
+                hamburgerBtn.classList.remove('active');
+                mobileNavOverlay.classList.remove('open');
+                document.body.classList.remove('nav-open');
+                setTimeout(() => {
+                    if (!mobileNavOverlay.classList.contains('open')) {
+                        mobileNavOverlay.style.display = 'none';
+                    }
+                }, 420);
+            }
+
+            hamburgerBtn.addEventListener('click', () => {
+                mobileNavOverlay.classList.contains('open') ? closeNav() : openNav();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileNavOverlay.classList.contains('open')) closeNav();
+            });
+        })();
+    </script>
+
+
+    <footer class="site-footer">
+        <div class="footer-glow"></div>
+        <div class="footer-bottom">
+            <div class="container footer-container-inner">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <i class="fas fa-bolt"></i> LUCKYTOOLS
+                        </div>
+                        <p>The ultimate toolkit for Adobe Premiere Pro editors. Automating the tedious, unlocking the creative.</p>
+                        <div class="social-links">
+                            <a href="https://discord.gg/RTBc93R33X" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+                            <a href="https://www.youtube.com/@LuckyTools.contact" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-nav">
+                        <h4>QUICK LINKS</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="ecosystem.html">Ecosystem</a></li>
+                            <li><a href="releases.html">Updates</a></li>
+                            <li><a href="guide.html">Guide</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="licenses.html">Licenses</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-support">
+                        <h4>SUPPORT</h4>
+                        <ul>
+                            <li><a href="contact.html">Contact Support</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="copyright-text">
+                    <p>&copy; 2026 LUCKYTOOLS. ALL RIGHTS RESERVED. <br>DESIGNED FOR THE NEXT GENERATION OF EDITORS.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- --- PREMIUM COOKIE BANNER (SOLID DESIGN) --- -->
+    <div id="cookieBanner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <h4>Cookies & Privacy</h4>
+            <p>LuckyTools uses cookies to improve the browsing experience and show personalized content. By clicking "Accept", you consent to their use.</p>
+        </div>
+        <div class="cookie-actions">
+            <button class="btn-cookie-accept" id="acceptCookies">Accept</button>
+            <a href="licenses.html#privacy" class="btn-cookie-info">More info</a>
+        </div>
+    </div>
+    <script>
+        (function() {
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptBtn = document.getElementById('acceptCookies');
+            if (cookieBanner && acceptBtn) {
+                if (!localStorage.getItem('lucky_cookies_accepted')) {
+                    setTimeout(() => {
+                        cookieBanner.style.display = 'flex';
+                    }, 2000);
+                }
+                acceptBtn.addEventListener('click', () => {
+                    localStorage.setItem('lucky_cookies_accepted', 'true');
+                    cookieBanner.classList.add('hiding');
+                    setTimeout(() => {
+                        cookieBanner.style.display = 'none';
+                    }, 400);
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

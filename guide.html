@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide | LuckyTools</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=2">
+    <link rel="stylesheet" href="assets/css/style.css?v=27">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .guide-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+        .guide-sidebar {
+            width: 250px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 100px;
+            height: max-content;
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .guide-sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .guide-sidebar li {
+            margin-bottom: 10px;
+        }
+        .guide-sidebar a {
+            color: #aaa;
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .guide-sidebar a:hover {
+            background: rgba(143, 136, 255, 0.1);
+            color: #8f88ff;
+        }
+        .guide-content {
+            flex-grow: 1;
+        }
+        .guide-section {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            scroll-margin-top: 100px;
+        }
+        .guide-section h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 28px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 15px;
+        }
+        .guide-section p {
+            color: #bbb;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .guide-section ul {
+            color: #bbb;
+            line-height: 1.6;
+            padding-left: 20px;
+        }
+        @media (max-width: 900px) {
+            .guide-container {
+                flex-direction: column;
+                gap: 20px;
+                margin-top: 20px;
+            }
+            .guide-sidebar {
+                width: 100%;
+                position: static;
+                padding: 14px;
+            }
+            .guide-section {
+                padding: 24px 18px;
+            }
+            .guide-section h2 {
+                font-size: 22px;
+            }
+        }
+        @media (max-width: 480px) {
+            .guide-section {
+                padding: 18px 14px;
+            }
+            .guide-section h2 {
+                font-size: 18px;
+            }
+        }
+        @keyframes subtle-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(0, 212, 255, 0.15); }
+            50% { box-shadow: 0 0 25px rgba(0, 212, 255, 0.3); }
+        }
+        .property-highlight {
+            border: 1px solid #00d4ff;
+            background: rgba(0, 212, 255, 0.08);
+            color: #00d4ff;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95em;
+            font-weight: 700;
+            animation: subtle-glow 3s infinite ease-in-out;
+        }
+        .property-highlight i {
+            font-size: 1.2em;
+        }
+        .property-highlight span {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="container">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 10px;">
+                <img src="assets/images/logo-demo.png" alt="Logo" class="header-logo">
+                LuckyTools
+            </a>
+        </div>
+        <nav>
+            <a href="about.html">About</a>
+            <div class="nav-eco-link" style="margin-left: 30px;">
+                <a href="ecosystem.html" style="margin-left: 0; opacity: 1; color: var(--accent-color);">Ecosystem</a>
+                <span class="free-badge">FREE PLUGINS!!</span>
+            </div>
+            <a href="releases.html">Updates</a>
+            <a href="contact.html">Contact</a>
+            <a href="licenses.html">Licenses</a>
+            <div class="nav-eco-link" style="margin-left: 30px;">
+                <a href="guide.html" style="margin-left: 0; opacity: 1; color: var(--accent-color);">Guide</a>
+                <span class="free-badge">LEARN!!</span>
+            </div>
+        </nav>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <a href="index.html">Home</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="about.html">About</a>
+        <div class="nav-overlay-divider"></div>
+        <div class="nav-eco-link" style="margin-left: 0; margin-bottom: 20px;">
+            <a href="ecosystem.html" style="margin-left: 0; opacity: 1; color: var(--accent-color); font-size: 24px;">Ecosystem</a>
+            <span class="free-badge" style="top: 40px;">FREE PLUGINS!!</span>
+        </div>
+        <div class="nav-overlay-divider"></div>
+        <a href="releases.html">Updates</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="contact.html">Contact</a>
+        <div class="nav-overlay-divider"></div>
+        <a href="licenses.html">Licenses</a>
+        <div class="nav-overlay-divider"></div>
+        <div class="nav-eco-link" style="margin-left: 0; margin-bottom: 20px;">
+            <a href="guide.html" style="margin-left: 0; opacity: 1; color: var(--accent-color); font-size: 24px;">Guide</a>
+            <span class="free-badge" style="top: 40px;">LEARN!!</span>
+        </div>
+    </div>
+
+    <main class="inner-page-main">
+        <div class="container">
+            <div class="page-header-v2">
+                <h1>The Ultimate <br><span style="color: var(--accent-color);">LuckyTools Guide</span></h1>
+                <p>Master every panel in the ecosystem to supercharge your workflow and edit at the speed of thought.</p>
+            </div>
+
+            <div class="guide-container">
+                <aside class="guide-sidebar">
+                    <ul>
+                        <li><a href="#luckysearch">LuckySearch</a></li>
+                        <li><a href="#luckyshortcuts">LuckyShortcuts</a></li>
+                        <li><a href="#luckyorganize">LuckyOrganize</a></li>
+                        <li><a href="#luckyzoom">LuckyZoom</a></li>
+                        <li><a href="#luckycut">LuckyCut</a></li>
+                        <li><a href="#luckypod">LuckyPod</a></li>
+                        <li><a href="#luckynotes">LuckyNotes</a></li>
+                        <li><a href="#luckycurves">LuckyCurves</a></li>
+                        <li><a href="#luckyanchor">LuckyAnchor</a></li>
+                    </ul>
+                </aside>
+
+                <div class="guide-content">
+                    <section id="luckysearch" class="guide-section">
+                        <h2><i class="fas fa-search" style="margin-right: 10px;"></i>LuckySearch</h2>
+                        <p><strong>Your Central Hub</strong> for accessing everything from one place. Find tools, effects, presets, and more instantly.</p>
+                        <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-color); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0;">
+                            <h4 style="color: white; margin: 0 0 10px 0; font-family: 'Outfit', sans-serif;">How to use it:</h4>
+                            <ol style="color: #bbb; line-height: 1.6; padding-left: 20px; margin: 0;">
+                                <li style="margin-bottom: 8px;">To summon the <strong>LuckySearch panel</strong>, you must first assign it a shortcut. Open the LuckyTools Settings (Shortcuts tab) and look under the <strong>Panels</strong> category (the very first section at the top) to set your preferred key combination.</li>
+                                <li style="margin-bottom: 8px;">Start typing the name of any effect, preset, or tool you need. The results will populate in real-time with zero lag.</li>
+                                <li style="margin-bottom: 8px;"><strong>Collapsible Categories:</strong> Search results are grouped by category. They may appear closed initially, but you can simply click to expand them. Plus, any category you open or close will <strong>save its state</strong> for the next time you open the panel.</li>
+                                <li style="margin-bottom: 8px;">Use the dynamic buttons below the search bar to re-apply your <strong>most recently used effects</strong> instantly.</li>
+                                <li>Click the <strong>Settings icon</strong> to customize the visual appearance, change fonts, or pin your absolute favorite effects for 1-click access.</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section id="luckyshortcuts" class="guide-section">
+                        <h2><i class="fas fa-keyboard" style="margin-right: 10px;"></i>LuckyShortcuts</h2>
+                        <p><strong>Turbo Hotkeys</strong> designed to let you assign individual actions inside LuckyTools directly to your keyboard.</p>
+                        <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-color); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0;">
+                            <h4 style="color: white; margin: 0 0 10px 0; font-family: 'Outfit', sans-serif;">How to use it:</h4>
+                            <ol style="color: #bbb; line-height: 1.6; padding-left: 20px; margin: 0;">
+                                <li style="margin-bottom: 8px;">Open <strong>LuckyTools Settings</strong> from Premiere's <strong>Window > Extensions</strong> menu to view all available commands. Everything is smartly organized into categories (such as <strong>Video/Audio Effects, Transitions, Presets, Panels, Sequence, Clip</strong>) and dedicated sections for each LuckyTools module.</li>
+                                <li style="margin-bottom: 8px;">Click on the input field next to the action you want to accelerate.</li>
+                                <li style="margin-bottom: 8px;">Press the exact key or key-combination (e.g., <em>Ctrl + Alt + X</em>) on your keyboard to assign it.</li>
+                                <li>Select a clip on your timeline and press your new hotkey to execute the action with <strong>zero latency</strong>.</li>
+                            </ol>
+                        </div>
+                        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 15px;"><em>Note: Complex multi-effect macros are not supported to guarantee absolute stability.</em></p>
+                    </section>
+
+                    <section id="luckyorganize" class="guide-section">
+                        <h2><i class="fas fa-folder-open" style="margin-right: 10px;"></i>LuckyOrganize</h2>
+                        <p><strong>Structure Folders</strong> instantly to keep your project bins perfectly organized and visually coherent.</p>
+                        <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-color); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0;">
+                            <h4 style="color: white; margin: 0 0 10px 0; font-family: 'Outfit', sans-serif;">How to use it:</h4>
+                            <ol style="color: #bbb; line-height: 1.6; padding-left: 20px; margin: 0;">
+                                <li style="margin-bottom: 8px;">In the <strong>LuckyOrganize panel</strong>, set up your desired folder names, assign specific label colors, and configure text filters.</li>
+                                <li style="margin-bottom: 8px;">Open <strong>LuckyShortcuts</strong> and assign a custom keyboard shortcut to the LuckyOrganize action.</li>
+                                <li style="margin-bottom: 8px;">Ensure your media and sequences are present in the Premiere Pro <strong>Project Panel</strong>.</li>
+                                <li>Press your assigned shortcut to instantly group and color-code your items based on your defined logical patterns.</li>
+                            </ol>
+                        </div>
+                        <p style="font-size: 0.9em; opacity: 0.7; margin-top: 15px;"><em>Note: Exclusively manages items within the Premiere Project panel. It does not move files on your hard drive.</em></p>
+                    </section>
+
+                    <section id="luckyzoom" class="guide-section">
+                        <h2><i class="fas fa-search-plus" style="margin-right: 10px;"></i>LuckyZoom</h2>
+                        <p><strong>Surgical Framing</strong> for revolutionizing your framing with dynamic zooms and custom start/end points.</p>
+                        <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-color); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0;">
+                            <h4 style="color: white; margin: 0 0 10px 0; font-family: 'Outfit', sans-serif;">How to use it:</h4>
+                            <ol style="color: #bbb; line-height: 1.6; padding-left: 20px; margin: 0;">
+                                <li style="margin-bottom: 8px;">First, assign a shortcut to open <strong>LuckyZoom</strong>. Go to the LuckyTools Settings (Shortcuts tab) and look under the <strong>Panels</strong> category to set your key.</li>
+                                <li style="margin-bottom: 8px;">Select a clip in your timeline that needs reframing.</li>
+                                <li style="margin-bottom: 8px;"><strong>Crucial Step:</strong> Every time you move the playhead or want to perform a zoom, you must click the <strong>Analyze</strong> button so the panel reads your current frame.</li>
+                                <li style="margin-bottom: 8px;">In the <strong>LuckyZoom preview window</strong>, hover your mouse and use the scroll wheel to zoom exactly into your desired point.</li>
+                                <li style="margin-bottom: 8px;">Choose your zoom style:
+                                    <ul style="margin-top: 8px; margin-bottom: 8px; list-style-type: disc; padding-left: 20px;">
+                                        <li><strong>Static Zooms:</strong> Instantly reframes the shot permanently without any animation or movement.</li>
+                                        <li><strong>Normal Zooms:</strong> Creates a standard, smooth animated push-in from your original framing to the new point.</li>
+                                        <li><strong>Dynamic Zooms:</strong> Lets you define custom Start and End points for complex, continuous camera movements across the clip.</li>
+                                    </ul>
+                                </li>
+                                <li>Select between the advanced <strong>Grow Mode</strong> (for world-class easing using native curves) or the standard <strong>Transform Mode</strong>, and apply!</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section id="luckycut" class="guide-section">
+                        <h2><i class="fas fa-cut" style="margin-right: 10px;"></i>LuckyCut</h2>
+                        <p><strong>Rapid Splicing</strong> utilizing dB-based silence detection.</p>
+                        <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-color); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0;">
+                            <h4 style="color: white; margin: 0 0 10px 0; font-family: 'Outfit', sans-serif;">How to use it:</h4>
+                            <ol style="color: #bbb; line-height: 1.6; padding-left: 20px; margin: 0;">
+                                <li style="margin-bottom: 8px;">Open <strong>LuckyCut</strong> and adjust the dB threshold to define what should be considered "silence".</li>
+                                <li style="margin-bottom: 8px;">Select the raw audio/video clip on your timeline.</li>
+                                <li>Click <strong>Analyze & Cut</strong>. The plugin will instantly process the clip and ripple-delete all detected silent gaps, completing hours of rough-cutting in seconds.</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section id="luckypod" class="guide-section">
+                        <h2><i class="fas fa-podcast" style="margin-right: 10px;"></i>LuckyPod</h2>
+                        <p><strong>Multicam Switcher</strong> perfect for automating podcast and interview edits.</p>
+                        <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-color); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0;">
+                            <h4 style="color: white; margin: 0 0 10px 0; font-family: 'Outfit', sans-serif;">How to use it:</h4>
+                            <ol style="color: #bbb; line-height: 1.6; padding-left: 20px; margin: 0;">
+                                <li style="margin-bottom: 8px;">Sync your multicam footage and audio tracks in the timeline as usual.</li>
+                                <li style="margin-bottom: 8px;">In <strong>LuckyPod</strong>, assign the audio signals to their respective camera angles.</li>
+                                <li>Run the process. The tool will intelligently analyze the waveforms to detect who is speaking, and <strong>automatically cut and switch</strong> to the correct camera for you.</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section id="luckynotes" class="guide-section">
+                        <h2><i class="fas fa-sticky-note" style="margin-right: 10px;"></i>LuckyNotes</h2>
+                        <p><strong>Intelligent Timeline</strong> to keep your workflow organized with a visual task system.</p>
+                        <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-color); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0;">
+                            <h4 style="color: white; margin: 0 0 10px 0; font-family: 'Outfit', sans-serif;">How to use it:</h4>
+                            <ol style="color: #bbb; line-height: 1.6; padding-left: 20px; margin: 0;">
+                                <li style="margin-bottom: 8px;">First, assign a shortcut to open <strong>LuckyNotes</strong>. Go to the LuckyTools Settings (Shortcuts tab) and look under the <strong>Panels</strong> category to set your key.</li>
+                                <li style="margin-bottom: 8px;">Use the <strong>LuckyNotes panel</strong> as your digital notepad. Jot down tasks, client feedback, or reminders.</li>
+                                <li style="margin-bottom: 8px;">Type specific timecodes (e.g., <em>01:23:45</em>) directly into your notes.</li>
+                                <li style="margin-bottom: 8px;"><strong>Click on any timecode</strong> in the notes to instantly snap your timeline playhead to that exact moment.</li>
+                                <li>Paste reference images directly into the panel to keep visual guides close at hand.</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section id="luckycurves" class="guide-section">
+                        <h2><i class="fas fa-wave-square" style="margin-right: 10px;"></i>LuckyCurves</h2>
+                        <p><strong>Perfect Dynamics</strong> giving you absolute control over animation dynamics.</p>
+                        <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-color); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0;">
+                            <h4 style="color: white; margin: 0 0 10px 0; font-family: 'Outfit', sans-serif;">How to use it:</h4>
+                            <ol style="color: #bbb; line-height: 1.6; padding-left: 20px; margin: 0;">
+                                <li style="margin-bottom: 8px;">First, assign a shortcut to open <strong>LuckyCurves</strong>. Go to the LuckyTools Settings (Shortcuts tab) and look under the <strong>Panels</strong> category to set your key.</li>
+                                <li style="margin-bottom: 8px;">Select the start and end <strong>keyframes</strong> of the animation you want to smooth out.</li>
+                                <li style="margin-bottom: 8px;">In <strong>LuckyCurves</strong>, select one of the pre-built dynamic profiles (Ease In, Ease Out, etc.).</li>
+                                <li style="margin-bottom: 8px;"><strong>Add Custom Profiles:</strong> You can create and save your own curve profiles! Manually adjust a curve in Premiere, then use LuckyCurves to save it as a new profile so you can reuse that exact dynamic with 1-click in the future.</li>
+                                <li style="margin-bottom: 8px;">Click <strong>Apply</strong> to inject the selected curve data directly into the keyframes.</li>
+                                <li>To remove any easing and return to linear motion, simply hit the <strong>Clear</strong> button.</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section id="luckyanchor" class="guide-section">
+                        <h2><i class="fas fa-crosshairs" style="margin-right: 10px;"></i>LuckyAnchor</h2>
+                        <p><strong>Surgical Control</strong> for mathematical repositioning of anchor points. Access it instantly via your assigned keyboard shortcuts or launch it directly from the LuckySearch hub without needing to keep the panel open.</p>
+                        <div class="property-highlight">
+                            <i class="fas fa-check-circle"></i>
+                            Works for both <span>Motion</span> & <span>Transform</span>
+                        </div>
+
+                        <div style="background: rgba(255, 255, 255, 0.03); border-left: 3px solid var(--accent-color); padding: 15px 20px; border-radius: 0 8px 8px 0; margin: 20px 0;">
+                            <h4 style="color: white; margin: 0 0 10px 0; font-family: 'Outfit', sans-serif;">How to use it:</h4>
+                            <ol style="color: #bbb; line-height: 1.6; padding-left: 20px; margin: 0;">
+                                <li style="margin-bottom: 8px;">First, assign a shortcut to open <strong>LuckyAnchor</strong>. Go to the LuckyTools Settings (Shortcuts tab) and look under the <strong>Panels</strong> category to set your key.</li>
+                                <li style="margin-bottom: 8px;">Select any visual clip (video, image, or shape) on your timeline.</li>
+                                <li style="margin-bottom: 8px;">Open <strong>LuckyAnchor</strong> to reveal the interactive alignment grid.</li>
+                                <li style="margin-bottom: 8px;">Click on any of the grid's points to mathematically snap the anchor point of the clip to that position (e.g., center, top-left).</li>
+                                <li>The position updates in <strong>real-time</strong>.</li>
+                            </ol>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-glow"></div>
+        <div class="footer-bottom">
+            <div class="container footer-container-inner">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <i class="fas fa-bolt"></i> LUCKYTOOLS
+                        </div>
+                        <p>The ultimate toolkit for Adobe Premiere Pro editors. Automating the tedious, unlocking the creative.</p>
+                        <div class="social-links">
+                            <a href="https://discord.gg/55xS3QpR5S" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+                            <a href="https://www.youtube.com/@LuckyTools.contact" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-nav">
+                        <h4>QUICK LINKS</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="ecosystem.html">Ecosystem</a></li>
+                            <li><a href="releases.html">Updates</a></li>
+                            <li><a href="guide.html">Guide</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="licenses.html">Licenses</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-support">
+                        <h4>SUPPORT</h4>
+                        <ul>
+                            <li><a href="contact.html">Contact Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="copyright-text">
+                    <p>&copy; 2026 LUCKYTOOLS. ALL RIGHTS RESERVED. <br>DESIGNED FOR THE NEXT GENERATION OF EDITORS.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- HAMBURGER MENU ---
+        (function() {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            if (!hamburgerBtn || !mobileNavOverlay) return;
+
+            function openNav() {
+                mobileNavOverlay.style.display = 'flex';
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        hamburgerBtn.classList.add('active');
+                        mobileNavOverlay.classList.add('open');
+                        document.body.classList.add('nav-open');
+                    });
+                });
+            }
+
+            function closeNav() {
+                hamburgerBtn.classList.remove('active');
+                mobileNavOverlay.classList.remove('open');
+                document.body.classList.remove('nav-open');
+                setTimeout(() => {
+                    if (!mobileNavOverlay.classList.contains('open')) {
+                        mobileNavOverlay.style.display = 'none';
+                    }
+                }, 420);
+            }
+
+            hamburgerBtn.addEventListener('click', () => {
+                mobileNavOverlay.classList.contains('open') ? closeNav() : openNav();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileNavOverlay.classList.contains('open')) closeNav();
+            });
+        })();
+        
+        // --- SMOOTH SCROLL FOR SIDEBAR ---
+        document.querySelectorAll('.guide-sidebar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
