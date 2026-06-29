@@ -277,6 +277,30 @@
             });
         }
 
+        // --- LIMITED TIME DEAL VISIBILITY ---
+        const limitedTimeDeal = {
+            enabled: true,
+            startDate: '2026-06-28T13:52:57-06:00',
+            durationDays: 9
+        };
+
+        function updateDealVisibility() {
+            if (!discountBox) return;
+            if (!limitedTimeDeal.enabled) {
+                discountBox.hidden = true;
+                return;
+            }
+
+            const startTime = new Date(limitedTimeDeal.startDate).getTime();
+            const durationMs = limitedTimeDeal.durationDays * 24 * 60 * 60 * 1000;
+            const remainingMs = startTime + durationMs - Date.now();
+
+            discountBox.hidden = !Number.isFinite(startTime) || remainingMs <= 0;
+        }
+
+        updateDealVisibility();
+        setInterval(updateDealVisibility, 60 * 1000);
+
         // --- HAMBURGER MENU ---
         (function() {
             const hamburgerBtn = document.getElementById('hamburgerBtn');
