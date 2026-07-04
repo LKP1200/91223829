@@ -7,7 +7,7 @@
     <title>LuckyTools | Premium Premiere Pro Plugins</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=7">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=7">
-    <link rel="stylesheet" href="assets/css/style.css?v=44">
+    <link rel="stylesheet" href="assets/css/style.css?v=45">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* GLOBAL SELECTION COLOR */
@@ -2838,106 +2838,13 @@
             });
         })();
 
-        // --- DRAGGABLE REVIEWS MARQUEE ---
+        // --- STATIC COMMUNITY REVIEWS ---
         (function() {
-            const commentsPanel = document.querySelector('.community-comments-panel');
-            const firstMarquee = commentsPanel?.querySelector('.reviews-marquee');
+            const communityTrack = document.querySelector('.community-comments-panel .reviews-track');
+            if (!communityTrack) return;
 
-            if (commentsPanel && firstMarquee && commentsPanel.querySelectorAll('.reviews-marquee').length === 1) {
-                firstMarquee.dataset.reviewRow = '1';
-                for (let i = 2; i <= 3; i++) {
-                    const clone = firstMarquee.cloneNode(true);
-                    clone.dataset.reviewRow = String(i);
-                    commentsPanel.appendChild(clone);
-                }
-            }
-
-            document.querySelectorAll('.reviews-marquee').forEach((marquee, index) => {
-                const track = marquee.querySelector('.reviews-track');
-                if (!track) return;
-
-                let isDragging = false;
-                let startX;
-                let scrollLeft;
-                let currentX = index === 1 ? -220 : index === 2 ? -440 : 0;
-                const direction = index === 1 ? 1 : -1;
-                const speed = index === 2 ? 0.48 : 0.6;
-                let moved = false;
-                let isHovered = false;
-
-                marquee.addEventListener('mouseenter', () => isHovered = true);
-                marquee.addEventListener('mouseleave', () => isHovered = false);
-
-                track.style.animation = 'none';
-
-                function getLoopPoint() {
-                    return (track.offsetWidth + 20) / 2;
-                }
-
-                function normalizePosition(loopPoint) {
-                    if (!loopPoint) return;
-                    if (currentX > 0) currentX -= loopPoint;
-                    if (Math.abs(currentX) >= loopPoint) currentX += loopPoint;
-                }
-
-                function update() {
-                    if (!isDragging && !isHovered) {
-                        currentX += direction * speed;
-                        normalizePosition(getLoopPoint());
-                        track.style.transform = `translateX(${currentX}px)`;
-                    }
-                    requestAnimationFrame(update);
-                }
-
-                update();
-
-                const startDrag = (e) => {
-                    isDragging = true;
-                    moved = false;
-                    startX = (e.pageX || e.touches[0].pageX);
-                    scrollLeft = currentX;
-                };
-
-                const stopDrag = () => {
-                    if (!isDragging) return;
-                    isDragging = false;
-                    marquee.classList.remove('is-dragging');
-                    setTimeout(() => { moved = false; }, 10);
-                };
-
-                const moveDrag = (e) => {
-                    if (!isDragging) return;
-
-                    const x = (e.pageX || e.touches[0].pageX);
-                    const walk = (x - startX);
-
-                    if (Math.abs(walk) > 5) {
-                        if (!moved) {
-                            moved = true;
-                            marquee.classList.add('is-dragging');
-                        }
-                        currentX = scrollLeft + walk * 1.5;
-                        normalizePosition(getLoopPoint());
-                        track.style.transform = `translateX(${currentX}px)`;
-                    }
-                };
-
-                track.addEventListener('click', (e) => {
-                    if (moved) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                    }
-                }, true);
-
-                marquee.addEventListener('mousedown', startDrag);
-                marquee.addEventListener('touchstart', startDrag, { passive: true });
-
-                window.addEventListener('mouseup', stopDrag);
-                window.addEventListener('touchend', stopDrag);
-
-                window.addEventListener('mousemove', moveDrag);
-                window.addEventListener('touchmove', moveDrag, { passive: true });
-            });
+            communityTrack.style.animation = 'none';
+            communityTrack.style.transform = 'none';
         })();
 
         // --- MAIN CATEGORY TABS LOGIC ---
