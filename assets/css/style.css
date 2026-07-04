@@ -1161,11 +1161,12 @@ html[_mstlang] .feature-card ul li {
 
 .community-proof-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    grid-template-columns: minmax(320px, 0.82fr) minmax(520px, 1.18fr);
     gap: clamp(22px, 3vw, 46px);
     align-items: stretch;
     max-width: 1480px;
     margin: 0 auto;
+    min-width: 0;
 }
 
 .community-comments-panel {
@@ -1192,6 +1193,7 @@ html[_mstlang] .feature-card ul li {
 
 .community-videos-panel {
     position: relative;
+    min-width: 0;
     padding: clamp(22px, 2vw, 30px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     background:
@@ -1209,67 +1211,63 @@ html[_mstlang] .feature-card ul li {
 }
 
 .community-video-list {
-    display: grid;
-    gap: 12px;
-}
-
-.community-video-card {
-    display: grid;
-    grid-template-columns: 44px minmax(0, 1fr) 18px;
-    align-items: center;
-    gap: 14px;
-    min-height: 78px;
-    padding: 14px;
-    color: inherit;
-    text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    background: rgba(255, 255, 255, 0.04);
-    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-}
-
-.community-video-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(143, 136, 255, 0.45);
-    background: rgba(143, 136, 255, 0.1);
-}
-
-.community-video-icon {
-    display: grid;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    color: #fff;
-    background: #111;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    font-size: 18px;
-}
-
-.community-video-copy {
-    display: grid;
+    display: flex;
+    gap: 16px;
+    width: 100%;
     min-width: 0;
-    gap: 3px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding: 2px 0 12px;
+    scrollbar-color: rgba(143, 136, 255, 0.75) rgba(255, 255, 255, 0.08);
 }
 
-.community-video-copy strong {
+.community-video-embed-card {
+    flex: 0 0 clamp(270px, 28vw, 340px);
+    scroll-snap-align: start;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.community-video-embed-card iframe {
+    display: block;
+    width: 100%;
+    height: clamp(560px, 52vw, 650px);
+    border: 0;
+    background: #050505;
+}
+
+.community-video-embed-card a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 46px;
+    padding: 12px 14px;
     color: #fff;
+    text-decoration: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.35);
     font-family: 'Outfit', sans-serif;
-    font-size: 15px;
-    line-height: 1.15;
-}
-
-.community-video-copy span {
-    color: var(--text-muted);
-    font-size: 11px;
-    line-height: 1.35;
-}
-
-.community-video-card > .fa-arrow-up-right-from-square {
-    color: rgba(255, 255, 255, 0.48);
     font-size: 13px;
+    font-weight: 800;
+}
+
+.community-video-embed-card a span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.community-video-embed-card a > .fa-arrow-up-right-from-square {
+    color: rgba(255, 255, 255, 0.48);
+    font-size: 12px;
     transition: color 0.25s ease, transform 0.25s ease;
 }
 
-.community-video-card:hover > .fa-arrow-up-right-from-square {
+.community-video-embed-card a:hover > .fa-arrow-up-right-from-square {
     color: #8f88ff;
     transform: translate(2px, -2px);
 }
@@ -1283,16 +1281,8 @@ html[_mstlang] .feature-card ul li {
         order: -1;
     }
 
-    .community-video-list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .community-video-card {
-        grid-template-columns: 40px minmax(0, 1fr);
-    }
-
-    .community-video-card > .fa-arrow-up-right-from-square {
-        display: none;
+    .community-video-embed-card {
+        flex-basis: min(330px, 82vw);
     }
 }
 
@@ -1319,11 +1309,16 @@ html[_mstlang] .feature-card ul li {
     }
 
     .community-video-list {
-        grid-template-columns: 1fr;
+        margin-right: -18px;
+        padding-right: 18px;
     }
 
-    .community-video-card {
-        min-height: 68px;
+    .community-video-embed-card {
+        flex-basis: min(300px, 82vw);
+    }
+
+    .community-video-embed-card iframe {
+        height: 585px;
     }
 
     .community-comments-panel .review-card {
