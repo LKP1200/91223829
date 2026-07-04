@@ -7,7 +7,7 @@
     <title>LuckyTools | Premium Premiere Pro Plugins</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=7">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=7">
-    <link rel="stylesheet" href="assets/css/style.css?v=43">
+    <link rel="stylesheet" href="assets/css/style.css?v=44">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* GLOBAL SELECTION COLOR */
@@ -2840,108 +2840,104 @@
 
         // --- DRAGGABLE REVIEWS MARQUEE ---
         (function() {
-            const track = document.querySelector('.reviews-track');
-            const marquee = document.querySelector('.reviews-marquee');
-            if (!track || !marquee) return;
+            const commentsPanel = document.querySelector('.community-comments-panel');
+            const firstMarquee = commentsPanel?.querySelector('.reviews-marquee');
 
-            let isDragging = false;
-            let startX;
-            let scrollLeft;
-            let currentX = 0;
-            let speed = 0.6; // Speed of auto-scroll
-            let animationId;
-            let moved = false;
-
-            // Pause animation on hover
-            let isHovered = false;
-            marquee.addEventListener('mouseenter', () => isHovered = true);
-            marquee.addEventListener('mouseleave', () => isHovered = false);
-
-            // Disable CSS animation
-            track.style.animation = 'none';
-
-            function getLoopPoint() {
-                // Each set of reviews is half the track plus half the gap
-                return (track.offsetWidth + 20) / 2;
+            if (commentsPanel && firstMarquee && commentsPanel.querySelectorAll('.reviews-marquee').length === 1) {
+                firstMarquee.dataset.reviewRow = '1';
+                for (let i = 2; i <= 3; i++) {
+                    const clone = firstMarquee.cloneNode(true);
+                    clone.dataset.reviewRow = String(i);
+                    commentsPanel.appendChild(clone);
+                }
             }
 
-            function update() {
-                if (!isDragging && !isHovered) {
-                    currentX -= speed;
-                    const loopPoint = getLoopPoint();
-                    if (Math.abs(currentX) >= loopPoint) {
-                        currentX = 0;
-                    }
-                    track.style.transform = `translateX(${currentX}px)`;
+            document.querySelectorAll('.reviews-marquee').forEach((marquee, index) => {
+                const track = marquee.querySelector('.reviews-track');
+                if (!track) return;
+
+                let isDragging = false;
+                let startX;
+                let scrollLeft;
+                let currentX = index === 1 ? -220 : index === 2 ? -440 : 0;
+                const direction = index === 1 ? 1 : -1;
+                const speed = index === 2 ? 0.48 : 0.6;
+                let moved = false;
+                let isHovered = false;
+
+                marquee.addEventListener('mouseenter', () => isHovered = true);
+                marquee.addEventListener('mouseleave', () => isHovered = false);
+
+                track.style.animation = 'none';
+
+                function getLoopPoint() {
+                    return (track.offsetWidth + 20) / 2;
                 }
-                animationId = requestAnimationFrame(update);
-            }
 
-            update();
-
-            // Drag Logic
-            const startDrag = (e) => {
-                isDragging = true;
-                moved = false;
-                startX = (e.pageX || e.touches[0].pageX);
-                scrollLeft = currentX;
-            };
-
-            const stopDrag = () => {
-                if (!isDragging) return;
-                isDragging = false;
-                marquee.classList.remove('is-dragging');
-                
-                // Use a small timeout to allow the 'click' event to fire or be prevented
-                setTimeout(() => { moved = false; }, 10);
-            };
-
-            const moveDrag = (e) => {
-                if (!isDragging) return;
-                
-                const x = (e.pageX || e.touches[0].pageX);
-                const walk = (x - startX);
-                
-                if (Math.abs(walk) > 5) {
-                    if (!moved) {
-                        moved = true;
-                        marquee.classList.add('is-dragging');
-                    }
-                    currentX = scrollLeft + walk * 1.5;
-
-                    const loopPoint = getLoopPoint();
-                    
-                    // Infinite seamless wrap
-                    if (currentX > 0) {
-                        currentX -= loopPoint;
-                        startX = x;
-                        scrollLeft = currentX;
-                    } else if (Math.abs(currentX) >= loopPoint) {
-                        currentX += loopPoint;
-                        startX = x;
-                        scrollLeft = currentX;
-                    }
-
-                    track.style.transform = `translateX(${currentX}px)`;
+                function normalizePosition(loopPoint) {
+                    if (!loopPoint) return;
+                    if (currentX > 0) currentX -= loopPoint;
+                    if (Math.abs(currentX) >= loopPoint) currentX += loopPoint;
                 }
-            };
 
-            // Prevent clicks on links if dragging happened
-            track.addEventListener('click', (e) => {
-                if (moved) {
-                    e.preventDefault();
-                    e.stopPropagation();
+                function update() {
+                    if (!isDragging && !isHovered) {
+                        currentX += direction * speed;
+                        normalizePosition(getLoopPoint());
+                        track.style.transform = `translateX(${currentX}px)`;
+                    }
+                    requestAnimationFrame(update);
                 }
-            }, true); // Use capture phase
 
-            marquee.addEventListener('mousedown', startDrag);
-            marquee.addEventListener('touchstart', startDrag, { passive: true });
+                update();
 
-            window.addEventListener('mouseup', stopDrag);
-            window.addEventListener('touchend', stopDrag);
+                const startDrag = (e) => {
+                    isDragging = true;
+                    moved = false;
+                    startX = (e.pageX || e.touches[0].pageX);
+                    scrollLeft = currentX;
+                };
 
-            window.addEventListener('mousemove', moveDrag);
-            window.addEventListener('touchmove', moveDrag, { passive: true });
+                const stopDrag = () => {
+                    if (!isDragging) return;
+                    isDragging = false;
+                    marquee.classList.remove('is-dragging');
+                    setTimeout(() => { moved = false; }, 10);
+                };
+
+                const moveDrag = (e) => {
+                    if (!isDragging) return;
+
+                    const x = (e.pageX || e.touches[0].pageX);
+                    const walk = (x - startX);
+
+                    if (Math.abs(walk) > 5) {
+                        if (!moved) {
+                            moved = true;
+                            marquee.classList.add('is-dragging');
+                        }
+                        currentX = scrollLeft + walk * 1.5;
+                        normalizePosition(getLoopPoint());
+                        track.style.transform = `translateX(${currentX}px)`;
+                    }
+                };
+
+                track.addEventListener('click', (e) => {
+                    if (moved) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                }, true);
+
+                marquee.addEventListener('mousedown', startDrag);
+                marquee.addEventListener('touchstart', startDrag, { passive: true });
+
+                window.addEventListener('mouseup', stopDrag);
+                window.addEventListener('touchend', stopDrag);
+
+                window.addEventListener('mousemove', moveDrag);
+                window.addEventListener('touchmove', moveDrag, { passive: true });
+            });
         })();
 
         // --- MAIN CATEGORY TABS LOGIC ---
