@@ -1165,8 +1165,8 @@ html[_mstlang] .feature-card ul li {
 
 .community-proof-layout {
     display: grid;
-    grid-template-columns: minmax(720px, 1fr) minmax(360px, 440px);
-    gap: clamp(20px, 2.5vw, 38px);
+    grid-template-columns: minmax(660px, 0.86fr) minmax(760px, 1.14fr);
+    gap: clamp(18px, 2vw, 32px);
     align-items: start;
     width: 100%;
     max-width: min(1720px, calc(100vw - 64px));
@@ -1198,8 +1198,8 @@ html[_mstlang] .feature-card ul li {
 
 .community-comments-panel .reviews-track {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
     width: 100%;
     transform: none !important;
     animation: none !important;
@@ -1211,9 +1211,9 @@ html[_mstlang] .feature-card ul li {
 
 .community-comments-panel .review-card {
     width: 100%;
-    min-height: 204px;
+    min-height: 188px;
     max-height: none;
-    padding: clamp(16px, 1vw, 22px);
+    padding: clamp(14px, 0.9vw, 18px);
     border-top-width: 2px;
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
 }
@@ -1224,8 +1224,8 @@ html[_mstlang] .feature-card ul li {
 
 .community-comments-panel .review-text {
     display: -webkit-box;
-    min-height: 84px;
-    max-height: 106px;
+    min-height: 80px;
+    max-height: 100px;
     overflow: hidden;
     font-size: 11px;
     line-height: 1.45;
@@ -1279,7 +1279,7 @@ html[_mstlang] .feature-card ul li {
     display: flex;
     flex: 1;
     flex-direction: row;
-    gap: 14px;
+    gap: 18px;
     width: 100%;
     min-width: 0;
     overflow-x: auto;
@@ -1290,7 +1290,7 @@ html[_mstlang] .feature-card ul li {
 }
 
 .community-video-embed-card {
-    flex: 0 0 min(330px, 88%);
+    flex: 0 0 calc((100% - 18px) / 2);
     scroll-snap-align: start;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1300,7 +1300,7 @@ html[_mstlang] .feature-card ul li {
 .community-video-embed-card iframe {
     display: block;
     width: 100%;
-    height: 500px;
+    height: clamp(660px, 43vw, 760px);
     border: 0;
     background: #050505;
 }
@@ -1339,7 +1339,7 @@ html[_mstlang] .feature-card ul li {
     transform: translate(2px, -2px);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1450px) {
     .community-proof-layout {
         grid-template-columns: 1fr;
         max-width: min(980px, calc(100vw - 32px));
@@ -1354,7 +1354,7 @@ html[_mstlang] .feature-card ul li {
     }
 
     .community-video-embed-card {
-        flex: 0 0 min(300px, 82vw);
+        flex: 0 0 min(330px, 82vw);
         scroll-snap-align: start;
     }
 }
