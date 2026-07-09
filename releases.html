@@ -7,7 +7,7 @@
     <title>Updates | LuckyTools</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=2">
-    <link rel="stylesheet" href="assets/css/style.css?v=28">
+    <link rel="stylesheet" href="assets/css/style.css?v=29">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -65,10 +65,11 @@
             <section class="releases-hero">
                 <div class="releases-hero-copy">
                     <div class="releases-eyebrow">Product updates</div>
-                    <h1>More Curves <span style="color: var(--accent-color);">Updated!</span></h1>
-                    <p>LuckyTools 1.0.1 expands motion control with new animation curves, faster preset workflows, LuckyBeat cutting, LuckyZoom framing helpers, and focused reliability fixes.</p>
+                    <h1>Version 1.0.2 <span style="color: var(--accent-color);">Coming Soon</span></h1>
+                    <p>The next LuckyTools update is focused on LuckySearch integrations, LuckyZoom and LuckyNotes improvements, keyboard shortcut management, panel upgrades, and reliability fixes.</p>
                     <div class="release-status-row">
                         <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.1</span>
+                        <span class="release-status-pill"><i class="fas fa-clock"></i> Upcoming: 1.0.2</span>
                         <span class="release-status-pill"><i class="fab fa-windows"></i> Windows</span>
                         <span class="release-status-pill"><i class="fas fa-video"></i> Premiere Pro 2026+</span>
                     </div>
@@ -82,49 +83,103 @@
                     </div>
                 </div>
 
-                <div class="release-preview-video releases-hero-video" data-release-video-switcher aria-label="Version 1.0.1 video preview">
-                    <div class="release-preview-stage">
-                        <video class="release-preview-clip is-active" data-release-video="curves" autoplay loop muted playsinline preload="metadata" aria-label="More Curves update preview">
-                            <source src="assets/videos/MORE C GITHUB.mp4" type="video/mp4">
-                        </video>
-                        <video class="release-preview-clip" data-release-video="beat" loop playsinline preload="metadata" aria-label="LuckyBeat preview with audio">
-                            <source src="assets/videos/LUCKYBEAT.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="release-video-tabs" role="group" aria-label="Choose update preview video">
-                        <button class="release-video-tab is-active" type="button" data-release-video-target="curves" aria-pressed="true">
-                            <i class="fas fa-wave-square"></i>
-                            Curves
-                        </button>
-                        <button class="release-video-tab" type="button" data-release-video-target="beat" aria-pressed="false">
-                            <i class="fas fa-volume-high"></i>
-                            LuckyBeat
-                        </button>
-                    </div>
-                    <div class="release-custom-controls" aria-label="Video controls">
-                        <button class="release-control-button" type="button" data-release-play aria-label="Play or pause video">
-                            <i class="fas fa-play"></i>
-                        </button>
-                        <span class="release-video-time" data-release-time>0:00 / 0:00</span>
-                        <input class="release-video-seek" type="range" min="0" max="1000" value="0" step="1" data-release-seek aria-label="Seek video">
-                        <button class="release-control-button" type="button" data-release-mute aria-label="Mute or unmute video">
-                            <i class="fas fa-volume-xmark"></i>
-                        </button>
-                        <button class="release-control-button" type="button" data-release-fullscreen aria-label="Open video fullscreen">
-                            <i class="fas fa-expand"></i>
-                        </button>
+                <div class="release-preview-video releases-hero-video release-coming-soon-video" aria-label="Version 1.0.2 video preview coming soon">
+                    <div class="release-coming-soon-stage">
+                        <span class="release-coming-soon-kicker">LuckyTools Update Preview</span>
+                        <strong>Coming Soon</strong>
+                        <span>Version 1.0.2 video preview</span>
                     </div>
                 </div>
             </section>
 
             <section class="release-timeline" aria-label="Update history">
-                <details class="release-entry release-entry-featured">
+                <details class="release-entry release-entry-featured" open>
+                    <span class="release-marker" aria-hidden="true"></span>
+                    <summary class="release-entry-header">
+                        <div>
+                            <div class="release-version">
+                                <h2>Version 1.0.2</h2>
+                                <span class="release-badge">Coming soon</span>
+                            </div>
+                            <p class="release-subtitle">A larger workflow update with deeper LuckySearch integration, redesigned LuckyZoom controls, panel upgrades, shortcut management, and bug fixes.</p>
+                        </div>
+                    </summary>
+
+                    <div class="release-notes release-notes-expanded">
+                        <div class="release-major-group">
+                            <h3><i class="fas fa-star"></i> Highlights</h3>
+                            <ul class="release-major-list">
+                                <li>
+                                    <strong>Keyboard shortcut import and export:</strong>
+                                    Shortcuts can now be imported, exported, cleared by category, cleared completely, and managed alongside license controls.
+                                </li>
+                                <li>
+                                    <strong>Deeper LuckySearch integration:</strong>
+                                    More function details, LuckyZoom tools, favorites, and LuckyNotes tasks are now visible and manageable directly from LuckySearch.
+                                </li>
+                                <li>
+                                    <strong>More panels:</strong>
+                                    LuckyPod, LuckyCut, and LuckyOrganize have been turned into dedicated panels for faster access.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-keyboard"></i> Shortcuts & LuckySearch</h3>
+                            <ul>
+                                <li>Keyboard shortcuts now correctly open LuckySearch for functions like Ladder, Loop Footage, and other quick actions.</li>
+                                <li>Function information that was previously visible only in LuckyTools Settings is now available inside LuckySearch.</li>
+                                <li>Added import and export support for keyboard shortcuts.</li>
+                                <li>Added controls to clear shortcut categories, clear all shortcuts, and manage license actions.</li>
+                            </ul>
+                        </div>
+
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-magnifying-glass-plus"></i> LuckyZoom</h3>
+                            <ul>
+                                <li>LuckyZoom has been redesigned, including a cleaner position for the Analyze button.</li>
+                                <li>LuckyZoom now has deeper integration inside LuckySearch.</li>
+                                <li>Saved LuckyZoom favorites can now be viewed from LuckySearch.</li>
+                                <li>Many new LuckyZoom panel buttons and functions can now be assigned shortcuts or accessed from LuckySearch.</li>
+                            </ul>
+                        </div>
+
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-note-sticky"></i> LuckyNotes</h3>
+                            <ul>
+                                <li>LuckyNotes has deeper LuckySearch integration.</li>
+                                <li>Tasks can now be viewed from LuckySearch.</li>
+                                <li>Tasks can be deleted or moved between priorities from LuckySearch, with real-time updates in the LuckyNotes panel.</li>
+                            </ul>
+                        </div>
+
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-location-crosshairs"></i> Anchor Points & Presets</h3>
+                            <ul>
+                                <li>LuckyAnchor now updates anchor points by reading clip data, so opening Effect Controls is no longer required.</li>
+                                <li>Fixed a GIF anchor point bug where some GIFs did not move correctly.</li>
+                                <li>Presets now apply correctly when saved with In and Out points.</li>
+                            </ul>
+                        </div>
+
+                        <div class="release-note-group">
+                            <h3><i class="fas fa-screwdriver-wrench"></i> Fixes & Panels</h3>
+                            <ul>
+                                <li>Fixed several minor bugs across everyday workflows.</li>
+                                <li>LuckyPod, LuckyCut, and LuckyOrganize are now available as panels.</li>
+                                <li>Fixed a LuckyOrganize bug where sequences were not being saved correctly.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="release-entry">
                     <span class="release-marker" aria-hidden="true"></span>
                     <summary class="release-entry-header">
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.1</h2>
-                                <span class="release-badge">NEW!</span>
+                                <span class="release-badge release-badge-muted">Latest stable</span>
                             </div>
                             <p class="release-subtitle">More Curves Updated! A bigger motion, audio, search, and framing update for faster everyday editing.</p>
                         </div>
