@@ -2983,47 +2983,14 @@ body.nav-open {
 }
 
 .release-coming-soon-video {
-    display: grid;
-    place-items: center;
     background: #000;
 }
 
-.release-coming-soon-stage {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    min-height: 100%;
+.release-coming-soon-video video {
+    display: block;
     width: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: clamp(28px, 7vw, 78px);
-    text-align: center;
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 32%),
-        #000;
-}
-
-.release-coming-soon-stage strong {
-    color: #fff;
-    font-family: 'Outfit', sans-serif;
-    font-size: clamp(42px, 8vw, 104px);
-    line-height: 0.95;
-    text-transform: uppercase;
-    text-shadow: 0 0 24px rgba(143, 136, 255, 0.4);
-}
-
-.release-coming-soon-stage span {
-    color: rgba(255, 255, 255, 0.68);
-    font-family: 'IBM Plex Mono', 'Courier New', monospace;
-    font-size: clamp(12px, 1.6vw, 18px);
-}
-
-.release-coming-soon-stage .release-coming-soon-kicker {
-    color: var(--accent-color);
-    font-weight: 700;
-    text-transform: uppercase;
+    height: 100%;
+    object-fit: cover;
 }
 
 .release-preview-video::after {
