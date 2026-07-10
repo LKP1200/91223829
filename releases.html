@@ -103,7 +103,7 @@
                                 <h2>Version 1.0.2</h2>
                                 <span class="release-badge">Coming soon</span>
                             </div>
-                            <p class="release-subtitle">A larger workflow update with recommended shortcuts, clearer shortcut availability, deeper LuckySearch integration, redesigned LuckyZoom controls, panel upgrades, performance improvements, interface polish, and bug fixes.</p>
+                            <p class="release-subtitle">Update notes are locked until the 1.0.2 preview is ready.</p>
                         </div>
                     </summary>
 
@@ -392,6 +392,29 @@
 
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'Escape' && mobileNavOverlay.classList.contains('open')) closeNav();
+            });
+        })();
+
+        (function() {
+            document.querySelectorAll('.release-entry-locked').forEach((entry) => {
+                const header = entry.querySelector('.release-entry-header');
+
+                entry.open = false;
+                entry.removeAttribute('open');
+
+                if (header) {
+                    header.setAttribute('aria-disabled', 'true');
+                    header.addEventListener('click', (event) => {
+                        event.preventDefault();
+                        entry.open = false;
+                    });
+                }
+
+                entry.addEventListener('toggle', () => {
+                    if (entry.open) {
+                        entry.open = false;
+                    }
+                });
             });
         })();
 

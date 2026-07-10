@@ -2841,6 +2841,71 @@ body.nav-open {
     box-shadow: 0 28px 86px rgba(0, 0, 0, 0.44), 0 0 44px rgba(143, 136, 255, 0.1);
 }
 
+.release-entry-locked .release-subtitle {
+    filter: blur(5px);
+    opacity: 0.38;
+    user-select: none;
+}
+
+.release-entry-locked .release-notes {
+    position: relative;
+}
+
+.release-entry-locked .release-notes > :not(.release-locked-overlay) {
+    filter: blur(7px);
+    opacity: 0.22;
+    user-select: none;
+    pointer-events: none;
+}
+
+.release-locked-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    display: flex;
+    min-height: 260px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 28px;
+    border: 1px solid rgba(143, 136, 255, 0.24);
+    background: linear-gradient(135deg, rgba(5, 5, 8, 0.88), rgba(12, 12, 18, 0.74));
+    text-align: center;
+    box-shadow: inset 0 0 45px rgba(143, 136, 255, 0.08);
+    pointer-events: none;
+}
+
+.release-locked-overlay i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    border: 1px solid rgba(143, 136, 255, 0.38);
+    border-radius: 50%;
+    background: rgba(143, 136, 255, 0.12);
+    color: var(--accent-color);
+    font-size: 22px;
+    box-shadow: 0 0 30px rgba(143, 136, 255, 0.24);
+}
+
+.release-locked-overlay strong {
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(24px, 4vw, 42px);
+    line-height: 1;
+}
+
+.release-locked-overlay span {
+    color: rgba(255, 255, 255, 0.62);
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
 .release-entry::before {
     content: '';
     position: absolute;
@@ -2905,10 +2970,27 @@ body.nav-open {
     transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
 }
 
+.release-entry-locked .release-entry-header {
+    cursor: not-allowed;
+}
+
+.release-entry-locked .release-entry-header::after {
+    content: '\f023';
+    transform: none;
+    border-color: rgba(143, 136, 255, 0.34);
+    background: rgba(143, 136, 255, 0.12);
+}
+
 .release-entry[open] .release-entry-header::after {
     transform: rotate(180deg);
     border-color: rgba(143, 136, 255, 0.32);
     background: rgba(143, 136, 255, 0.12);
+}
+
+.release-entry-locked[open] .release-entry-header::after {
+    content: '\f023';
+    transform: none;
+    border-color: rgba(143, 136, 255, 0.34);
 }
 
 .release-entry:not([open]) .release-entry-header {
