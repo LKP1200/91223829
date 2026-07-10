@@ -87,6 +87,10 @@
                     <video autoplay loop muted playsinline preload="metadata">
                         <source src="assets/videos/1.0.2.mp4" type="video/mp4">
                     </video>
+                    <div class="release-coming-soon-overlay" aria-hidden="true">
+                        <span>LuckyTools update preview</span>
+                        <strong>Coming Soon</strong>
+                    </div>
                 </div>
             </section>
 
@@ -99,7 +103,7 @@
                                 <h2>Version 1.0.2</h2>
                                 <span class="release-badge">Coming soon</span>
                             </div>
-                            <p class="release-subtitle">A larger workflow update with deeper LuckySearch integration, redesigned LuckyZoom controls, panel upgrades, shortcut management, and bug fixes.</p>
+                            <p class="release-subtitle">A larger workflow update with recommended shortcuts, clearer shortcut availability, deeper LuckySearch integration, redesigned LuckyZoom controls, panel upgrades, performance improvements, interface polish, and bug fixes.</p>
                         </div>
                     </summary>
 
@@ -108,16 +112,20 @@
                             <h3><i class="fas fa-star"></i> Highlights</h3>
                             <ul class="release-major-list">
                                 <li>
-                                    <strong>Keyboard shortcut import and export:</strong>
-                                    Shortcuts can now be imported, exported, cleared by category, cleared completely, and managed alongside license controls.
+                                    <strong>Recommended shortcut list:</strong>
+                                    LuckyTools now suggests practical shortcuts, shows which ones are available or unavailable, and blocks unsafe combinations like Ctrl+C and Ctrl+V so you do not have to guess what to assign.
                                 </li>
                                 <li>
                                     <strong>Deeper LuckySearch integration:</strong>
                                     More function details, LuckyZoom tools, favorites, and LuckyNotes tasks are now visible and manageable directly from LuckySearch.
                                 </li>
                                 <li>
-                                    <strong>More panels:</strong>
+                                    <strong>Workflow improvements:</strong>
                                     LuckyPod, LuckyCut, and LuckyOrganize have been turned into dedicated panels for faster access.
+                                </li>
+                                <li>
+                                    <strong>Performance and interface polish:</strong>
+                                    Faster everyday interactions, cleaner controls, and smoother panel behavior across the update.
                                 </li>
                             </ul>
                         </div>
@@ -126,6 +134,9 @@
                             <h3><i class="fas fa-keyboard"></i> Shortcuts & LuckySearch</h3>
                             <ul>
                                 <li>Keyboard shortcuts now correctly open LuckySearch for functions like Ladder, Loop Footage, and other quick actions.</li>
+                                <li>Added a recommended shortcuts list so users can choose useful defaults without thinking too much about which keys to use.</li>
+                                <li>Shortcut assignment now shows available and unavailable shortcuts more clearly.</li>
+                                <li>Unsafe or protected shortcuts, including common system actions like Ctrl+C and Ctrl+V, are blocked for safety.</li>
                                 <li>Function information that was previously visible only in LuckyTools Settings is now available inside LuckySearch.</li>
                                 <li>Added import and export support for keyboard shortcuts.</li>
                                 <li>Added controls to clear shortcut categories, clear all shortcuts, and manage license actions.</li>
@@ -156,13 +167,15 @@
                             <ul>
                                 <li>LuckyAnchor now updates anchor points by reading clip data, so opening Effect Controls is no longer required.</li>
                                 <li>Fixed a GIF anchor point bug where some GIFs did not move correctly.</li>
-                                <li>Presets now apply correctly when saved with In and Out points.</li>
+                                <li>Presets now apply correctly when saved with Scale and Out points.</li>
                             </ul>
                         </div>
 
                         <div class="release-note-group">
                             <h3><i class="fas fa-screwdriver-wrench"></i> Fixes & Panels</h3>
                             <ul>
+                                <li>Improved performance across daily panel interactions and shortcut workflows.</li>
+                                <li>Polished interface details for cleaner controls and easier scanning.</li>
                                 <li>Fixed several minor bugs across everyday workflows.</li>
                                 <li>LuckyPod, LuckyCut, and LuckyOrganize are now available as panels.</li>
                                 <li>Fixed a LuckyOrganize bug where sequences were not being saved correctly.</li>
