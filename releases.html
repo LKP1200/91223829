@@ -65,11 +65,10 @@
             <section class="releases-hero">
                 <div class="releases-hero-copy">
                     <div class="releases-eyebrow">Product updates</div>
-                    <h1>Version 1.0.2 <span style="color: var(--accent-color);">Coming Soon</span></h1>
-                    <p>The next LuckyTools update is focused on LuckySearch integrations, LuckyZoom and LuckyNotes improvements, keyboard shortcut management, panel upgrades, and reliability fixes.</p>
+                    <h1>Version 1.0.2 <span style="color: var(--accent-color);">Latest Stable</span></h1>
+                    <p>The latest LuckyTools update is focused on LuckySearch integrations, LuckyZoom and LuckyNotes improvements, keyboard shortcut management, panel upgrades, and reliability fixes.</p>
                     <div class="release-status-row">
-                        <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.1</span>
-                        <span class="release-status-pill"><i class="fas fa-clock"></i> Upcoming: 1.0.2</span>
+                        <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.2</span>
                         <span class="release-status-pill"><i class="fab fa-windows"></i> Windows</span>
                         <span class="release-status-pill"><i class="fas fa-video"></i> Premiere Pro 2026+</span>
                     </div>
@@ -83,27 +82,23 @@
                     </div>
                 </div>
 
-                <div class="release-preview-video releases-hero-video release-coming-soon-video" aria-label="Version 1.0.2 video preview">
+                <div class="release-preview-video releases-hero-video release-hero-preview-video" aria-label="Version 1.0.2 video preview">
                     <video autoplay loop muted playsinline preload="metadata">
                         <source src="assets/videos/1.0.2.mp4" type="video/mp4">
                     </video>
-                    <div class="release-coming-soon-overlay" aria-hidden="true">
-                        <span>LuckyTools update preview</span>
-                        <strong>Coming Soon</strong>
-                    </div>
                 </div>
             </section>
 
             <section class="release-timeline" aria-label="Update history">
-                <details class="release-entry release-entry-featured release-entry-locked">
+                <details class="release-entry release-entry-featured" open>
                     <span class="release-marker" aria-hidden="true"></span>
                     <summary class="release-entry-header">
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.2</h2>
-                                <span class="release-badge">Coming soon</span>
+                                <span class="release-badge">Latest stable</span>
                             </div>
-                            <p class="release-subtitle">Update notes are locked until the 1.0.2 preview is ready.</p>
+                            <p class="release-subtitle">A larger workflow update with recommended shortcuts, clearer shortcut availability, deeper LuckySearch integration, redesigned LuckyZoom controls, panel upgrades, performance improvements, interface polish, and bug fixes.</p>
                         </div>
                     </summary>
 
@@ -181,11 +176,6 @@
                                 <li>Fixed a LuckyOrganize bug where sequences were not being saved correctly.</li>
                             </ul>
                         </div>
-                        <div class="release-locked-overlay" aria-hidden="true">
-                            <i class="fas fa-lock"></i>
-                            <strong>Update Notes Locked</strong>
-                            <span>Coming soon</span>
-                        </div>
                     </div>
                 </details>
 
@@ -195,7 +185,7 @@
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.1</h2>
-                                <span class="release-badge release-badge-muted">Latest stable</span>
+                                <span class="release-badge release-badge-muted">Previous stable</span>
                             </div>
                             <p class="release-subtitle">More Curves Updated! A bigger motion, audio, search, and framing update for faster everyday editing.</p>
                         </div>
@@ -392,29 +382,6 @@
 
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'Escape' && mobileNavOverlay.classList.contains('open')) closeNav();
-            });
-        })();
-
-        (function() {
-            document.querySelectorAll('.release-entry-locked').forEach((entry) => {
-                const header = entry.querySelector('.release-entry-header');
-
-                entry.open = false;
-                entry.removeAttribute('open');
-
-                if (header) {
-                    header.setAttribute('aria-disabled', 'true');
-                    header.addEventListener('click', (event) => {
-                        event.preventDefault();
-                        entry.open = false;
-                    });
-                }
-
-                entry.addEventListener('toggle', () => {
-                    if (entry.open) {
-                        entry.open = false;
-                    }
-                });
             });
         })();
 
