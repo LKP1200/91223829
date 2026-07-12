@@ -69,27 +69,79 @@
         });
     });
 
+    // ── Core guide data ──────────────────────────────────────────────
     var guideSearch = document.getElementById('guideSearch');
     var modules = Array.prototype.slice.call(document.querySelectorAll('.guide-module'));
     var emptyState = document.getElementById('guideEmpty');
+    var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.guide-toc a'));
+    var guideModulesContainer = document.querySelector('.guide-modules');
 
     function normalize(value) {
         return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     }
 
+    // ── Tab mode: show only the selected module ───────────────────────
+    function showModule(targetId) {
+        modules.forEach(function (module) {
+            module.classList.toggle('tab-hidden', module.id !== targetId);
+        });
+        tocLinks.forEach(function (link) {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + targetId);
+        });
+        if (guideModulesContainer) guideModulesContainer.scrollTop = 0;
+        // Scroll window to just above the guide modules area
+        if (guideModulesContainer) {
+            var top = guideModulesContainer.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+        if (history.replaceState) history.replaceState(null, '', '#' + targetId);
+    }
+
+    // Init: activate first module by default (or match URL hash)
+    var initHash = window.location.hash ? window.location.hash.slice(1) : '';
+    var initModule = initHash && document.getElementById(initHash) ? initHash : (modules[0] ? modules[0].id : null);
+    if (initModule) showModule(initModule);
+
+    tocLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            var href = link.getAttribute('href');
+            if (!href || href.charAt(0) !== '#') return;
+            event.preventDefault();
+            showModule(href.slice(1));
+        });
+    });
+
+    // ── Search ────────────────────────────────────────────────────────
     function filterGuide() {
         var query = normalize(guideSearch ? guideSearch.value.trim() : '');
         var visible = 0;
-        modules.forEach(function (module) {
-            var matches = !query || normalize(module.textContent).indexOf(query) !== -1;
-            module.classList.toggle('search-hidden', !matches);
-            if (matches) visible += 1;
-        });
+        if (query) {
+            // While searching: show all matching modules, bypass tab-hidden
+            modules.forEach(function (module) {
+                var matches = normalize(module.textContent).indexOf(query) !== -1;
+                module.classList.toggle('search-hidden', !matches);
+                module.classList.remove('tab-hidden');
+                if (matches) visible += 1;
+            });
+            tocLinks.forEach(function (l) { l.classList.remove('active'); });
+        } else {
+            // Search cleared: restore tab mode
+            modules.forEach(function (module) {
+                module.classList.remove('search-hidden');
+            });
+            var activeLink = document.querySelector('.guide-toc a.active');
+            var activeId = activeLink
+                ? activeLink.getAttribute('href').slice(1)
+                : (modules[0] ? modules[0].id : null);
+            if (activeId) showModule(activeId);
+            visible = 1;
+        }
         if (emptyState) emptyState.classList.toggle('visible', visible === 0);
     }
 
     if (guideSearch) guideSearch.addEventListener('input', filterGuide);
 
+    // ── Expand / Collapse all ─────────────────────────────────────────
     var expandAll = document.getElementById('expandAll');
     var collapseAll = document.getElementById('collapseAll');
 
@@ -105,29 +157,18 @@
     if (expandAll) expandAll.addEventListener('click', function () { setAllDetails(true); });
     if (collapseAll) collapseAll.addEventListener('click', function () { setAllDetails(false); });
 
+    // ── Non-TOC anchor links scroll normally ──────────────────────────
     document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        if (anchor.closest('.guide-toc')) return; // already handled above
         anchor.addEventListener('click', function (event) {
             var target = document.querySelector(anchor.getAttribute('href'));
             if (!target) return;
             event.preventDefault();
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            if (history.replaceState) history.replaceState(null, '', anchor.getAttribute('href'));
         });
     });
 
-    var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.guide-toc a'));
-    if ('IntersectionObserver' in window) {
-        var sectionObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (!entry.isIntersecting) return;
-                tocLinks.forEach(function (link) {
-                    link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
-                });
-            });
-        }, { rootMargin: '-18% 0px -68% 0px', threshold: 0 });
-        modules.forEach(function (module) { sectionObserver.observe(module); });
-    }
-
+    // ── Reading progress bar ──────────────────────────────────────────
     var progress = document.getElementById('guideProgress');
     function updateProgress() {
         if (!progress) return;
