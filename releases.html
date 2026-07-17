@@ -7,7 +7,7 @@
     <title>Updates | LuckyTools</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=2">
-    <link rel="stylesheet" href="assets/css/style.css?v=29">
+    <link rel="stylesheet" href="assets/css/style.css?v=50">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -82,10 +82,37 @@
                     </div>
                 </div>
 
-                <div class="release-preview-video releases-hero-video release-hero-preview-video" aria-label="Version 1.0.2 video preview">
-                    <video autoplay loop muted playsinline preload="metadata">
+                <div class="release-preview-video releases-hero-video release-hero-preview-video" aria-label="LuckyTools update and installation videos">
+                    <video
+                        id="releaseUpdatePreview"
+                        class="release-hero-media is-active"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                        preload="metadata"
+                        aria-label="Version 1.0.2 update preview">
                         <source src="assets/videos/1.0.2.mp4" type="video/mp4">
                     </video>
+                    <iframe
+                        id="releaseInstallGuide"
+                        class="release-hero-media"
+                        data-src="https://www.youtube.com/embed/5L-7xrjY4I8?controls=1&autoplay=0&rel=0&modestbranding=1"
+                        title="How to download, install, or update LuckyTools for Premiere Pro 2026"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                    <button
+                        class="release-hero-toggle"
+                        id="releaseHeroVideoToggle"
+                        type="button"
+                        aria-controls="releaseUpdatePreview releaseInstallGuide"
+                        aria-pressed="false"
+                        aria-label="Show how to install or update LuckyTools"
+                        title="Next: How to install or update LuckyTools">
+                        <span class="release-hero-toggle-label">Next: How to install or update</span>
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
                 </div>
             </section>
 
@@ -382,6 +409,41 @@
 
             document.addEventListener('keydown', (event) => {
                 if (event.key === 'Escape' && mobileNavOverlay.classList.contains('open')) closeNav();
+            });
+        })();
+
+        (function() {
+            const updatePreview = document.getElementById('releaseUpdatePreview');
+            const installGuide = document.getElementById('releaseInstallGuide');
+            const toggle = document.getElementById('releaseHeroVideoToggle');
+            const toggleLabel = toggle?.querySelector('.release-hero-toggle-label');
+            if (!updatePreview || !installGuide || !toggle || !toggleLabel) return;
+
+            let showingInstallGuide = false;
+
+            function updateHeroVideo() {
+                updatePreview.classList.toggle('is-active', !showingInstallGuide);
+                installGuide.classList.toggle('is-active', showingInstallGuide);
+                toggle.setAttribute('aria-pressed', showingInstallGuide ? 'true' : 'false');
+
+                if (showingInstallGuide) {
+                    updatePreview.pause();
+                    installGuide.src = installGuide.dataset.src;
+                    toggleLabel.textContent = 'Next: Version 1.0.2 update preview';
+                    toggle.setAttribute('aria-label', 'Show the Version 1.0.2 update preview');
+                    toggle.setAttribute('title', 'Next: Version 1.0.2 update preview');
+                } else {
+                    installGuide.src = 'about:blank';
+                    updatePreview.play().catch(() => {});
+                    toggleLabel.textContent = 'Next: How to install or update';
+                    toggle.setAttribute('aria-label', 'Show how to install or update LuckyTools');
+                    toggle.setAttribute('title', 'Next: How to install or update LuckyTools');
+                }
+            }
+
+            toggle.addEventListener('click', () => {
+                showingInstallGuide = !showingInstallGuide;
+                updateHeroVideo();
             });
         })();
 
