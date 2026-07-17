@@ -7,7 +7,7 @@
     <title>LuckyTools | Premium Premiere Pro Plugins</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=7">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=7">
-    <link rel="stylesheet" href="assets/css/style.css?v=48">
+    <link rel="stylesheet" href="assets/css/style.css?v=49">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* GLOBAL SELECTION COLOR */
@@ -1030,11 +1030,11 @@
 
                 <div class="hero-video-column load-pop-delay">
                     <div class="video-stack">
-                        <div id="videoCardOne" class="premium-video-wrapper video-layer" style="display: none;" onclick="this.classList.contains('background') && swapVideos()">
+                        <div id="videoCardOne" class="premium-video-wrapper video-layer" onclick="this.classList.contains('background') && swapVideos()">
                             <iframe 
                                 id="promoVideo1"
-                                data-yt-src="https://www.youtube.com/embed/Ssr-CmC9SNw?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
-                                title="LuckyTools PROMO ONE"
+                                data-yt-src="https://www.youtube.com/embed/u5LMBOMJPqY?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
+                                title="Lucky Suite — Official promo"
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
@@ -1046,18 +1046,25 @@
                                 id="promoVideo2"
                                 loading="lazy"
                                 data-yt-src="https://www.youtube.com/embed/Ssr-CmC9SNw?controls=1&mute=0&autoplay=0&rel=0&modestbranding=1&vq=hd1080&enablejsapi=1" 
-                                title="LuckyTools PROMO TWO"
+                                title="LuckyTools Suite — Complete feature explanation"
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                 allowfullscreen>
                             </iframe>
                         </div>
                         
-                        <!-- Global Swap Button (Outside wrappers to maintain total opacity) -->
-                        <div class="global-swap-btn" style="display: none;" onclick="swapVideos()">
-                            <div class="swap-popup-cool">Watch Full Features</div>
-                            <i class="fas fa-chevron-right"></i>
-                        </div>
+                        <!-- Video toggle: its label always describes the video that will appear next. -->
+                        <button
+                            class="global-swap-btn"
+                            id="heroVideoToggle"
+                            type="button"
+                            aria-controls="videoCardOne videoCardTwo"
+                            aria-pressed="false"
+                            aria-label="Show the complete LuckyTools feature explanation"
+                            onclick="swapVideos()">
+                            <span class="swap-popup-cool">Next: Complete feature explanation</span>
+                            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        </button>
 
                     </div>
                 </div>
@@ -2577,43 +2584,61 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         // YouTube Iframe API integration for exact time tracking
+        let ytPlayer1 = null;
         let ytPlayer2 = null;
         function onYouTubeIframeAPIReady() {
+            ytPlayer1 = new YT.Player('promoVideo1');
             ytPlayer2 = new YT.Player('promoVideo2');
         }
 
         // Interactive Stacked Video System
         const videoCardOne = document.getElementById('videoCardOne');
         const videoCardTwo = document.getElementById('videoCardTwo');
+        const heroVideoToggle = document.getElementById('heroVideoToggle');
         const swapPopupText = document.querySelector('.swap-popup-cool');
+        let activeHeroVideo = 'promo-one';
         
         function updateVideoStack(activePromo) {
+            activeHeroVideo = activePromo;
+
             if (activePromo === 'promo-two') {
                 videoCardOne.classList.remove('active');
                 videoCardOne.classList.add('background');
                 videoCardTwo.classList.remove('background');
                 videoCardTwo.classList.add('active');
-                if (swapPopupText) swapPopupText.innerText = 'Watch Quick Promo';
+                if (swapPopupText) swapPopupText.innerText = 'Next: Official Lucky Suite promo';
+                if (heroVideoToggle) {
+                    heroVideoToggle.setAttribute('aria-pressed', 'true');
+                    heroVideoToggle.setAttribute('aria-label', 'Show the official Lucky Suite promo');
+                    heroVideoToggle.setAttribute('title', 'Next: Official Lucky Suite promo');
+                }
             } else {
                 videoCardTwo.classList.remove('active');
                 videoCardTwo.classList.add('background');
                 videoCardOne.classList.remove('background');
                 videoCardOne.classList.add('active');
-                if (swapPopupText) swapPopupText.innerText = 'Watch Full Features';
+                if (swapPopupText) swapPopupText.innerText = 'Next: Complete feature explanation';
+                if (heroVideoToggle) {
+                    heroVideoToggle.setAttribute('aria-pressed', 'false');
+                    heroVideoToggle.setAttribute('aria-label', 'Show the complete LuckyTools feature explanation');
+                    heroVideoToggle.setAttribute('title', 'Next: Complete feature explanation');
+                }
             }
         }
 
         function swapVideos() {
-            const currentPromo = localStorage.getItem('luckyTools_promo');
-            const newPromo = (currentPromo === 'promo-one') ? 'promo-two' : 'promo-one';
-            localStorage.setItem('luckyTools_promo', newPromo);
+            const outgoingPlayer = activeHeroVideo === 'promo-one' ? ytPlayer1 : ytPlayer2;
+            if (outgoingPlayer && typeof outgoingPlayer.pauseVideo === 'function') {
+                outgoingPlayer.pauseVideo();
+            }
+
+            const newPromo = activeHeroVideo === 'promo-one' ? 'promo-two' : 'promo-one';
             updateVideoStack(newPromo);
         }
 
         // Initialize stack to always start with the primary video
         if (videoCardOne && videoCardTwo) {
-            updateVideoStack('promo-two');
-            localStorage.setItem('luckyTools_promo', 'promo-two');
+            updateVideoStack('promo-one');
         }
 
         // ===== PANELS TAB SWITCHER =====
