@@ -7,8 +7,86 @@
     <title>Updates | LuckyTools</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=2">
-    <link rel="stylesheet" href="assets/css/style.css?v=50">
+    <link rel="stylesheet" href="assets/css/style.css?v=51">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Critical hero-video controls kept inline so stale CSS caches cannot hide the toggle. */
+        .release-hero-preview-video .release-hero-media {
+            position: absolute !important;
+            inset: 0 !important;
+            z-index: 1 !important;
+            display: block !important;
+            width: 100% !important;
+            height: 100% !important;
+            border: 0 !important;
+            background: #000 !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+
+        .release-hero-preview-video .release-hero-media.is-active {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+        }
+
+        #releaseHeroVideoToggle {
+            position: absolute !important;
+            top: 50% !important;
+            right: 18px !important;
+            z-index: 50 !important;
+            display: inline-flex !important;
+            width: 58px !important;
+            height: 58px !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 0 !important;
+            border: 2px solid rgba(255, 255, 255, 0.72) !important;
+            border-radius: 50% !important;
+            background: #6c63ff !important;
+            color: #080808 !important;
+            box-shadow: 0 0 0 5px rgba(108, 99, 255, 0.2), 0 14px 38px rgba(0, 0, 0, 0.6) !important;
+            transform: translateY(-50%) !important;
+            cursor: pointer !important;
+        }
+
+        #releaseHeroVideoToggle .release-hero-toggle-label {
+            position: absolute !important;
+            top: 50% !important;
+            right: calc(100% + 12px) !important;
+            display: block !important;
+            width: max-content !important;
+            max-width: min(300px, 55vw) !important;
+            padding: 10px 15px !important;
+            border: 1px solid rgba(108, 99, 255, 0.45) !important;
+            border-radius: 999px !important;
+            background: #fff !important;
+            color: #080808 !important;
+            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.55) !important;
+            font-size: 12px !important;
+            font-weight: 800 !important;
+            line-height: 1.3 !important;
+            text-align: center !important;
+            transform: translateY(-50%) !important;
+            pointer-events: none !important;
+        }
+
+        @media (max-width: 600px) {
+            #releaseHeroVideoToggle {
+                right: 10px !important;
+                width: 46px !important;
+                height: 46px !important;
+            }
+
+            #releaseHeroVideoToggle .release-hero-toggle-label {
+                right: calc(100% + 8px) !important;
+                max-width: 58vw !important;
+                padding: 7px 10px !important;
+                font-size: 10px !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="bg-blobs">
