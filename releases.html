@@ -7,7 +7,7 @@
     <title>Updates | LuckyTools</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=2">
-    <link rel="stylesheet" href="assets/css/style.css?v=51">
+    <link rel="stylesheet" href="assets/css/style.css?v=52">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Critical hero-video controls kept inline so stale CSS caches cannot hide the toggle. */
@@ -213,6 +213,13 @@
                     </summary>
 
                     <div class="release-notes release-notes-expanded">
+                        <figure class="release-version-preview">
+                            <video autoplay loop muted playsinline preload="metadata" data-version-preview aria-label="Version 1.0.2 feature preview">
+                                <source src="assets/videos/1.0.2.mp4" type="video/mp4">
+                            </video>
+                            <figcaption><i class="fas fa-circle-play" aria-hidden="true"></i> Version 1.0.2 preview</figcaption>
+                        </figure>
+
                         <div class="release-major-group">
                             <h3><i class="fas fa-star"></i> Highlights</h3>
                             <ul class="release-major-list">
@@ -302,6 +309,13 @@
                     </summary>
 
                     <div class="release-notes release-notes-expanded">
+                        <figure class="release-version-preview">
+                            <video autoplay loop muted playsinline preload="metadata" data-version-preview aria-label="LuckyCurves preview from Version 1.0.1">
+                                <source src="assets/videos/luckycurves.mp4" type="video/mp4">
+                            </video>
+                            <figcaption><i class="fas fa-circle-play" aria-hidden="true"></i> LuckyCurves in Version 1.0.1</figcaption>
+                        </figure>
+
                         <div class="release-major-group">
                             <h3><i class="fas fa-star"></i> Highlights</h3>
                             <ul class="release-major-list">
@@ -682,6 +696,24 @@
                 }
 
                 syncControls();
+            });
+        })();
+
+        (function() {
+            document.querySelectorAll('.release-entry').forEach((entry) => {
+                const preview = entry.querySelector('[data-version-preview]');
+                if (!preview) return;
+
+                function syncVersionPreview() {
+                    if (entry.open) {
+                        preview.play().catch(() => {});
+                    } else {
+                        preview.pause();
+                    }
+                }
+
+                entry.addEventListener('toggle', syncVersionPreview);
+                syncVersionPreview();
             });
         })();
     </script>
