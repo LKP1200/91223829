@@ -7,7 +7,7 @@
     <title>Updates | LuckyTools</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=2">
-    <link rel="stylesheet" href="assets/css/style.css?v=57">
+    <link rel="stylesheet" href="assets/css/style.css?v=69">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Critical hero-video controls kept inline so stale CSS caches cannot hide the toggle. */
@@ -164,10 +164,10 @@
             <section class="releases-hero">
                 <div class="releases-hero-copy">
                     <div class="releases-eyebrow">Product updates</div>
-                    <h1>Version 1.0.2 <span style="color: var(--accent-color);">Latest Stable</span></h1>
-                    <p>The latest LuckyTools update is focused on LuckySearch integrations, LuckyZoom and LuckyNotes improvements, keyboard shortcut management, panel upgrades, and reliability fixes.</p>
+                    <h1>Version 1.0.3 <span style="color: var(--accent-color);">Latest Stable</span></h1>
+                    <p>Smarter community-tuned effects, tracking directly from LuckySearch, safer Paste storage, repaired transitions, expanded Ladder controls, and focused workflow fixes.</p>
                     <div class="release-status-row">
-                        <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.2</span>
+                        <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.3</span>
                         <span class="release-status-pill"><i class="fab fa-windows"></i> Windows</span>
                         <span class="release-status-pill"><i class="fas fa-video"></i> Premiere Pro 2026+</span>
                     </div>
@@ -182,17 +182,16 @@
                 </div>
 
                 <div class="release-preview-video releases-hero-video release-hero-preview-video" aria-label="LuckyTools update and installation videos">
-                    <video
+                    <iframe
                         id="releaseUpdatePreview"
                         class="release-hero-media is-active"
-                        autoplay
-                        loop
-                        muted
-                        playsinline
-                        preload="metadata"
-                        aria-label="Version 1.0.2 update preview">
-                        <source src="assets/videos/1.0.2.mp4" type="video/mp4">
-                    </video>
+                        src="https://www.youtube.com/embed/mqmw7k3pjmA?controls=1&autoplay=1&mute=1&loop=1&playlist=mqmw7k3pjmA&rel=0&modestbranding=1"
+                        data-src="https://www.youtube.com/embed/mqmw7k3pjmA?controls=1&autoplay=1&mute=1&loop=1&playlist=mqmw7k3pjmA&rel=0&modestbranding=1"
+                        title="LuckyTools Version 1.0.3 update video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
                     <iframe
                         id="releaseInstallGuide"
                         class="release-hero-media"
@@ -216,13 +215,173 @@
             </section>
 
             <section class="release-timeline" aria-label="Update history">
-                <details class="release-entry release-entry-featured" open>
+                <details class="release-entry release-entry-featured release-entry-103" open>
+                    <span class="release-marker" aria-hidden="true"></span>
+                    <summary class="release-entry-header">
+                        <div>
+                            <div class="release-version">
+                                <h2>Version 1.0.3</h2>
+                                <span class="release-badge">Latest stable</span>
+                            </div>
+                            <p class="release-subtitle">A workflow update led by Better Effects, tracking from LuckySearch, configurable Paste storage, dependable transitions, more flexible Ladder modes, and faster timeline tools.</p>
+                        </div>
+                    </summary>
+
+                    <div class="release-notes release-notes-expanded">
+                        <div class="release-103-spotlights">
+                            <article class="release-spotlight release-spotlight-effects">
+                                <div class="release-spotlight-kicker"><i class="fas fa-wand-magic-sparkles"></i> Better Effects</div>
+                                <h3>Popular effects now start closer to the result editors actually want.</h3>
+                                <p>Apply these effects from LuckySearch or a shortcut and get more useful, intuitive starting values instead of Premiere Pro's generic defaults.</p>
+
+                                <div class="release-effect-chips" aria-label="Effects enhanced by Better Effects">
+                                    <span>VR Glow</span>
+                                    <span>Roughen Edges</span>
+                                    <span>Drop Shadow</span>
+                                    <span>Wiggle</span>
+                                    <span>Stroke</span>
+                                    <span>and more</span>
+                                </div>
+
+                                <div class="release-ultra-key">
+                                    <div class="release-ultra-key-icon"><i class="fas fa-crown"></i></div>
+                                    <div>
+                                        <span>Signature effect</span>
+                                        <strong>Ultra Key — automatic chroma removal</strong>
+                                        <p>Analyzes the clip and automatically selects the chroma background color to remove, whether it is green, blue, red, or another color.</p>
+                                    </div>
+                                </div>
+
+                                <a class="release-busco-link" href="https://x.com/BuscoEditor" target="_blank" rel="noopener" aria-label="Visit Busco Editor on X">
+                                    <div class="release-community-avatars" aria-hidden="true">
+                                        <img src="assets/images/busco.jpg" alt="">
+                                        <img src="assets/images/marck.jpg" alt="">
+                                        <img src="assets/images/strike.png" alt="">
+                                        <img src="assets/images/blackbull.jpg" alt="">
+                                        <img src="assets/images/ermac.jpg" alt="">
+                                        <span class="release-community-count">+9K</span>
+                                    </div>
+                                    <span class="release-community-copy">
+                                        <small>Community-informed defaults</small>
+                                        <strong>Feedback collected from Busco Editor creators</strong>
+                                        <em>Collected usage data and editor feedback helped set practical defaults for VR Glow, Roughen Edges, Drop Shadow, Wiggle, Stroke, Transform, and more. Premiere Pro's original controls remain available; Better Effects reduces repetitive setup—for example, Transform starts with a 180° Shutter Angle—so common looks take fewer adjustments.</em>
+                                    </span>
+                                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                                </a>
+                            </article>
+
+                            <article class="release-spotlight release-spotlight-tracking">
+                                <div class="release-spotlight-kicker"><i class="fas fa-crosshairs"></i> Tracking</div>
+                                <h3>Start tracking directly from LuckySearch.</h3>
+                                <p>Tracking can now be launched from the search bar. Under the hood, it uses mask tracking and the generated mask keyframes to follow motion across the clip.</p>
+                                <div class="release-tracking-grid">
+                                    <div><i class="fas fa-magnifying-glass"></i><strong>From the search bar</strong><span>Find and start tracking without digging through effect controls.</span></div>
+                                    <div><i class="fas fa-bezier-curve"></i><strong>Powered by mask tracking</strong><span>Uses the generated mask keyframes to follow motion across the clip.</span></div>
+                                    <div><i class="fas fa-keyboard"></i><strong>Assignable shortcuts</strong><span>Set tracking shortcuts from LuckyTools Settings for even faster access.</span></div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="release-major-group release-103-highlights">
+                            <h3><i class="fas fa-bolt"></i> Release Highlights</h3>
+                            <ul class="release-major-list">
+                                <li>
+                                    <strong>Safer Paste storage:</strong>
+                                    Choose where Paste saves its files. By default, they are now stored beside the active project instead of in the temporary folder, helping prevent missing-file and path errors.
+                                </li>
+                                <li>
+                                    <strong>Full-name reverse search:</strong>
+                                    Enter the effect's complete name—even with its words reversed—to get the result, such as “VR Glow” or “Glow VR.”
+                                </li>
+                                <li>
+                                    <strong>Reliable transitions:</strong>
+                                    Better placement, multi-clip support, and no more strange visual resizing after application.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="release-detail-columns">
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-magnifying-glass"></i> LuckySearch & Effects</h3>
+                                    <ul>
+                                        <li>Search has been optimized for quicker, more responsive results.</li>
+                                        <li>Reverse word-order search requires the effect's complete name—for example, entering the full names “VR Glow” or “Glow VR” returns the same result.</li>
+                                        <li>Tracking can now be started directly from LuckySearch; it uses mask tracking and the generated mask keyframes to follow motion.</li>
+                                        <li>Tracking commands can also be assigned to shortcuts from LuckyTools Settings.</li>
+                                        <li>The Transform effect no longer displays both scale controls when Uniform Scale is enabled.</li>
+                                        <li>Roughen Edges now starts with practical values that produce the rounded-edge look commonly used in daily editing.</li>
+                                        <li>Better Effects applies community-informed defaults to popular visual effects for faster first results.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-arrows-left-right-to-line"></i> Transitions</h3>
+                                    <ul>
+                                        <li>When the playhead is positioned inside a clip, transitions are now placed correctly at the beginning and end of that clip.</li>
+                                        <li>Fixed transition application issues that could cause strange visual resizing.</li>
+                                        <li>Transitions can now be applied to multiple stacked clips when those clips share the same duration.</li>
+                                        <li>Ladder no longer damages transitions on stacked clips.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-screwdriver-wrench"></i> Fixes & Reliability</h3>
+                                    <ul>
+                                        <li>LuckyCurves now clears Squash & Stretch correctly and removes it only from active clips.</li>
+                                        <li>Fixed overlapping labels in LuckyNotes.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-paste"></i> Paste & File Storage</h3>
+                                    <ul>
+                                        <li>Paste now lets you choose the folder where its files are saved.</li>
+                                        <li>By default, Paste saves files in the active project's location instead of the temporary folder.</li>
+                                        <li>Keeping pasted files with the project helps prevent missing-file, temporary-path, and relinking errors.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group release-ladder-group">
+                                    <h3><i class="fas fa-layer-group"></i> Ladder, Nest & Unnest</h3>
+                                    <ul>
+                                        <li><strong>Reverse mode:</strong> preserves the normal staggered starts while reversing the ending order—the top clip finishes first and the bottom clip finishes last.</li>
+                                        <li><strong>Same End mode:</strong> keeps staggered starts using the chosen value while aligning every clip to exactly the same ending point.</li>
+                                        <li>Nest is now available in the Shortcuts list.</li>
+                                        <li>Unnest is dramatically faster.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-magnifying-glass-plus"></i> LuckyZoom</h3>
+                                    <ul>
+                                        <li>LuckyZoom now applies framing correctly to high-resolution clips such as 4K footage with both <strong>Grow</strong> and <strong>Transform</strong>.</li>
+                                        <li>LuckyZoom analysis is now more optimized for faster, more efficient results.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-location-crosshairs"></i> LuckyAnchor</h3>
+                                    <ul>
+                                        <li>LuckyAnchor now includes a new <strong>Visible Content</strong> button.</li>
+                                        <li>Visible Content reads the pixels that are actually visible and ignores empty or transparent space around them when calculating the anchor point.</li>
+                                        <li>The anchor is positioned relative to the artwork or subject that can be seen, rather than the clip's full rectangular bounds, providing more accurate placement when the visible content occupies only part of the frame.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="release-entry">
                     <span class="release-marker" aria-hidden="true"></span>
                     <summary class="release-entry-header">
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.2</h2>
-                                <span class="release-badge">Latest stable</span>
+                                <span class="release-badge release-badge-muted">Previous stable</span>
                             </div>
                             <p class="release-subtitle">A larger workflow update with recommended shortcuts, clearer shortcut availability, deeper LuckySearch integration, redesigned LuckyZoom controls, panel upgrades, performance improvements, interface polish, and bug fixes.</p>
                         </div>
@@ -257,56 +416,62 @@
                             </ul>
                         </div>
 
-                        <div class="release-note-group">
-                            <h3><i class="fas fa-keyboard"></i> Shortcuts & LuckySearch</h3>
-                            <ul>
-                                <li>Keyboard shortcuts now correctly open LuckySearch for functions like Ladder, Loop Footage, and other quick actions.</li>
-                                <li>Added a recommended shortcuts list so users can choose useful defaults without thinking too much about which keys to use.</li>
-                                <li>Shortcut assignment now shows available and unavailable shortcuts more clearly.</li>
-                                <li>Unsafe or protected shortcuts, including common system actions like Ctrl+C and Ctrl+V, are blocked for safety.</li>
-                                <li>Function information that was previously visible only in LuckyTools Settings is now available inside LuckySearch.</li>
-                                <li>Added import and export support for keyboard shortcuts.</li>
-                                <li>Added controls to clear shortcut categories, clear all shortcuts, and manage license actions.</li>
-                            </ul>
-                        </div>
+                        <div class="release-detail-columns">
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-keyboard"></i> Shortcuts & LuckySearch</h3>
+                                    <ul>
+                                        <li>Keyboard shortcuts now correctly open LuckySearch for functions like Ladder, Loop Footage, and other quick actions.</li>
+                                        <li>Added a recommended shortcuts list so users can choose useful defaults without thinking too much about which keys to use.</li>
+                                        <li>Shortcut assignment now shows available and unavailable shortcuts more clearly.</li>
+                                        <li>Unsafe or protected shortcuts, including common system actions like Ctrl+C and Ctrl+V, are blocked for safety.</li>
+                                        <li>Function information that was previously visible only in LuckyTools Settings is now available inside LuckySearch.</li>
+                                        <li>Added import and export support for keyboard shortcuts.</li>
+                                        <li>Added controls to clear shortcut categories, clear all shortcuts, and manage license actions.</li>
+                                    </ul>
+                                </div>
 
-                        <div class="release-note-group">
-                            <h3><i class="fas fa-magnifying-glass-plus"></i> LuckyZoom</h3>
-                            <ul>
-                                <li>LuckyZoom has been redesigned, including a cleaner position for the Analyze button.</li>
-                                <li>LuckyZoom now has deeper integration inside LuckySearch.</li>
-                                <li>Saved LuckyZoom favorites can now be viewed from LuckySearch.</li>
-                                <li>Many new LuckyZoom panel buttons and functions can now be assigned shortcuts or accessed from LuckySearch.</li>
-                            </ul>
-                        </div>
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-screwdriver-wrench"></i> Fixes & Panels</h3>
+                                    <ul>
+                                        <li>Improved performance across daily panel interactions and shortcut workflows.</li>
+                                        <li>Polished interface details for cleaner controls and easier scanning.</li>
+                                        <li>Fixed several minor bugs across everyday workflows.</li>
+                                        <li>LuckyPod, LuckyCut, and LuckyOrganize are now available as panels.</li>
+                                        <li>Fixed a LuckyOrganize bug where sequences were not being saved correctly.</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                        <div class="release-note-group">
-                            <h3><i class="fas fa-note-sticky"></i> LuckyNotes</h3>
-                            <ul>
-                                <li>LuckyNotes has deeper LuckySearch integration.</li>
-                                <li>Tasks can now be viewed from LuckySearch.</li>
-                                <li>Tasks can be deleted or moved between priorities from LuckySearch, with real-time updates in the LuckyNotes panel.</li>
-                            </ul>
-                        </div>
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-magnifying-glass-plus"></i> LuckyZoom</h3>
+                                    <ul>
+                                        <li>LuckyZoom has been redesigned, including a cleaner position for the Analyze button.</li>
+                                        <li>LuckyZoom now has deeper integration inside LuckySearch.</li>
+                                        <li>Saved LuckyZoom favorites can now be viewed from LuckySearch.</li>
+                                        <li>Many new LuckyZoom panel buttons and functions can now be assigned shortcuts or accessed from LuckySearch.</li>
+                                    </ul>
+                                </div>
 
-                        <div class="release-note-group">
-                            <h3><i class="fas fa-location-crosshairs"></i> Anchor Points & Presets</h3>
-                            <ul>
-                                <li>LuckyAnchor now updates anchor points by reading clip data, so opening Effect Controls is no longer required.</li>
-                                <li>Fixed a GIF anchor point bug where some GIFs did not move correctly.</li>
-                                <li>Presets now apply correctly when saved with Scale and Out points.</li>
-                            </ul>
-                        </div>
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-note-sticky"></i> LuckyNotes</h3>
+                                    <ul>
+                                        <li>LuckyNotes has deeper LuckySearch integration.</li>
+                                        <li>Tasks can now be viewed from LuckySearch.</li>
+                                        <li>Tasks can be deleted or moved between priorities from LuckySearch, with real-time updates in the LuckyNotes panel.</li>
+                                    </ul>
+                                </div>
 
-                        <div class="release-note-group">
-                            <h3><i class="fas fa-screwdriver-wrench"></i> Fixes & Panels</h3>
-                            <ul>
-                                <li>Improved performance across daily panel interactions and shortcut workflows.</li>
-                                <li>Polished interface details for cleaner controls and easier scanning.</li>
-                                <li>Fixed several minor bugs across everyday workflows.</li>
-                                <li>LuckyPod, LuckyCut, and LuckyOrganize are now available as panels.</li>
-                                <li>Fixed a LuckyOrganize bug where sequences were not being saved correctly.</li>
-                            </ul>
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-location-crosshairs"></i> Anchor Points & Presets</h3>
+                                    <ul>
+                                        <li>LuckyAnchor now updates anchor points by reading clip data, so opening Effect Controls is no longer required.</li>
+                                        <li>Fixed a GIF anchor point bug where some GIFs did not move correctly.</li>
+                                        <li>Presets now apply correctly when saved with Scale and Out points.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </details>
@@ -348,54 +513,60 @@
                             </ul>
                         </div>
 
-                        <div class="release-note-group">
-                            <h3><i class="fas fa-wave-square"></i> LuckyCurves</h3>
-                            <ul>
-                                <li>Added Elastic, Bounce, and Step curve families for more expressive animation timing.</li>
-                                <li>Improved accessibility across curve controls and visualizers for clearer navigation and feedback.</li>
-                                <li>Added a button to invert the curve graphic preview.</li>
-                                <li>Added a new button to invert applied keyframes or any existing animated keyframes directly in Effect Controls.</li>
-                                <li>Squash and Stretch curves can now be applied and cleaned more reliably depending on the selected property.</li>
-                                <li>Curve cleanup is more precise when switching between supported property types.</li>
-                            </ul>
-                        </div>
+                        <div class="release-detail-columns">
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-wave-square"></i> LuckyCurves</h3>
+                                    <ul>
+                                        <li>Added Elastic, Bounce, and Step curve families for more expressive animation timing.</li>
+                                        <li>Improved accessibility across curve controls and visualizers for clearer navigation and feedback.</li>
+                                        <li>Added a button to invert the curve graphic preview.</li>
+                                        <li>Added a new button to invert applied keyframes or any existing animated keyframes directly in Effect Controls.</li>
+                                        <li>Squash and Stretch curves can now be applied and cleaned more reliably depending on the selected property.</li>
+                                        <li>Curve cleanup is more precise when switching between supported property types.</li>
+                                    </ul>
+                                </div>
 
-                        <div class="release-note-group">
-                            <h3><i class="fas fa-music"></i> LuckyBeat</h3>
-                            <ul>
-                                <li>Added LuckyBeat, a new beat-based cutting workflow for slicing clips in sync with music rhythm.</li>
-                                <li>Added Toggle Enable/Disable, a new function that alternates enabled and disabled clips sequentially across a multi-clip selection.</li>
-                                <li>Designed for quick music-driven edits, beat chops, rhythmic pacing, and faster timeline preparation.</li>
-                                <li>Helps turn a full track into editable rhythmic segments without manually hunting for every beat.</li>
-                            </ul>
-                        </div>
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-magnifying-glass-plus"></i> LuckyZoom</h3>
+                                    <ul>
+                                        <li>Fixed special cases where LuckyZoom could fail to apply the effect correctly.</li>
+                                        <li>Added framing guides with optional ruler and grid overlays for more accurate composition.</li>
+                                        <li>Improved reliability when creating zooms in less common sequence or clip situations.</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                        <div class="release-note-group">
-                            <h3><i class="fas fa-gauge-high"></i> Speed Improvements</h3>
-                            <ul>
-                                <li>The search bar now opens faster and feels more responsive when launching LuckySearch.</li>
-                                <li>Preset application is faster when applying the same preset across multiple selected clips.</li>
-                                <li>Reduced waiting time in multi-clip workflows so batch edits feel smoother and more predictable.</li>
-                            </ul>
-                        </div>
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-music"></i> LuckyBeat</h3>
+                                    <ul>
+                                        <li>Added LuckyBeat, a new beat-based cutting workflow for slicing clips in sync with music rhythm.</li>
+                                        <li>Added Toggle Enable/Disable, a new function that alternates enabled and disabled clips sequentially across a multi-clip selection.</li>
+                                        <li>Designed for quick music-driven edits, beat chops, rhythmic pacing, and faster timeline preparation.</li>
+                                        <li>Helps turn a full track into editable rhythmic segments without manually hunting for every beat.</li>
+                                    </ul>
+                                </div>
 
-                        <div class="release-note-group">
-                            <h3><i class="fas fa-magnifying-glass-plus"></i> LuckyZoom</h3>
-                            <ul>
-                                <li>Fixed special cases where LuckyZoom could fail to apply the effect correctly.</li>
-                                <li>Added framing guides with optional ruler and grid overlays for more accurate composition.</li>
-                                <li>Improved reliability when creating zooms in less common sequence or clip situations.</li>
-                            </ul>
-                        </div>
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-gauge-high"></i> Speed Improvements</h3>
+                                    <ul>
+                                        <li>The search bar now opens faster and feels more responsive when launching LuckySearch.</li>
+                                        <li>Preset application is faster when applying the same preset across multiple selected clips.</li>
+                                        <li>Reduced waiting time in multi-clip workflows so batch edits feel smoother and more predictable.</li>
+                                    </ul>
+                                </div>
 
-                        <div class="release-note-group">
-                            <h3><i class="fas fa-screwdriver-wrench"></i> Fixes</h3>
-                            <ul>
-                                <li>Fixed preset application when a preset contains two Transform effects, preserving the correct effect order.</li>
-                                <li>Fixed several smaller bugs reported across daily editing workflows.</li>
-                                <li>Improved consistency when applying and clearing curve data from selected properties.</li>
-                                <li>General stability polish for a cleaner, faster LuckyTools experience.</li>
-                            </ul>
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-screwdriver-wrench"></i> Fixes</h3>
+                                    <ul>
+                                        <li>Fixed preset application when a preset contains two Transform effects, preserving the correct effect order.</li>
+                                        <li>Fixed several smaller bugs reported across daily editing workflows.</li>
+                                        <li>Improved consistency when applying and clearing curve data from selected properties.</li>
+                                        <li>General stability polish for a cleaner, faster LuckyTools experience.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
 
                         <a class="release-action release-notes-action" href="https://luckytpr.lemonsqueezy.com/checkout/buy/10dc8a74-bb2e-49f5-bf88-4897ba0bfe36">
@@ -538,14 +709,14 @@
                 toggle.setAttribute('aria-pressed', showingInstallGuide ? 'true' : 'false');
 
                 if (showingInstallGuide) {
-                    updatePreview.pause();
+                    updatePreview.src = 'about:blank';
                     installGuide.src = installGuide.dataset.src;
-                    toggleLabel.textContent = 'Next: Version 1.0.2 update preview';
-                    toggle.setAttribute('aria-label', 'Show the Version 1.0.2 update preview');
-                    toggle.setAttribute('title', 'Next: Version 1.0.2 update preview');
+                    toggleLabel.textContent = 'Next: Version 1.0.3 update video';
+                    toggle.setAttribute('aria-label', 'Show the Version 1.0.3 update video');
+                    toggle.setAttribute('title', 'Next: Version 1.0.3 update video');
                 } else {
                     installGuide.src = 'about:blank';
-                    updatePreview.play().catch(() => {});
+                    updatePreview.src = updatePreview.dataset.src;
                     toggleLabel.textContent = 'Next: How to install or update';
                     toggle.setAttribute('aria-label', 'Show how to install or update LuckyTools');
                     toggle.setAttribute('title', 'Next: How to install or update LuckyTools');
