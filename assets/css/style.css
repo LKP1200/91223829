@@ -6278,9 +6278,9 @@ body[data-templates-enabled="false"] #templates-section {
 
 .key-contributors {
     display: grid;
-    grid-template-columns: minmax(190px, 0.7fr) 1.3fr;
+    grid-template-columns: 1fr;
     align-items: center;
-    gap: 24px;
+    gap: 12px;
     margin-top: 18px;
     padding: 15px 18px;
     border: 1px solid rgba(143, 136, 255, 0.25);
@@ -6314,14 +6314,17 @@ body[data-templates-enabled="false"] #templates-section {
     flex: 0 0 54px;
 }
 .key-contributor-card img {
-    width: 100%;
-    height: 100%;
     display: block;
     object-fit: cover;
     border-radius: 8px;
 }
+.key-contributor-card .profile-photo-link img {
+    width: 100%;
+    height: 100%;
+}
 .key-contributor-card strong,
 .key-contributor-card span { display: block; }
+.key-contributor-card > div { min-width: 0; }
 .key-contributor-card strong { color: rgba(255,255,255,0.92); font-size: 13px; }
 .key-contributor-card span { margin-top: 2px; color: var(--accent-color); font-size: 9px; letter-spacing: .8px; text-transform: uppercase; }
 
