@@ -6244,6 +6244,67 @@ body[data-templates-enabled="false"] #templates-section {
 }
 .clover-values i { color: var(--accent-color); }
 
+.key-contributors {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.7fr) 1.3fr;
+    align-items: center;
+    gap: 24px;
+    margin-top: 18px;
+    padding: 15px 18px;
+    border: 1px solid rgba(143, 136, 255, 0.25);
+    border-radius: 12px;
+    background: rgba(143, 136, 255, 0.055);
+}
+.key-contributors-heading h3 {
+    margin: 5px 0 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+}
+.key-contributors-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+.key-contributor-card {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+    padding: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.035);
+}
+.key-contributor-card > img,
+.key-contributor-card .profile-photo-link {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 54px;
+}
+.key-contributor-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.key-contributor-card strong,
+.key-contributor-card span { display: block; }
+.key-contributor-card strong { color: rgba(255,255,255,0.92); font-size: 13px; }
+.key-contributor-card span { margin-top: 2px; color: var(--accent-color); font-size: 9px; letter-spacing: .8px; text-transform: uppercase; }
+
+.profile-photo-link {
+    display: block;
+    border-radius: 8px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.profile-photo-link:hover,
+.profile-photo-link:focus-visible {
+    transform: translateY(-2px) scale(1.025);
+    box-shadow: 0 0 0 2px var(--accent-color), 0 8px 18px rgba(0,0,0,.35);
+    outline: none;
+}
+
 .influence-heading {
     display: flex;
     justify-content: space-between;
@@ -6309,9 +6370,15 @@ body[data-templates-enabled="false"] #templates-section {
     .clover-feature { grid-template-columns: 1fr; text-align: center; padding: 20px 16px; }
     .clover-portrait-wrap { width: min(48vw, 150px); }
     .clover-values { justify-content: center; }
+    .key-contributors { grid-template-columns: 1fr; gap: 12px; }
+    .key-contributors-grid { grid-template-columns: 1fr 1fr; }
     .influence-heading { align-items: flex-start; flex-direction: column; gap: 12px; }
     .influence-grid { grid-template-columns: repeat(2, 1fr); }
     .community-crowd { flex-direction: column; align-items: flex-start; padding: 14px; }
     .crowd-icons { min-width: 0; width: 100%; justify-content: center; padding-left: 0; }
     .crowd-icons span { width: 34px; height: 34px; }
+}
+
+@media (max-width: 440px) {
+    .key-contributors-grid { grid-template-columns: 1fr; }
 }
