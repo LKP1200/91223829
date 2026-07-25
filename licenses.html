@@ -280,36 +280,6 @@
             });
         })();
     </script>
-    <!-- --- PREMIUM COOKIE BANNER (SOLID DESIGN) --- -->
-    <div id="cookieBanner" class="cookie-banner" style="display: none;">
-        <div class="cookie-content">
-            <h4>Cookies & Privacy</h4>
-            <p>LuckyTools uses cookies to improve the browsing experience and show personalized content. By clicking "Accept", you consent to their use.</p>
-        </div>
-        <div class="cookie-actions">
-            <button class="btn-cookie-accept" id="acceptCookies">Accept</button>
-            <a href="licenses.html#privacy" class="btn-cookie-info">More info</a>
-        </div>
-    </div>
-    <script>
-        (function() {
-            const cookieBanner = document.getElementById('cookieBanner');
-            const acceptBtn = document.getElementById('acceptCookies');
-            if (cookieBanner && acceptBtn) {
-                if (!localStorage.getItem('lucky_cookies_accepted')) {
-                    setTimeout(() => {
-                        cookieBanner.style.display = 'flex';
-                    }, 2000);
-                }
-                acceptBtn.addEventListener('click', () => {
-                    localStorage.setItem('lucky_cookies_accepted', 'true');
-                    cookieBanner.classList.add('hiding');
-                    setTimeout(() => {
-                        cookieBanner.style.display = 'none';
-                    }, 400);
-                });
-            }
-        })();
-    </script>
+
 </body>
 </html>
