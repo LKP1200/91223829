@@ -1214,6 +1214,12 @@
 
 /* Guide hero: use the same full-width shell + stable inner container pattern
    as the Licenses hero. This prevents panoramic padding from collapsing copy. */
+.interior-guide .guide-hero {
+    width: 100vw;
+    max-width: none;
+    box-sizing: border-box;
+}
+
 .interior-guide .guide-hero-inner {
     width: min(100%, 1240px);
     min-width: 0;
