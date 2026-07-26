@@ -1102,3 +1102,24 @@ body.guide-page {
     .guide-manual-surface .module-head { padding: 27px 22px 23px; }
     .guide-manual-surface .module-body { padding: 24px 22px 27px; }
 }
+
+/* Keep the black guide intro stable on ultrawide and zoomed-out viewports. */
+.interior-guide .guide-hero {
+    box-sizing: border-box;
+}
+
+.interior-guide .guide-hero h1 {
+    width: 100%;
+    max-width: 760px;
+    flex: 0 0 auto;
+}
+
+.interior-guide .guide-hero-copy,
+.interior-guide .guide-hero-meta,
+.interior-guide .guide-command {
+    width: 100%;
+    max-width: 720px;
+    min-width: 0;
+    align-self: flex-start;
+    flex: 0 0 auto;
+}
