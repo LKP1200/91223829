@@ -6,10 +6,15 @@
     <title>About | LuckyTools</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=2">
-    <link rel="stylesheet" href="assets/css/style.css?v=27">
+    <link rel="stylesheet" href="css/style.css?v=104">
+    <link rel="stylesheet" href="assets/css/site-refresh.css?v=8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/header-unified.css?v=3">
+    <link rel="stylesheet" href="css/payment-methods.css?v=2">
+    <link rel="stylesheet" href="css/footer-unified.css?v=2">
+    <link rel="stylesheet" href="css/about-compact.css?v=1">
 </head>
-<body>
+<body class="interior-page interior-about">
     <div class="bg-blobs">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -24,10 +29,6 @@
         </div>
         <nav>
             <a href="about.html">About</a>
-            <div class="nav-eco-link" style="margin-left: 30px;">
-                <a href="ecosystem.html" style="margin-left: 0; opacity: 1; color: var(--accent-color);">Ecosystem</a>
-                <span class="free-badge">FREE PLUGINS!!</span>
-            </div>
             <a href="releases.html">Updates</a>
             <a href="contact.html">Contact</a>
             <a href="licenses.html">Licenses</a>
@@ -47,11 +48,6 @@
         <a href="index.html">Home</a>
         <div class="nav-overlay-divider"></div>
         <a href="about.html">About</a>
-        <div class="nav-overlay-divider"></div>
-        <div class="nav-eco-link" style="margin-left: 0; margin-bottom: 20px;">
-            <a href="ecosystem.html" style="margin-left: 0; opacity: 1; color: var(--accent-color); font-size: 24px;">Ecosystem</a>
-            <span class="free-badge" style="top: 40px;">FREE PLUGINS!!</span>
-        </div>
         <div class="nav-overlay-divider"></div>
         <a href="releases.html">Updates</a>
         <div class="nav-overlay-divider"></div>
@@ -78,27 +74,25 @@
                         <h2 style="font-family: 'Outfit', sans-serif; font-size: 24px; margin-bottom: 20px; color: var(--accent-color);">The Story Behind LuckyTools</h2>
                         <p style="margin-bottom: 20px;">LuckyTools was created after years of editing for top-tier creators and experiencing the friction of repetitive tasks firsthand. Across the editing community, many editors have already built their own plugins, scripts, and workflow fixes to solve these same problems. That spirit is not new; LuckyTools simply grew from the idea of bringing that energy into one unified place.</p>
                         
-                        <p style="margin-bottom: 30px; opacity: 0.8;">What makes LuckyTools unique is its <strong>integrated ecosystem</strong>. It's not just a set of disconnected plugins; it's a harmonized environment where community-tested tools work in sync to save you hours of manual labor.</p>
-
-                        <div style="background: rgba(143, 136, 255, 0.05); border: 1px solid rgba(143, 136, 255, 0.3); padding: 20px; border-radius: 12px; margin-bottom: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
-                            <img src="assets/images/busco.jpg" alt="Busco Editor" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--accent-color); flex-shrink: 0;">
-                            <div style="flex: 1; min-width: 200px;">
-                                <h3 style="margin: 0 0 8px 0; font-size: 18px; color: var(--accent-color); font-family: 'Outfit', sans-serif;">The Power of Community</h3>
-                                <p style="margin: 0; font-size: 14.5px; opacity: 0.9; line-height: 1.5;">LuckyTools is developed in exclusive alliance with <strong>Busco Editor</strong>, the largest network of professional video editors in LATAM. Many editors in this community have created their own plugins and shared solutions for years, including tools and options that have been in development for a long time. Our goal is to keep imagining new tools with the community, test them with <strong>9,000+ elite creators</strong>, and turn the best ideas into a unified ecosystem for everyone.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="about-links" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                            <a href="ecosystem.html" class="social-item-v2" style="padding: 10px 20px; font-size: 14px; border-color: rgba(143, 136, 255, 0.45); color: var(--accent-color);">Explore Ecosystem &rarr;</a>
-                            <a href="index.html" class="social-item-v2" style="padding: 10px 20px; font-size: 14px;">Home &rarr;</a>
-                            <a href="contact.html" class="social-item-v2" style="padding: 10px 20px; font-size: 14px;">Contact &rarr;</a>
-                        </div>
+                        <p style="margin-bottom: 0; opacity: 0.8;">What makes LuckyTools unique is its <strong>integrated ecosystem</strong>. It's not just a set of disconnected plugins; it's a harmonized environment where community-tested tools work in sync to save you hours of manual labor.</p>
                     </div>
                 </div>
 
-                <div class="about-visual-v2">
-                    <img src="assets/images/about-demo.png" alt="LuckyTools About">
-                </div>
+                <aside class="about-side-v2" aria-label="Community and LuckyTools links">
+                    <div class="about-community-card">
+                        <img src="assets/images/busco.jpg" alt="Busco Editor" class="about-community-avatar">
+                        <div>
+                            <h3>The Power of Community</h3>
+                            <p>LuckyTools is developed in exclusive alliance with <strong>Busco Editor</strong>, the largest network of professional video editors in LATAM. The community helps us imagine and test tools with <strong>9,000+ elite creators</strong>, turning proven ideas into one unified editing toolkit.</p>
+                        </div>
+                    </div>
+
+                    <nav class="about-links" aria-label="Learn more about LuckyTools">
+                        <a href="luckysuite.html" class="social-item-v2">Explore LuckySuite &rarr;</a>
+                        <a href="index.html" class="social-item-v2">Home &rarr;</a>
+                        <a href="contact.html" class="social-item-v2">Contact &rarr;</a>
+                    </nav>
+                </aside>
             </div>
 
             <div class="about-info-grid">
@@ -228,12 +222,12 @@
                 </div>
             </section>
 
-        <!-- COMPATIBILITY FAQ SECTION -->
+        <!-- FAQ SECTION -->
         <section class="faq-section container" style="margin-top: clamp(40px, 8vw, 100px);">
             <h2 class="reveal reveal-up" style="text-align: center; margin-bottom: 25px; font-family: 'Outfit', sans-serif;">
-                Clarifications &amp; Requirements 
-                <span style="background: #ff4d4d; color: white; padding: 4px 10px; border-radius: 6px; font-size: 0.45em; vertical-align: middle; text-transform: uppercase; animation: warningBounce 3s infinite; display: inline-block; margin-left: 10px; letter-spacing: 1px;">Must Read</span>
+                FAQs<span style="color: var(--accent-color);">.</span>
             </h2>
+            <p class="faq-section-intro">Compatibility, requirements and licensing—explained clearly before you install.</p>
             <div class="faq-accordion">
                 <div class="faq-item reveal reveal-left delay-1 open" onclick="this.classList.toggle('open')">
                     <div class="faq-question">
@@ -241,11 +235,11 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>LuckyTools is **exclusively compatible with Adobe Premiere Pro in English or Spanish**. We have prioritized these two languages because they are the most widely used among editors. Supporting additional languages is an extremely heavy task, so we haven't implemented it yet. To ensure the plugin functions correctly, please make sure your Premiere Pro installation is set to either English or Spanish.</p>
+                        <p>LuckyTools is <strong>exclusively compatible with Adobe Premiere Pro in English or Spanish</strong>. We have prioritized these two languages because they are the most widely used among editors. Supporting additional languages is an extremely heavy task, so we haven't implemented it yet. To ensure the plugin functions correctly, please make sure your Premiere Pro installation is set to either English or Spanish.</p>
                     </div>
                 </div>
 
-                <div class="faq-item reveal reveal-right delay-2 open" onclick="this.classList.toggle('open')">
+                <div class="faq-item reveal reveal-right delay-2" onclick="this.classList.toggle('open')">
                     <div class="faq-question">
                         Is LuckyTools compatible with macOS?
                         <i class="fas fa-chevron-down"></i>
@@ -255,7 +249,7 @@
                     </div>
                 </div>
                 
-                <div class="faq-item reveal reveal-left delay-3 open" onclick="this.classList.toggle('open')">
+                <div class="faq-item reveal reveal-left delay-3" onclick="this.classList.toggle('open')">
                     <div class="faq-question">
                         Which versions of Adobe Premiere Pro are supported?
                         <i class="fas fa-chevron-down"></i>
@@ -265,7 +259,7 @@
                     </div>
                 </div>
 
-                <div class="faq-item reveal reveal-right delay-4 open" onclick="this.classList.toggle('open')">
+                <div class="faq-item reveal reveal-right delay-4" onclick="this.classList.toggle('open')">
                     <div class="faq-question">
                         Does it work perfectly on Windows with Premiere 2026?
                         <i class="fas fa-chevron-down"></i>
@@ -283,17 +277,6 @@
                     <div class="faq-answer">
                         <p>LuckyTools is a project that is always growing and evolving. While we do our best to make sure everything is stable, it's possible that you might find some minor errors or quirks along the way.</p>
                         <p>The best part is that we are constantly listening to your feedback. Your support helps us release regular updates and fixes, making these tools better and more reliable for every editor in the community!</p>
-                    </div>
-                </div>
-
-                <div class="faq-item reveal reveal-right delay-6" onclick="this.classList.toggle('open')">
-                    <div class="faq-question">
-                        Does this plugin replace other dedicated tools?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>It does not intend to. The focus with LuckyTools is to group everyday functions to speed up workflows quickly and easily. Because of this, the tools are straightforward in terms of configuration and do not offer great depth&mdash;the goal is to maintain ease of use without overwhelming settings or complex menus.</p>
-                        <p><strong>Ultimately, the true vision behind LuckyTools is to act as a unified ecosystem</strong>, where all its panels and tools communicate seamlessly with each other to multiply your efficiency across the entire editing process.</p>
                     </div>
                 </div>
 
@@ -345,7 +328,6 @@
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About</a></li>
-                            <li><a href="ecosystem.html">Ecosystem</a></li>
                             <li><a href="releases.html">Updates</a></li>
                             <li><a href="guide.html">Guide</a></li>
                             <li><a href="contact.html">Contact</a></li>
@@ -362,6 +344,18 @@
                     </div>
                 </div>
                 
+                <div class="payment-methods" aria-label="Payment methods">
+                    <div class="payment-brands">
+                        <span class="payment-brand payment-paypal">PayPal</span>
+                        <span class="payment-brand payment-visa">VISA</span>
+                        <span class="payment-brand payment-mastercard">Mastercard</span>
+                        <span class="payment-brand payment-apple">Apple Pay</span>
+                        <span class="payment-brand payment-google">Google Pay</span>
+                        <span class="payment-more">Cards and local methods</span>
+                    </div>
+                    <p class="payment-methods-copy"><strong>Payment options at checkout</strong>Processed by Lemon Squeezy, our merchant of record. LuckyTools is independent; this page is not operated by Lemon Squeezy. Wallets and local methods vary by browser, device and location. <a href="https://docs.lemonsqueezy.com/help/checkout/payment-methods" target="_blank" rel="noopener">Details</a></p>
+                </div>
+
                 <div class="copyright-text">
                     <p>&copy; 2026 LUCKYTOOLS. ALL RIGHTS RESERVED. <br>DESIGNED FOR THE NEXT GENERATION OF EDITORS.</p>
                 </div>

@@ -1,0 +1,125 @@
+/* Exact footer geometry shared by every LuckyTools page. */
+body > .site-footer {
+    margin-top: 0 !important;
+}
+
+body > .site-footer .footer-glow {
+    display: none !important;
+}
+
+body > .site-footer .footer-bottom {
+    padding: 38px 0 18px !important;
+    border-top: 1px solid #242424 !important;
+    background: #070707 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+body > .site-footer .footer-container-inner {
+    width: min(calc(100% - 44px), 1320px) !important;
+    max-width: 1320px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+body > .site-footer .footer-content {
+    grid-template-columns: 1.2fr .9fr .55fr !important;
+    gap: 38px !important;
+    margin-bottom: 18px !important;
+    padding-bottom: 24px !important;
+    text-align: left !important;
+}
+
+body > .site-footer .footer-brand {
+    grid-column: auto !important;
+    text-align: left !important;
+}
+
+body > .site-footer .footer-logo {
+    margin-bottom: 10px !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    letter-spacing: -.04em !important;
+}
+
+body > .site-footer .footer-logo i {
+    color: #ff9d00 !important;
+}
+
+body > .site-footer .footer-brand p {
+    max-width: 360px !important;
+    margin: 0 0 14px !important;
+    color: #787878 !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+}
+
+body > .site-footer .social-links {
+    justify-content: flex-start !important;
+    gap: 8px !important;
+}
+
+body > .site-footer .social-links a {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+}
+
+body > .site-footer .footer-nav h4,
+body > .site-footer .footer-support h4 {
+    margin-bottom: 12px !important;
+    font-size: 11px !important;
+}
+
+body > .site-footer .footer-nav ul {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px 18px !important;
+}
+
+body > .site-footer .footer-nav li,
+body > .site-footer .footer-support li {
+    margin: 0 !important;
+}
+
+body > .site-footer .footer-nav a,
+body > .site-footer .footer-support a {
+    color: #787878 !important;
+    font-size: 11px !important;
+}
+
+body > .site-footer .footer-nav a:hover,
+body > .site-footer .footer-support a:hover {
+    color: #ff9d00 !important;
+}
+
+body > .site-footer .copyright-text {
+    text-align: center !important;
+}
+
+body > .site-footer .copyright-text p {
+    margin: 0 !important;
+    font-size: 13px !important;
+    line-height: 2 !important;
+    letter-spacing: 1.5px !important;
+}
+
+@media (max-width: 768px) {
+    body > .site-footer .footer-container-inner {
+        width: calc(100% - 32px) !important;
+    }
+
+    body > .site-footer .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+
+    body > .site-footer .footer-brand {
+        grid-column: auto !important;
+        text-align: left !important;
+    }
+}

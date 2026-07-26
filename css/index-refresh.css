@@ -1,0 +1,386 @@
+/* Small brand and purchase refresh shared with the LuckySuite product page. */
+.timeline-ambient-stage { display: none !important; }
+
+body > header {
+    min-height: 74px;
+    padding: 0 clamp(22px, 4vw, 66px);
+    position: relative;
+}
+
+body > header.container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+body > header .logo {
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -.04em;
+    line-height: 1;
+    text-transform: none;
+}
+
+body > header .logo a { gap: 10px !important; }
+body > header .header-logo {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 0;
+    object-fit: contain;
+    transform: none !important;
+}
+
+body > header nav { gap: clamp(20px, 2.7vw, 42px); }
+body > header nav > a,
+body > header .nav-eco-link { margin-left: 0 !important; }
+body > header nav a { margin-left: 0; font-size: 13px; }
+
+/* Remove the old 60px spacer that exposed a stray gray strip below the header. */
+body > main { padding-top: 0; }
+
+/* Keep the editor-proof section on the white editorial canvas used before. */
+#community-reviews.reviews-section {
+    padding: 72px clamp(22px, 4vw, 66px) 48px;
+    color: #111;
+    background: #fff;
+}
+#community-reviews .community-proof-header {
+    width: 100%;
+    max-width: 1720px;
+    margin: 0 auto 50px;
+}
+#community-reviews .reviews-header h2 { color: #111; }
+#community-reviews .reviews-header h2 span { color: #7567ff; }
+#community-reviews .reviews-header p { color: #666; }
+#community-reviews .section-kicker { color: #6659e8; }
+
+.plugin-cover-trigger { text-decoration: none; }
+
+.hero-platform-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.hero-platform-badges span {
+    min-height: 28px;
+    padding: 5px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid #2c2c2c;
+    border-radius: 8px;
+    color: #a8a8a8;
+    background: #121212;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.hero-platform-badges img { width: 17px; height: 17px; object-fit: contain; }
+
+.hero-editor-proof {
+    min-height: 34px;
+    padding: 4px 11px 4px 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #2d2d32;
+    border-radius: 999px;
+    color: #a8a8a8;
+    background: #121214;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+.hero-editor-avatars { display: inline-flex; align-items: center; padding-left: 1px; }
+.hero-editor-avatar,
+.hero-editor-count {
+    width: 25px;
+    height: 25px;
+    margin-left: -6px;
+    display: inline-grid;
+    place-items: center;
+    border: 2px solid #7567ff;
+    border-radius: 50%;
+    color: #e8e8e8;
+    background: #252529;
+    font-size: 9px;
+}
+.hero-editor-avatar:first-child { margin-left: 0; }
+.hero-editor-count {
+    width: 31px;
+    color: #0a0a0a;
+    background: #9b91ff;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    text-transform: none;
+}
+.hero-editor-proof-copy { white-space: nowrap; }
+.hero-editor-bolt { color: #9187ff; font-size: 14px; }
+
+#buyNowBtn,
+.hero-cta-block [data-purchase-trigger] {
+    min-height: 54px;
+    padding: 0 30px !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+    color: #0b0b0b !important;
+    background: #ff9d00 !important;
+    box-shadow: 0 12px 30px rgba(255, 157, 0, .14);
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    letter-spacing: -.01em;
+}
+
+#buyNowBtn:hover,
+.hero-cta-block [data-purchase-trigger]:hover {
+    background: #ffad28 !important;
+    color: #0b0b0b !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 16px 36px rgba(255, 157, 0, .22);
+}
+
+.plugin-buy-btn {
+    border-color: #ff9d00 !important;
+    color: #0b0b0b !important;
+    background: #ff9d00 !important;
+}
+
+.plugin-buy-btn:hover {
+    color: #0b0b0b !important;
+    background: #ffad28 !important;
+}
+
+@media (max-width: 768px) {
+    body > header { min-height: 66px; padding: 0 18px; }
+    body > header .logo { font-size: 19px; }
+    body > header .header-logo { width: 30px !important; height: 30px !important; }
+    #buyNowBtn { width: 100%; justify-content: center; }
+}
+
+/* Index now ends with the same compact footer used across the refreshed tabs. */
+body > .site-footer { margin-top: 0; }
+body > .site-footer .footer-glow { display: none; }
+body > .site-footer .footer-bottom {
+    padding: 38px 0 18px;
+    border-top: 1px solid #242424;
+    background: #070707;
+    backdrop-filter: none;
+}
+body > .site-footer .footer-content {
+    grid-template-columns: 1.2fr .9fr .55fr;
+    gap: 38px;
+    margin-bottom: 18px;
+    padding-bottom: 24px;
+    text-align: left;
+}
+body > .site-footer .footer-logo {
+    margin-bottom: 10px;
+    justify-content: flex-start;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: -.04em;
+}
+body > .site-footer .footer-logo i { color: #ff9d00; }
+body > .site-footer .footer-brand p { max-width: 360px; margin: 0 0 14px; font-size: 12px; line-height: 1.5; }
+body > .site-footer .social-links { justify-content: flex-start; gap: 8px; }
+body > .site-footer .social-links a { width: 34px; height: 34px; border-radius: 8px; font-size: 14px; }
+body > .site-footer .footer-nav h4,
+body > .site-footer .footer-support h4 { margin-bottom: 12px; font-size: 11px; }
+body > .site-footer .footer-nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; }
+body > .site-footer .footer-nav li,
+body > .site-footer .footer-support li { margin: 0; }
+body > .site-footer .footer-nav a,
+body > .site-footer .footer-support a { font-size: 11px; }
+body > .site-footer .copyright-text p { font-size: 9px; line-height: 1.6; }
+
+@media (max-width: 768px) {
+    body > .site-footer .footer-content { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* Restore the two-video stack and its visible switch control. */
+.hero-fullwidth {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero-fullwidth::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -235px;
+    left: 3%;
+    width: min(920px, 72vw);
+    height: 460px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, .105) 0%, rgba(255, 255, 255, .035) 42%, transparent 72%);
+    filter: blur(16px);
+    pointer-events: none;
+}
+
+.hero-video-minimal .video-stack {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: visible;
+}
+.hero-video-minimal .video-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+.hero-video-minimal .video-layer.active {
+    z-index: 10;
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+    pointer-events: auto;
+}
+.hero-video-minimal .video-layer.background {
+    z-index: 5;
+    opacity: .3;
+    transform: translate(7%, 0) scale(.93);
+    pointer-events: none;
+}
+.hero-video-minimal .global-swap-btn {
+    right: -22px;
+    width: 54px;
+    height: 54px;
+    border: 1px solid rgba(255,255,255,.38);
+    color: #090909;
+    background: #ff9d00;
+    box-shadow: 0 12px 34px rgba(255,157,0,.24);
+}
+.hero-video-minimal .global-swap-btn:hover {
+    color: #090909;
+    background: #ffb33e;
+}
+.hero-video-minimal .swap-popup-cool {
+    padding: 7px 11px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #ddd;
+    background: #111;
+    font-size: 10px;
+    animation: none;
+}
+.hero-video-minimal .swap-popup-cool::after {
+    border-color: #111 transparent transparent transparent;
+}
+
+@media (max-width: 768px) {
+    .hero-video-minimal .global-swap-btn { right: 10px; width: 48px; height: 48px; }
+}
+
+/* Warm community badge and a quiet secondary product-details action. */
+.hero-support-busco {
+    min-height: 34px;
+    padding: 4px 13px 4px 6px;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 999px;
+    border-color: rgba(255, 190, 58, .25) !important;
+    color: #d8c9a2 !important;
+    background: rgba(255, 190, 58, .075) !important;
+    box-shadow: inset 0 0 20px rgba(255, 190, 58, .025);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.hero-support-busco:hover {
+    border-color: rgba(255, 190, 58, .42) !important;
+    color: #f0dfb1 !important;
+    background: rgba(255, 190, 58, .12) !important;
+}
+.hero-support-busco img {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 190, 58, .5);
+}
+.hero-info-btn {
+    width: 142px;
+    min-height: 34px;
+    margin-top: 10px;
+    padding: 0 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid #2e2e2e;
+    border-radius: 8px;
+    color: #aaa;
+    background: #111;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.hero-info-btn:hover {
+    border-color: rgba(255, 190, 58, .48);
+    color: #fff;
+    background: rgba(255, 190, 58, .08);
+    transform: translateY(-2px);
+}
+
+.hero-cta-block {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.hero-cta-block .hero-actions-minimal {
+    gap: 18px !important;
+}
+
+#included-panels {
+    margin-top: 32px;
+}
+.hero-cta-block .price-box {
+    min-width: 112px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transform: translateY(8px);
+}
+.price-main-line {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+}
+.hero-cta-block .price-current {
+    font-size: clamp(2.05rem, 2.35vw, 2.3rem) !important;
+    line-height: .95;
+    letter-spacing: -.035em;
+}
+.price-currency {
+    color: #b8b8b8;
+    font: 700 12px/1 'Inter', sans-serif;
+    letter-spacing: .08em;
+}
+.price-payment-label {
+    margin-top: 7px;
+    color: #929292;
+    font: 600 10.5px/1.15 'Inter', sans-serif;
+    letter-spacing: .035em;
+    white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+    .hero-actions-minimal { width: 100%; }
+    .hero-info-btn { width: 142px; }
+}

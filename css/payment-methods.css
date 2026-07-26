@@ -1,0 +1,96 @@
+/* Compact trust strip for payment options handled by Lemon Squeezy. */
+.payment-methods {
+    width: 100%;
+    margin: 22px auto 0;
+    padding: 11px 16px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
+    align-items: center;
+    gap: 18px;
+    box-sizing: border-box;
+    color: #111;
+    background: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 11px;
+}
+
+.payment-brands {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px 15px;
+}
+
+.payment-brand {
+    display: inline-flex;
+    align-items: center;
+    color: #171717;
+    font: 800 13px/1 'Inter', sans-serif;
+    letter-spacing: -.03em;
+    white-space: nowrap;
+}
+
+.payment-paypal { color: #063b8e; font-style: italic; }
+.payment-visa { color: #1434cb; font-size: 17px; font-style: italic; letter-spacing: -.08em; }
+.payment-apple { font-size: 14px; }
+.payment-google { color: #3f3f3f; font-weight: 700; }
+
+.payment-mastercard::before {
+    content: '';
+    width: 21px;
+    height: 13px;
+    margin-right: 6px;
+    background:
+        radial-gradient(circle at 35% 50%, #eb001b 0 41%, transparent 43%),
+        radial-gradient(circle at 65% 50%, #f79e1b 0 41%, transparent 43%);
+}
+
+.payment-more {
+    color: #777;
+    font: 600 10px/1.2 'Inter', sans-serif;
+    white-space: nowrap;
+}
+
+.payment-methods-copy {
+    margin: 0;
+    color: #666;
+    font: 500 10px/1.4 'Inter', sans-serif;
+    text-align: right;
+}
+
+.payment-methods-copy strong {
+    display: inline;
+    margin-right: 5px;
+    color: #111;
+    font-size: 10.5px;
+}
+
+.payment-methods-copy a {
+    margin-left: 4px;
+    color: #111;
+    font-weight: 750;
+    text-decoration-color: #ff9d00;
+    text-underline-offset: 3px;
+}
+
+.payment-methods-standalone {
+    width: min(calc(100% - 44px), 1320px);
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+@media (max-width: 860px) {
+    .payment-methods {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .payment-methods-copy { text-align: left; }
+}
+
+@media (max-width: 520px) {
+    .payment-methods { padding: 13px 15px; }
+    .payment-brands { gap: 8px 13px; }
+    .payment-more { width: 100%; }
+}

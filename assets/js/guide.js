@@ -83,7 +83,9 @@
     // ── Tab mode: show only the selected module ───────────────────────
     function showModule(targetId) {
         modules.forEach(function (module) {
-            module.classList.toggle('tab-hidden', module.id !== targetId);
+            var active = module.id === targetId;
+            module.classList.toggle('tab-hidden', !active);
+            module.setAttribute('aria-hidden', active ? 'false' : 'true');
         });
         tocLinks.forEach(function (link) {
             link.classList.toggle('active', link.getAttribute('href') === '#' + targetId);
@@ -121,6 +123,7 @@
                 var matches = normalize(module.textContent).indexOf(query) !== -1;
                 module.classList.toggle('search-hidden', !matches);
                 module.classList.remove('tab-hidden');
+                module.setAttribute('aria-hidden', matches ? 'false' : 'true');
                 if (matches) visible += 1;
             });
             tocLinks.forEach(function (l) { l.classList.remove('active'); });
@@ -164,6 +167,10 @@
             var target = document.querySelector(anchor.getAttribute('href'));
             if (!target) return;
             event.preventDefault();
+            if (target.classList.contains('guide-module')) {
+                showModule(target.id);
+                return;
+            }
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });

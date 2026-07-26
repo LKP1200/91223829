@@ -628,7 +628,8 @@ body.guide-page {
 
 .guide-empty { display:none;padding:36px;border:1px dashed rgba(117,105,255,.4);text-align:center;color:#8f919c; }
 .guide-empty.visible { display:block; }
-.guide-module.search-hidden { display:none; }
+.guide-module.tab-hidden,
+.guide-module.search-hidden { display:none !important; }
 .search-hit { background:rgba(255,189,46,.18);color:#fff; }
 
 @media (max-width: 980px) {
@@ -1020,4 +1021,84 @@ body.guide-page {
     .feature-grid { grid-template-columns: 1fr; }
     .feature-card { border-right: 0; padding-left: 0; padding-right: 0; }
     .workflow-grid { grid-template-columns: 1fr; }
+}
+
+/* Clear editorial transition: dark manual cover, light reading surface. */
+.guide-manual-surface {
+    margin-top: 0;
+    padding: 64px 0 92px;
+    background: #f7f7f5;
+    color: #111;
+}
+
+.guide-page .guide-main { padding-bottom: 0; }
+
+.guide-manual-surface .manual-introduction {
+    margin-bottom: 36px;
+    padding: 0 0 34px;
+    border-top: 0;
+    border-bottom: 1px solid #d9d9d6;
+    background: transparent;
+}
+
+.guide-manual-surface .manual-introduction h2 { color: #111; }
+.guide-manual-surface .manual-introduction p { color: #555; }
+
+.guide-manual-surface .guide-toc {
+    border: 1px solid #dededb;
+    background: #fff;
+    box-shadow: 0 15px 38px rgba(15, 15, 15, .07);
+}
+
+.guide-manual-surface .toc-title { color: #888; }
+.guide-manual-surface .guide-toc a { color: #606068; }
+.guide-manual-surface .guide-toc a:hover,
+.guide-manual-surface .guide-toc a.active {
+    border-color: rgba(117, 105, 255, .25);
+    background: rgba(117, 105, 255, .09);
+    color: #111;
+}
+
+.guide-manual-surface .guide-module {
+    overflow: hidden;
+    margin-bottom: 42px;
+    border: 1px solid #25252a;
+    border-radius: 20px !important;
+    background: #111114;
+    box-shadow: 0 18px 50px rgba(15, 15, 15, .12);
+}
+
+.guide-manual-surface .module-head {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding: 34px 32px 28px;
+    position: relative;
+    inset: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 18px 18px 0 0 !important;
+    background: #141417;
+    box-shadow: none;
+}
+
+.guide-manual-surface .module-body { padding: 30px 32px 34px; }
+.guide-manual-surface .workflow-section { border-top-color: rgba(255, 255, 255, .09); }
+.guide-manual-surface .guide-empty { border-color: rgba(117, 105, 255, .35); color: #555; }
+
+@media (max-width: 980px) {
+    .guide-manual-surface .guide-toc {
+        border: 1px solid #dededb;
+        border-radius: 12px !important;
+        background: rgba(255, 255, 255, .96);
+    }
+}
+
+@media (max-width: 720px) {
+    .guide-manual-surface { padding: 46px 0 70px; }
+    .guide-manual-surface .module-head { padding: 27px 22px 23px; }
+    .guide-manual-surface .module-body { padding: 24px 22px 27px; }
 }

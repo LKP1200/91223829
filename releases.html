@@ -7,7 +7,7 @@
     <title>Updates | LuckyTools</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=2">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=2">
-    <link rel="stylesheet" href="assets/css/style.css?v=69">
+    <link rel="stylesheet" href="css/style.css?v=104">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Critical hero-video controls kept inline so stale CSS caches cannot hide the toggle. */
@@ -35,6 +35,63 @@
             visibility: visible !important;
             pointer-events: auto !important;
         }
+
+        .release-hero-preview-video .release-hero-media > img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            border-radius: inherit;
+        }
+
+        .release-hero-preview-video .release-hero-media::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            border-radius: inherit;
+            background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, .82) 100%);
+            pointer-events: none;
+        }
+
+        .release-hero-play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 4;
+            width: 62px;
+            height: 62px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            color: #080808;
+            background: #ff9d00;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, .4);
+            transform: translate(-50%, -50%);
+        }
+
+        .release-hero-caption {
+            position: absolute;
+            left: 22px;
+            right: 22px;
+            bottom: 18px;
+            z-index: 4;
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 18px;
+            color: #fff;
+        }
+
+        .release-hero-caption small {
+            color: #c7c7c7;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .release-hero-caption strong { font-size: 13px; }
 
         #releaseHeroVideoToggle {
             position: absolute !important;
@@ -109,8 +166,13 @@
             object-fit: contain !important;
         }
     </style>
+    <link rel="stylesheet" href="assets/css/site-refresh.css?v=8">
+    <link rel="stylesheet" href="css/header-unified.css?v=3">
+    <link rel="stylesheet" href="css/payment-methods.css?v=2">
+    <link rel="stylesheet" href="css/footer-unified.css?v=2">
+    <link rel="stylesheet" href="css/inline-youtube.css?v=1">
 </head>
-<body>
+<body class="interior-page interior-releases">
     <div class="bg-blobs">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -125,10 +187,6 @@
         </div>
         <nav>
             <a href="about.html">About</a>
-            <div class="nav-eco-link" style="margin-left: 30px;">
-                <a href="ecosystem.html" style="margin-left: 0; opacity: 1; color: var(--accent-color);">Ecosystem</a>
-                <span class="free-badge">FREE PLUGINS!!</span>
-            </div>
             <a href="releases.html" aria-current="page">Updates</a>
             <a href="contact.html">Contact</a>
             <a href="licenses.html">Licenses</a>
@@ -148,8 +206,6 @@
         <a href="index.html">Home</a>
         <div class="nav-overlay-divider"></div>
         <a href="about.html">About</a>
-        <div class="nav-overlay-divider"></div>
-        <a href="ecosystem.html">Ecosystem</a>
         <div class="nav-overlay-divider"></div>
         <a href="releases.html" style="color: var(--accent-color);">Updates</a>
         <div class="nav-overlay-divider"></div>
@@ -183,36 +239,42 @@
                 </div>
 
                 <div class="release-preview-video releases-hero-video release-hero-preview-video" aria-label="LuckyTools update and installation videos">
-                    <iframe
+                    <div
                         id="releaseUpdatePreview"
-                        class="release-hero-media is-active"
-                        src="https://www.youtube.com/embed/eSRlutsJe7o?controls=1&autoplay=1&mute=1&loop=1&playlist=eSRlutsJe7o&rel=0&modestbranding=1"
-                        data-src="https://www.youtube.com/embed/eSRlutsJe7o?controls=1&autoplay=1&mute=1&loop=1&playlist=eSRlutsJe7o&rel=0&modestbranding=1"
-                        title="LuckyTools Version 1.0.3 update video"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-                    </iframe>
-                    <iframe
+                        class="release-hero-media is-active inline-youtube-player"
+                        data-youtube-id="eSRlutsJe7o"
+                        data-youtube-title="LuckyTools Version 1.0.3 update video"
+                        role="button"
+                        tabindex="0"
+                        aria-label="Play the LuckyTools Version 1.0.3 update video here">
+                        <img src="https://i.ytimg.com/vi/eSRlutsJe7o/hqdefault.jpg" alt="LuckyTools Version 1.0.3 video thumbnail">
+                        <span class="release-hero-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                        <span class="release-hero-caption"><small>Version 1.0.3</small><strong>Play here</strong></span>
+                    </div>
+                    <div
                         id="releaseInstallGuide"
-                        class="release-hero-media"
-                        data-src="https://www.youtube.com/embed/5L-7xrjY4I8?controls=1&autoplay=0&rel=0&modestbranding=1"
-                        title="How to download, install, or update LuckyTools for Premiere Pro 2026"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
+                        class="release-hero-media inline-youtube-player"
+                        data-youtube-id="5L-7xrjY4I8"
+                        data-youtube-title="How to install or update LuckyTools"
+                        role="button"
+                        tabindex="0"
+                        aria-label="Play the LuckyTools installation guide here">
+                        <img src="https://i.ytimg.com/vi/5L-7xrjY4I8/hqdefault.jpg" alt="LuckyTools installation guide video thumbnail">
+                        <span class="release-hero-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                        <span class="release-hero-caption"><small>Installation guide</small><strong>Play here</strong></span>
+                    </div>
                     <button
                         class="release-hero-toggle"
                         id="releaseHeroVideoToggle"
                         type="button"
                         aria-controls="releaseUpdatePreview releaseInstallGuide"
                         aria-pressed="false"
-                        aria-label="Show how to install or update LuckyTools"
-                        title="Next: How to install or update LuckyTools">
-                        <span class="release-hero-toggle-label">Next: How to install or update</span>
+                        aria-label="Show how to install or update LuckyTools">
+                        <span class="release-hero-toggle-label">Next: Installation guide</span>
                         <i class="fas fa-chevron-right" aria-hidden="true"></i>
                     </button>
                 </div>
+
             </section>
 
             <section class="release-timeline" aria-label="Update history">
@@ -254,14 +316,7 @@
                                 </div>
 
                                 <a class="release-busco-link" href="https://x.com/BuscoEditor" target="_blank" rel="noopener" aria-label="Visit Busco Editor on X">
-                                    <div class="release-community-avatars" aria-hidden="true">
-                                        <img src="assets/images/busco.jpg" alt="">
-                                        <img src="assets/images/marck.jpg" alt="">
-                                        <img src="assets/images/strike.png" alt="">
-                                        <img src="assets/images/blackbull.jpg" alt="">
-                                        <img src="assets/images/ermac.jpg" alt="">
-                                        <span class="release-community-count">+9K</span>
-                                    </div>
+                                    <img class="release-busco-avatar" src="assets/images/busco.jpg" alt="Busco Editor logo">
                                     <span class="release-community-copy">
                                         <small>Community-informed defaults</small>
                                         <strong>Feedback collected from Busco Editor creators</strong>
@@ -376,7 +431,7 @@
                     </div>
                 </details>
 
-                <details class="release-entry">
+                <details class="release-entry release-entry-has-video">
                     <span class="release-marker" aria-hidden="true"></span>
                     <summary class="release-entry-header">
                         <div>
@@ -390,11 +445,10 @@
 
                     <div class="release-notes release-notes-expanded">
                         <figure class="release-version-preview">
-                            <video autoplay loop muted playsinline preload="metadata" data-version-preview aria-label="Version 1.0.2 feature preview">
+                            <video loop muted playsinline preload="metadata" data-version-preview aria-label="Version 1.0.2 feature preview">
                                 <source src="assets/videos/1.0.2.mp4" type="video/mp4">
                             </video>
                         </figure>
-
                         <div class="release-major-group">
                             <h3><i class="fas fa-star"></i> Highlights</h3>
                             <ul class="release-major-list">
@@ -477,7 +531,7 @@
                     </div>
                 </details>
 
-                <details class="release-entry">
+                <details class="release-entry release-entry-has-video">
                     <span class="release-marker" aria-hidden="true"></span>
                     <summary class="release-entry-header">
                         <div>
@@ -491,11 +545,10 @@
 
                     <div class="release-notes release-notes-expanded">
                         <figure class="release-version-preview">
-                            <video autoplay loop muted playsinline preload="metadata" data-version-preview aria-label="LuckyCurves preview from Version 1.0.1">
+                            <video loop muted playsinline preload="metadata" data-version-preview aria-label="LuckyCurves preview from Version 1.0.1">
                                 <source src="assets/videos/luckycurves.mp4" type="video/mp4">
                             </video>
                         </figure>
-
                         <div class="release-major-group">
                             <h3><i class="fas fa-star"></i> Highlights</h3>
                             <ul class="release-major-list">
@@ -614,8 +667,6 @@
                     </div>
                 </details>
             </section>
-
-            <p class="release-footnote">More complete update notes will be added here as new LuckyTools versions become available.</p>
         </div>
     </main>
 
@@ -637,7 +688,6 @@
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About</a></li>
-                            <li><a href="ecosystem.html">Ecosystem</a></li>
                             <li><a href="releases.html">Updates</a></li>
                             <li><a href="guide.html">Guide</a></li>
                             <li><a href="contact.html">Contact</a></li>
@@ -651,6 +701,18 @@
                         </ul>
                     </div>
                 </div>
+                <div class="payment-methods" aria-label="Payment methods">
+                    <div class="payment-brands">
+                        <span class="payment-brand payment-paypal">PayPal</span>
+                        <span class="payment-brand payment-visa">VISA</span>
+                        <span class="payment-brand payment-mastercard">Mastercard</span>
+                        <span class="payment-brand payment-apple">Apple Pay</span>
+                        <span class="payment-brand payment-google">Google Pay</span>
+                        <span class="payment-more">Cards and local methods</span>
+                    </div>
+                    <p class="payment-methods-copy"><strong>Payment options at checkout</strong>Processed by Lemon Squeezy, our merchant of record. LuckyTools is independent; this page is not operated by Lemon Squeezy. Wallets and local methods vary by browser, device and location. <a href="https://docs.lemonsqueezy.com/help/checkout/payment-methods" target="_blank" rel="noopener">Details</a></p>
+                </div>
+
                 <div class="copyright-text">
                     <p>&copy; 2026 LUCKYTOOLS. ALL RIGHTS RESERVED.<br>DESIGNED FOR THE NEXT GENERATION OF EDITORS.</p>
                 </div>
@@ -705,19 +767,18 @@
             let showingInstallGuide = false;
 
             function updateHeroVideo() {
+                if (window.LuckyInlineYouTube) {
+                    window.LuckyInlineYouTube.stop(showingInstallGuide ? updatePreview : installGuide);
+                }
                 updatePreview.classList.toggle('is-active', !showingInstallGuide);
                 installGuide.classList.toggle('is-active', showingInstallGuide);
                 toggle.setAttribute('aria-pressed', showingInstallGuide ? 'true' : 'false');
 
                 if (showingInstallGuide) {
-                    updatePreview.src = 'about:blank';
-                    installGuide.src = installGuide.dataset.src;
                     toggleLabel.textContent = 'Next: Version 1.0.3 update video';
                     toggle.setAttribute('aria-label', 'Show the Version 1.0.3 update video');
                     toggle.setAttribute('title', 'Next: Version 1.0.3 update video');
                 } else {
-                    installGuide.src = 'about:blank';
-                    updatePreview.src = updatePreview.dataset.src;
                     toggleLabel.textContent = 'Next: How to install or update';
                     toggle.setAttribute('aria-label', 'Show how to install or update LuckyTools');
                     toggle.setAttribute('title', 'Next: How to install or update LuckyTools');
@@ -903,5 +964,6 @@
             });
         })();
     </script>
+    <script src="assets/js/inline-youtube.js?v=1"></script>
 </body>
 </html>

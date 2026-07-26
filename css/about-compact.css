@@ -1,0 +1,113 @@
+/* Compact story section: useful content on both columns, no decorative logo panel. */
+.interior-about .about-grid-v2 {
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+    gap: clamp(42px, 5vw, 72px);
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.interior-about .about-content-v2 p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.interior-about .about-side-v2 {
+    min-width: 0;
+    display: grid;
+    gap: 14px;
+}
+
+.interior-about .about-community-card {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    padding: 22px;
+    border: 1px solid #dedede;
+    border-radius: 16px;
+    background: #f7f7f7;
+}
+
+.interior-about .about-community-avatar {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #ff9d00;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.interior-about .about-community-card h3 {
+    margin: 0 0 8px;
+    color: #111;
+    font: 700 19px/1.15 'Outfit', sans-serif;
+}
+
+.interior-about .about-community-card p {
+    margin: 0;
+    color: #555;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.interior-about .about-community-card strong {
+    color: #111;
+}
+
+.interior-about .about-side-v2 .about-links {
+    margin: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px !important;
+}
+
+.interior-about .about-side-v2 .social-item-v2 {
+    min-height: 44px;
+    padding: 10px 16px !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #d6d6d6 !important;
+    border-radius: 10px;
+    color: #111 !important;
+    background: #fff !important;
+    font-size: 13px !important;
+    text-align: center;
+}
+
+.interior-about .about-side-v2 .social-item-v2:first-child {
+    grid-column: 1 / -1;
+    border-color: #ff9d00 !important;
+    background: #ff9d00 !important;
+    font-weight: 750;
+}
+
+.interior-about .about-side-v2 .social-item-v2:hover {
+    border-color: #111 !important;
+    color: #fff !important;
+    background: #111 !important;
+}
+
+@media (max-width: 980px) {
+    .interior-about .about-grid-v2 {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-top: 42px;
+        padding-bottom: 42px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 560px) {
+    .interior-about .about-community-card {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .interior-about .about-side-v2 .about-links {
+        grid-template-columns: 1fr;
+    }
+
+    .interior-about .about-side-v2 .social-item-v2:first-child {
+        grid-column: auto;
+    }
+}

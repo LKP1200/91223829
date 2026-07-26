@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LuckySuite brings nine panels for Premiere Pro 2026 and later into one complete editing ecosystem.">
+    <title>LuckySuite | 9 panels for Premiere Pro</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png?v=7">
+    <link rel="stylesheet" href="css/style.css?v=104">
+    <link rel="stylesheet" href="css/luckysuite.css?v=7">
+    <link rel="stylesheet" href="css/purchase-modal.css?v=1">
+    <link rel="stylesheet" href="css/payment-methods.css?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/footer-unified.css?v=2">
+</head>
+<body class="suite-page">
+    <header class="suite-header">
+        <a class="suite-brand" href="index.html" aria-label="LuckyTools home">
+            <img src="assets/images/logo-demo.png" alt="" width="36" height="36">
+            <span>LuckyTools</span>
+        </a>
+
+        <nav class="suite-nav" id="suiteNav" aria-label="Main navigation">
+            <a href="about.html">About</a>
+            <a href="releases.html">Updates</a>
+            <a href="contact.html">Contact</a>
+            <a href="licenses.html">Licenses</a>
+            <a href="guide.html">Guide</a>
+        </nav>
+
+        <button class="suite-menu" type="button" aria-controls="suiteNav" aria-expanded="false" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="suite-hero" aria-labelledby="suite-title">
+            <div class="suite-hero-grid">
+                <div class="suite-gallery" aria-label="LuckySuite gallery">
+                    <div class="suite-media-stage" id="suiteMediaStage" aria-live="polite">
+                        <img src="assets/images/LuckySuitev1.png" alt="LuckySuite box with a preview of its panels" fetchpriority="high">
+                    </div>
+
+                    <div class="suite-thumbnails" role="list" aria-label="Choose a demonstration">
+                        <button class="suite-thumb is-active" type="button" data-kind="image" data-src="assets/images/LuckySuitev1.png" data-alt="LuckySuite box" aria-pressed="true">
+                            <img src="assets/images/LuckySuitev1.png" alt="">
+                            <span>Cover</span>
+                        </button>
+                        <button class="suite-thumb" type="button" data-kind="video" data-src="assets/videos/luckysearch.mp4" data-alt="LuckySearch demonstration" aria-pressed="false">
+                            <video muted playsinline preload="metadata"><source src="assets/videos/luckysearch.mp4#t=0.2" type="video/mp4"></video>
+                            <span>Search</span>
+                        </button>
+                        <button class="suite-thumb" type="button" data-kind="video" data-src="assets/videos/luckyshortcuts.mp4" data-alt="LuckyShortcuts demonstration" aria-pressed="false">
+                            <video muted playsinline preload="metadata"><source src="assets/videos/luckyshortcuts.mp4#t=0.2" type="video/mp4"></video>
+                            <span>Shortcuts</span>
+                        </button>
+                        <button class="suite-thumb" type="button" data-kind="video" data-src="assets/videos/luckyorganize.mp4" data-alt="LuckyOrganize demonstration" aria-pressed="false">
+                            <video muted playsinline preload="metadata"><source src="assets/videos/luckyorganize.mp4#t=0.2" type="video/mp4"></video>
+                            <span>Organize</span>
+                        </button>
+                        <button class="suite-thumb" type="button" data-kind="video" data-src="assets/videos/luckyzoom.mp4" data-alt="LuckyZoom demonstration" aria-pressed="false">
+                            <video muted playsinline preload="metadata"><source src="assets/videos/luckyzoom.mp4#t=0.2" type="video/mp4"></video>
+                            <span>Zoom</span>
+                        </button>
+                        <button class="suite-thumb" type="button" data-kind="video" data-src="assets/videos/luckycut.mp4" data-alt="LuckyCut demonstration" aria-pressed="false">
+                            <video muted playsinline preload="metadata"><source src="assets/videos/luckycut.mp4#t=0.2" type="video/mp4"></video>
+                            <span>Cut</span>
+                        </button>
+                        <button class="suite-thumb" type="button" data-kind="video" data-src="assets/videos/luckypod.mp4" data-alt="LuckyPod demonstration" aria-pressed="false">
+                            <video muted playsinline preload="metadata"><source src="assets/videos/luckypod.mp4#t=0.2" type="video/mp4"></video>
+                            <span>Pod</span>
+                        </button>
+                        <button class="suite-thumb" type="button" data-kind="video" data-src="assets/videos/luckynotes.mp4" data-alt="LuckyNotes demonstration" aria-pressed="false">
+                            <video muted playsinline preload="metadata"><source src="assets/videos/luckynotes.mp4#t=0.2" type="video/mp4"></video>
+                            <span>Notes</span>
+                        </button>
+                        <button class="suite-thumb" type="button" data-kind="video" data-src="assets/videos/luckycurves.mp4" data-alt="LuckyCurves demonstration" aria-pressed="false">
+                            <video muted playsinline preload="metadata"><source src="assets/videos/luckycurves.mp4#t=0.2" type="video/mp4"></video>
+                            <span>Curves</span>
+                        </button>
+                        <button class="suite-thumb" type="button" data-kind="video" data-src="assets/videos/luckyanchor.mp4" data-alt="LuckyAnchor demonstration" aria-pressed="false">
+                            <video muted playsinline preload="metadata"><source src="assets/videos/luckyanchor.mp4#t=0.2" type="video/mp4"></video>
+                            <span>Anchor</span>
+                        </button>
+                    </div>
+                    <p class="suite-gallery-hint">Select a panel to see how it works.</p>
+                </div>
+
+                <div class="suite-product-copy">
+                    <p class="suite-eyebrow"><span></span> Complete ecosystem</p>
+                    <h1 id="suite-title">Nine panels.<br>One workflow.</h1>
+                    <p class="suite-lead">LuckySuite brings together the Premiere Pro tools you use most, so you can find, cut, organize and animate without breaking your editing rhythm.</p>
+
+                    <div class="suite-like-proof" aria-label="12,000 likes">
+                        <span class="suite-like-icon" aria-hidden="true">♥</span>
+                        <strong>12,000</strong>
+                        <span>likes</span>
+                    </div>
+
+                    <div class="suite-price-row">
+                        <strong>$230.00</strong>
+                        <span>One-time payment</span>
+                    </div>
+
+                    <ul class="suite-benefits">
+                        <li><b>Premiere Pro 2026 and later</b><span>Compatible with current versions starting with Premiere Pro 2026.</span></li>
+                        <li><b>Instant download</b><span>Start installing your panels immediately after purchase.</span></li>
+                        <li><b>One full year of updates</b><span>Your purchase includes 1 full year of updates, keeping your tools fresh at the start of every new year. After this period, you will no longer receive new updates, but you can still continue using the final version released during your 1-year period without any issues for as long as you want. You can always add another year at a reduced price compared to your initial purchase, subject to the current pricing on our website.</span></li>
+                        <li><b>Commercial license</b><span>Use it in personal and client projects.</span></li>
+                    </ul>
+
+                    <div class="suite-actions">
+                        <a class="suite-button suite-button-primary" href="https://luckytpr.lemonsqueezy.com/checkout/buy/10dc8a74-bb2e-49f5-bf88-4897ba0bfe36" data-purchase-trigger>Buy LuckySuite <span>→</span></a>
+                        <a class="suite-button suite-button-secondary" href="#panels">Explore the panels</a>
+                    </div>
+                    <p class="suite-safe-note">Secure checkout · Digital download · Support included</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="suite-statement" aria-labelledby="statement-title">
+            <div class="suite-statement-inner">
+                <p class="suite-kicker">Everything essential. Nothing in the way.</p>
+                <h2 id="statement-title">The editing ecosystem that <em>keeps</em> up with you.</h2>
+                <p class="suite-statement-copy">Fewer menus, fewer repetitive tasks and more time for creative decisions. Each panel solves a specific part of the job, and they all share the same visual language.</p>
+                <div class="suite-numbers">
+                    <div><strong>9</strong><span>connected panels</span></div>
+                    <div><strong>1</strong><span>unified installation</span></div>
+                    <div><strong>2026+</strong><span>Premiere Pro</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="suite-panels" id="panels" aria-labelledby="panels-title">
+            <div class="suite-panels-heading">
+                <p class="suite-kicker">What's inside LuckySuite</p>
+                <h2 id="panels-title">One panel for every part of your edit.</h2>
+                <p>No jargon: here is what each tool does in your everyday workflow.</p>
+            </div>
+
+            <div class="suite-panel-list">
+                <article>
+                    <span>01</span>
+                    <div class="suite-panel-content">
+                        <div class="suite-panel-summary"><h3>LuckySearch</h3><p>Find and run what you need without leaving your flow.</p></div>
+                        <div class="suite-panel-specs">
+                            <div><b>Modes</b><strong>Search · favorites · quick actions</strong></div>
+                            <div><b>What it does</b><p>Brings panels, effects, transitions, presets and editing commands into one keyboard-first window.</p></div>
+                            <div><b>Best for</b><p>Replacing menu hunting with one fast, searchable workflow.</p></div>
+                        </div>
+                        <details class="suite-panel-details">
+                            <summary><span>How LuckySearch works</span><i aria-hidden="true"></i></summary>
+                            <div class="suite-panel-deep-grid">
+                                <div><b>Everything in one search</b><p>Find LuckyTools panels, Project, Sequence, Clip and Item actions, effects, transitions, presets, LuckyNotes tasks, LuckyZoom controls, LuckyAnchor positions and LuckyCurves actions.</p></div>
+                                <div><b>Categories that remember</b><p>Results stay grouped in collapsible categories. Open or close a category once and LuckySearch remembers its state for the next search.</p></div>
+                                <div><b>Favorites and recent actions</b><p>Star the tools you repeat. With an empty search, up to twelve favorite and recent actions become persistent one-click buttons.</p></div>
+                                <div><b>Personalized workspace</b><p>Change the accent color, typography and search title. Search in Spanish even when Premiere Pro is configured in English.</p></div>
+                                <div><b>Fast keyboard-first control</b><p>Locally indexed results update as you type. Use Up and Down to navigate, Enter to run a result and Escape to leave a submenu or close the search window.</p></div>
+                                <div><b>Curve preview and Quick Paste</b><p>Preview supported motion curves before applying them, or send clipboard content directly to the timeline with Quick Paste.</p></div>
+                            </div>
+                            <p class="suite-panel-caveat"><strong>Adobe API note:</strong> custom interpolation curves may not be preserved when a preset is applied programmatically, so manual easing adjustments can occasionally be required.</p>
+                        </details>
+                    </div>
+                </article>
+                <article>
+                    <span>02</span>
+                    <div class="suite-panel-content">
+                        <div class="suite-panel-summary"><h3>LuckyShortcuts</h3><p>Turn repetitive actions into direct buttons and shortcuts.</p></div>
+                        <div class="suite-panel-specs">
+                            <div><b>Mode</b><strong>One action per shortcut</strong></div>
+                            <div><b>What it does</b><p>Maps panels, tools, effects, transitions, presets and editing actions directly to keys or buttons.</p></div>
+                            <div><b>Best for</b><p>Eliminating repeated clicks and building a dependable personal workspace.</p></div>
+                        </div>
+                        <details class="suite-panel-details">
+                            <summary><span>How LuckyShortcuts works</span><i aria-hidden="true"></i></summary>
+                            <div class="suite-panel-deep-grid">
+                                <div><b>Direct 1-to-1 mapping</b><p>Assign one Premiere Pro or LuckyTools action to each shortcut. The panel intentionally does not run multi-step macros.</p></div>
+                                <div><b>Complete action library</b><p>Map panels, markers, project and sequence tools, clip actions, adjustment layers, solids, effects, transitions, presets, LuckyZoom, LuckyCurves and all 25 LuckyAnchor positions.</p></div>
+                                <div><b>Conflict-aware setup</b><p>Search for an action, choose a key or key combination and resolve conflicts before saving. The Active filter shows assigned shortcuts only.</p></div>
+                                <div><b>Portable configuration</b><p>Import and export panel shortcuts, action shortcuts and saved transition durations when moving to another computer.</p></div>
+                            </div>
+                            <p class="suite-panel-caveat"><strong>Designed for stability:</strong> LuckyShortcuts executes one command per keypress. It is not a macro recorder.</p>
+                        </details>
+                    </div>
+                </article>
+                <article>
+                    <span>03</span>
+                    <div class="suite-panel-content">
+                        <div class="suite-panel-summary"><h3>LuckyOrganize</h3><p>Start every project with everything in its place.</p></div>
+                        <div class="suite-panel-specs">
+                            <div><b>Modes</b><strong>Manual · automatic</strong></div>
+                            <div><b>What it does</b><p>Creates nested bins and sorts project items using extension, filename, audio-type and color rules.</p></div>
+                            <div><b>Best for</b><p>Repeatable templates for podcasts, weddings, ads and social content.</p></div>
+                        </div>
+                        <details class="suite-panel-details">
+                            <summary><span>How LuckyOrganize works</span><i aria-hidden="true"></i></summary>
+                            <div class="suite-panel-deep-grid">
+                                <div><b>Reusable profiles</b><p>Create a different organization profile for each recurring production. Test a new profile in Manual mode, then switch to Automatic when every rule behaves correctly.</p></div>
+                                <div><b>Nested project structure</b><p>Build bins and sub-bins, move through them with breadcrumbs and save the complete structure for the next project.</p></div>
+                                <div><b>Precise sorting rules</b><p>Combine extensions such as mov, wav, png or mogrt with filename text filters, Short SFX or Long Music classifications and Premiere label colors.</p></div>
+                                <div><b>Safe project management</b><p>LuckyOrganize changes only the organization inside Premiere Pro's Project panel. It does not move, rename, import or delete source files on your drive.</p></div>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+                <article>
+                    <span>04</span>
+                    <div class="suite-panel-content">
+                        <div class="suite-panel-summary"><h3>LuckyZoom</h3><p>Create precise punch-ins without fighting scale and position.</p></div>
+                        <div class="suite-panel-specs">
+                            <div><b>Modes</b><strong>Grow · Transform · Dynamic</strong></div>
+                            <div><b>What it does</b><p>Analyzes the frame and turns a visual selection into a static reframe, animated punch-in or two-point camera move.</p></div>
+                            <div><b>Best for</b><p>Tutorials, gameplay, vertical videos and any edit that needs to guide the viewer's eye.</p></div>
+                        </div>
+                        <details class="suite-panel-details">
+                            <summary><span>How LuckyZoom works</span><i aria-hidden="true"></i></summary>
+                            <div class="suite-panel-deep-grid">
+                                <div><b>Analyze, draw and apply</b><p>Select a clip, analyze the frame and draw the composition you want. Move or resize the selection, choose the behavior and apply the result.</p></div>
+                                <div><b>Grow mode</b><p>Creates consistent editorial zooms from the beginning of the clip with uniform scale, a built-in curve editor, Impact Grow and Reverse.</p></div>
+                                <div><b>Transform mode</b><p>Starts from the current playhead, supports Shutter Angle motion blur and can link new Position and Scale keyframes to LuckyCurves.</p></div>
+                                <div><b>Dynamic Zoom</b><p>Define independent A and B frames for zoom-ins, zoom-outs, lateral reframing and simulated camera travel. Control duration and invert the movement when needed.</p></div>
+                                <div><b>Free Aspect and Eagle View</b><p>Hold Shift in Transform to stretch, squash or skew the frame independently. Eagle View lets you compose beyond the normal sequence boundary.</p></div>
+                                <div><b>Guides, history and favorites</b><p>Snap to center or rule-of-thirds guides, navigate with the mouse wheel, restore recent zooms and save named favorites in separate profiles.</p></div>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+                <article>
+                    <span>05</span>
+                    <div class="suite-panel-content">
+                        <div class="suite-panel-summary"><h3>LuckyCut</h3><p>Reach a clean first cut sooner.</p></div>
+                        <div class="suite-panel-specs">
+                            <div><b>Mode</b><strong>Silence detection</strong></div>
+                            <div><b>What it does</b><p>Analyzes audio, previews cuts and lets you adjust the threshold, minimum duration and margins before changing the sequence.</p></div>
+                            <div><b>Best for</b><p>Talking heads, interviews, courses and long recordings with pauses.</p></div>
+                        </div>
+                        <details class="suite-panel-details">
+                            <summary><span>How LuckyCut works</span><i aria-hidden="true"></i></summary>
+                            <div class="suite-panel-deep-grid">
+                                <div><b>Fast local analysis</b><p>Scan the active sequence, choose the video and audio tracks to process and detect quiet sections through audio levels without cloud processing.</p></div>
+                                <div><b>Editable detection</b><p>Threshold defines what counts as silence, Minimum Silence Duration controls how long it must last, and Padding In and Out preserve the edges of spoken words.</p></div>
+                                <div><b>Preview before processing</b><p>Preview the waveform and detected regions at the playhead. Test loud, quiet and soft-spoken moments before running the full sequence.</p></div>
+                                <div><b>Two processing methods</b><p>Delete Silences shortens the edit with ripple deletion. Enable / Disable keeps the timeline duration and provides a more reversible first pass.</p></div>
+                            </div>
+                            <p class="suite-panel-caveat"><strong>Recommended workflow:</strong> duplicate the sequence first and save profiles for different recording environments.</p>
+                        </details>
+                    </div>
+                </article>
+                <article>
+                    <span>06</span>
+                    <div class="suite-panel-content">
+                        <div class="suite-panel-summary"><h3>LuckyPod</h3><p>Keep a multicamera conversation moving automatically.</p></div>
+                        <div class="suite-panel-specs">
+                            <div><b>Mode</b><strong>Multicamera auto-switch</strong></div>
+                            <div><b>What it does</b><p>Maps isolated microphones to camera angles, detects who is speaking and builds a first multicamera pass.</p></div>
+                            <div><b>Best for</b><p>Podcasts, interviews and conversations with two or more participants.</p></div>
+                        </div>
+                        <details class="suite-panel-details">
+                            <summary><span>How LuckyPod works</span><i aria-hidden="true"></i></summary>
+                            <div class="suite-panel-deep-grid">
+                                <div><b>Microphone-to-camera mapping</b><p>Use one isolated audio track per speaker and map each microphone to its matching camera, a combination of cameras or an All Mics wide shot.</p></div>
+                                <div><b>Flexible productions</b><p>Configure between one and ten microphones and camera angles, name each speaker and save the complete setup as a reusable profile.</p></div>
+                                <div><b>Editorial behavior</b><p>Choose Slow, Medium or Fast switching, tune the dB threshold and decide whether linked audio should remain protected or be cut.</p></div>
+                                <div><b>Private local processing</b><p>Audio analysis runs on your computer with no AI service and no uploaded media. The current method creates the pass with Enable / Disable.</p></div>
+                            </div>
+                            <p class="suite-panel-caveat"><strong>Current version:</strong> Multicam Switch is still marked Coming Soon. Review overlaps, reaction shots and wide-angle choices after the automatic pass.</p>
+                        </details>
+                    </div>
+                </article>
+                <article>
+                    <span>07</span>
+                    <div class="suite-panel-content">
+                        <div class="suite-panel-summary"><h3>LuckyNotes</h3><p>Keep every task beside the edit.</p></div>
+                        <div class="suite-panel-specs">
+                            <div><b>Modes</b><strong>Notes · tasks · references</strong></div>
+                            <div><b>What it does</b><p>Keeps formatted notes, clickable timecodes, reference images and status-based tasks beside the edit.</p></div>
+                            <div><b>Best for</b><p>Feedback rounds, long deliveries and edits that continue across multiple days.</p></div>
+                        </div>
+                        <details class="suite-panel-details">
+                            <summary><span>How LuckyNotes works</span><i aria-hidden="true"></i></summary>
+                            <div class="suite-panel-deep-grid">
+                                <div><b>Rich notes</b><p>Format text with bold, italic, underline, alignment, text color, highlight color and multiple sizes. Notes save automatically.</p></div>
+                                <div><b>Clickable timecodes and links</b><p>Auto-Tags converts supported timecodes into playhead navigation and recognized web addresses into links without adding timeline markers.</p></div>
+                                <div><b>Visual references</b><p>Paste or drag images, align and resize them, or import a selected reference into the Premiere project and timeline.</p></div>
+                                <div><b>Synced task system</b><p>Create, reorder and filter Urgent, Pending and Done tasks. Add Task also works from LuckySearch or a direct shortcut.</p></div>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+                <article>
+                    <span>08</span>
+                    <div class="suite-panel-content">
+                        <div class="suite-panel-summary"><h3>LuckyCurves</h3><p>Shape easing, dynamics and expressive Squash &amp; Stretch motion.</p></div>
+                        <div class="suite-panel-specs">
+                            <div><b>Modes</b><strong>Velocity · value · deform</strong></div>
+                            <div><b>What it does</b><p>Shapes acceleration, spatial values and deformation with visual curves, reusable profiles and direct keyframe controls.</p></div>
+                            <div><b>Best for</b><p>Text, graphics, scaling and motion that need a natural entrance or exit.</p></div>
+                        </div>
+                        <details class="suite-panel-details">
+                            <summary><span>How LuckyCurves works</span><i aria-hidden="true"></i></summary>
+                            <div class="suite-panel-deep-grid">
+                                <div><b>Velocity and Value graphs</b><p>Control how quickly animation accelerates and settles, or shape spatial interpolation beyond its normal range for more organic movement.</p></div>
+                                <div><b>Complete curve library</b><p>Choose Sine, Quad, Cubic, Quart, Quint, Expo, Circ or Back, then select In, Out or In-Out. Elastic, Bounce and Step families add more stylized timing.</p></div>
+                                <div><b>Squash &amp; Stretch</b><p>Deform mode coordinates Position, Scale and Rotation to inject weight, inertia and expressive physics into titles, icons, stickers and graphics.</p></div>
+                                <div><b>Hands-on editing</b><p>Drag graph handles or numeric In and Out values. Hold Alt for fine adjustment and Shift to unlock the normal curve limits.</p></div>
+                                <div><b>Reusable motion language</b><p>Save curves in named profiles for titles, lower thirds, zooms or impact moves, then reuse the same motion behavior across projects.</p></div>
+                                <div><b>Direction and cleanup</b><p>Reverse keyframes, invert the graph or clean an applied curve. LuckyZoom Transform can send newly created keyframes directly to the selected curve.</p></div>
+                            </div>
+                        </details>
+                    </div>
+                </article>
+                <article>
+                    <span>09</span>
+                    <div class="suite-panel-content">
+                        <div class="suite-panel-summary"><h3>LuckyAnchor</h3><p>The right anchor point, exactly where you need it.</p></div>
+                        <div class="suite-panel-specs">
+                            <div><b>Mode</b><strong>25-point positioning</strong></div>
+                            <div><b>What it does</b><p>Moves the anchor with mathematical precision while compensating Position so the image does not visually jump.</p></div>
+                            <div><b>Best for</b><p>Setting the correct origin before scale and rotation animation.</p></div>
+                        </div>
+                        <details class="suite-panel-details">
+                            <summary><span>How LuckyAnchor works</span><i aria-hidden="true"></i></summary>
+                            <div class="suite-panel-deep-grid">
+                                <div><b>25-point precision grid</b><p>Choose corners, edge centers, the exact center and intermediate positions for finer placement without calculating coordinates by hand.</p></div>
+                                <div><b>Motion and Transform</b><p>Target Premiere Pro's native Motion controls by default or switch to a compatible Transform effect when that is the system driving the animation.</p></div>
+                                <div><b>No visual jump</b><p>LuckyAnchor compensates Position as Anchor Point changes, keeping the element visually in place while changing the origin of scale and rotation.</p></div>
+                                <div><b>Shortcuts and search</b><p>Every Motion and Transform grid position can receive a direct shortcut and can also be launched from LuckySearch.</p></div>
+                                <div><b>Custom pixel offsets</b><p>Fine-tune the chosen position with exact coordinate offsets for specialized layouts and pixel-perfect framing.</p></div>
+                            </div>
+                            <p class="suite-panel-caveat"><strong>Best practice:</strong> set the anchor before creating scale or rotation keyframes. If complex animation already exists, review the result after moving it.</p>
+                        </details>
+                    </div>
+                </article>
+            </div>
+
+            <div class="suite-manual-link">
+                <div><span>Need every control and workflow?</span><strong>Open the complete LuckyTools user manual.</strong></div>
+                <a href="guide.html">Read the guide <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+
+        <section class="suite-proof" aria-labelledby="proof-title">
+            <div>
+                <p class="suite-kicker">Built to get work done</p>
+                <h2 id="proof-title">Edit faster.<br>Get paid sooner.</h2>
+            </div>
+            <p>You do not need to learn nine different workflows. LuckySuite keeps the same structure, shortcuts and consistent interface so the tool fades away and your edit keeps moving.</p>
+        </section>
+
+        <section class="suite-faq-section" aria-labelledby="suite-faq-title">
+            <div class="suite-faq-shell">
+                <div class="suite-faq-intro">
+                    <p class="suite-kicker">Before you buy</p>
+                    <h2 id="suite-faq-title">FAQs<span>.</span></h2>
+                    <p>The important details, explained clearly. No fine print or surprises after installation.</p>
+                    <a href="contact.html">Another question? Contact us →</a>
+                </div>
+                <div class="suite-faq-list">
+                    <details open>
+                        <summary>Which Premiere Pro languages are supported?<i></i></summary>
+                        <p>LuckySuite works exclusively with Adobe Premiere Pro configured in <strong>English or Spanish</strong>. Other languages are not supported yet.</p>
+                    </details>
+                    <details>
+                        <summary>Does it work on macOS?<i></i></summary>
+                        <p>No. LuckySuite is currently available <strong>for Windows only</strong>. If you use a Mac, do not purchase the plugin because it will not run on your system.</p>
+                    </details>
+                    <details>
+                        <summary>Which version of Premiere Pro do I need?<i></i></summary>
+                        <p>Stable compatibility is guaranteed for <strong>Premiere Pro 2026 (v26.0) or later</strong>. It may open in earlier versions, but errors or instability can occur.</p>
+                    </details>
+                    <details>
+                        <summary>How does the license work?<i></i></summary>
+                        <p>Each purchase includes <strong>one license per computer</strong>. You can deactivate it from your LemonSqueezy account and activate it again if you change computers or reinstall Windows.</p>
+                    </details>
+                    <details>
+                        <summary>Are updates included?<i></i></summary>
+                        <p><strong>Your purchase includes 1 full year of updates</strong>, keeping your tools fresh at the start of every new year. After this period, you will no longer receive new updates, but you can still continue using the final version released during your 1-year period without any issues for as long as you want. You can always add another year at a reduced price compared to your initial purchase, subject to the current pricing on our website.</p>
+                    </details>
+                    <details>
+                        <summary>Could there be bugs or limitations?<i></i></summary>
+                        <p>LuckySuite continues to grow. Minor issues may appear in specific scenarios; community feedback is used to publish fixes and improve stability.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="suite-reviews-section" aria-labelledby="suite-reviews-title">
+            <div class="suite-reviews-shell">
+                <div class="suite-reviews-heading">
+                    <div>
+                        <p class="suite-kicker">Community reviews</p>
+                        <h2 id="suite-reviews-title">Editors put it to work.<br>Then told us the truth.</h2>
+                    </div>
+                </div>
+
+                <div class="suite-reviews-layout">
+                    <aside class="suite-rating-summary" aria-label="Customer rating distribution">
+                        <p class="suite-rating-label">Customer reviews</p>
+                        <div class="suite-rating-score">
+                            <strong>4.9</strong>
+                            <div>
+                                <span class="suite-stars" aria-label="4.9 out of 5 stars">★★★★★</span>
+                                <small>out of 5</small>
+                            </div>
+                        </div>
+                        <p class="suite-rating-note">Rating distribution</p>
+
+                        <div class="suite-rating-bars">
+                            <div class="suite-rating-row"><span>5 stars</span><i><b style="--rating:92%"></b></i><strong>92%</strong></div>
+                            <div class="suite-rating-row"><span>4 stars</span><i><b style="--rating:5%"></b></i><strong>5%</strong></div>
+                            <div class="suite-rating-row"><span>3 stars</span><i><b style="--rating:2%"></b></i><strong>2%</strong></div>
+                            <div class="suite-rating-row"><span>2 stars</span><i><b style="--rating:0%"></b></i><strong>0%</strong></div>
+                            <div class="suite-rating-row"><span>1 star</span><i><b style="--rating:1%"></b></i><strong>1%</strong></div>
+                        </div>
+
+                        <p class="suite-rating-footnote">Feedback collected from editors who have tested LuckyTools in real workflows.</p>
+                    </aside>
+
+                    <div class="suite-review-grid">
+                        <article class="suite-review-card">
+                            <div class="suite-review-author"><img src="assets/images/dylan.jpg" alt=""><strong>Dylan G</strong></div>
+                            <span class="suite-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                            <p>I've been using the transition shortcuts since the first builds and they've saved my skin on many quick deliveries. It's not 100% perfect yet, but the potential here is insane. You're gaining real life time, highly recommended.</p>
+                        </article>
+
+                        <article class="suite-review-card">
+                            <div class="suite-review-author"><img src="assets/images/busco.jpg" alt=""><strong>Busco Editor</strong></div>
+                            <span class="suite-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                            <p>We've seen top editors in the community push LuckyTools hard to meet their deadlines. It is an investment that pays for itself if you value your time and peace of mind.</p>
+                        </article>
+
+                        <article class="suite-review-card">
+                            <div class="suite-review-author"><img src="assets/images/oury.jpg" alt=""><strong>Oury Editor</strong></div>
+                            <span class="suite-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                            <p>I know we do not have macros here, which is a bit of a drawback, but for everyday work it is more than enough. Keyframe control is a thousand times smoother than Premiere's native tools.</p>
+                        </article>
+
+                        <article class="suite-review-card">
+                            <div class="suite-review-author"><img src="assets/images/blackbull.jpg" alt=""><strong>BlackBull Designer</strong></div>
+                            <span class="suite-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                            <p>The Anchor Point tool is surgical; there is nothing else like it. Unnest already processes clips in batches, though it still does not feel as fast as I would like. At least the project clearly feels alive, and feedback is always close at hand in the Busco Editor community.</p>
+                        </article>
+
+                        <article class="suite-review-card">
+                            <div class="suite-review-author"><img src="assets/images/ermac.jpg" alt=""><strong>Ermac</strong></div>
+                            <span class="suite-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                            <p>A total change for my workflow. It is a little inconvenient that LuckySearch has no undo button, but the time I save is incredible. &mdash;Looking forward to v2.0!</p>
+                        </article>
+
+                        <article class="suite-review-card">
+                            <div class="suite-review-author"><img src="assets/images/marck.jpg?v=1" alt=""><strong>MarckDBM</strong></div>
+                            <span class="suite-stars" aria-label="4 out of 5 stars">★★★★<i>★</i></span>
+                            <p>It is good: it saves time and money. Several things still need refinement, but it will do well if updates continue. The customization is nice, although it feels more focused on that than on some features. I hope more updates arrive; otherwise I might just turn pirate and publish it for everyone.</p>
+                        </article>
+
+                        <article class="suite-review-card">
+                            <div class="suite-review-author"><img src="assets/images/playeraplayer.png" alt=""><strong>Playera</strong></div>
+                            <span class="suite-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                            <p>It is the most complete plugin I have tried. It has strong potential and can revolutionize the workflow in terms of time, quality, and quantity. I am proud to have contributed to the development of this plugin.</p>
+                        </article>
+
+                        <article class="suite-review-card">
+                            <div class="suite-review-author"><img src="assets/images/strike.png" alt=""><strong>Strike</strong></div>
+                            <span class="suite-stars" aria-label="5 out of 5 stars">★★★★★</span>
+                            <p>I've been with LuckyTools since its earliest versions, and the steady evolution shows. It is a well-designed tool for editors who want to save time and keep a more organized workflow.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="suite-cta" id="buy" aria-labelledby="cta-title">
+            <p>LuckySuite for Premiere Pro 2026+</p>
+            <h2 id="cta-title">Your workflow, finally in one place.</h2>
+            <a class="suite-button suite-button-primary" href="https://luckytpr.lemonsqueezy.com/checkout/buy/10dc8a74-bb2e-49f5-bf88-4897ba0bfe36" aria-label="Buy LuckySuite for 230 dollars" data-purchase-trigger>Buy now · $230 <span>→</span></a>
+            <small>Includes all 9 panels, a commercial license and one year of updates.</small>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-glow"></div>
+        <div class="footer-bottom">
+            <div class="container footer-container-inner">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <i class="fas fa-bolt"></i> LUCKYTOOLS
+                        </div>
+                        <p>The ultimate toolkit for Adobe Premiere Pro editors. Automating the tedious, unlocking the creative.</p>
+                        <div class="social-links">
+                            <a href="https://discord.gg/55xS3QpR5S" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
+                            <a href="https://www.youtube.com/@LuckyTools.contact" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-nav">
+                        <h4>QUICK LINKS</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="releases.html">Updates</a></li>
+                            <li><a href="guide.html">Guide</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="licenses.html">Licenses</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-support">
+                        <h4>SUPPORT</h4>
+                        <ul>
+                            <li><a href="contact.html">Contact Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="payment-methods" aria-label="Payment methods">
+                    <div class="payment-brands">
+                        <span class="payment-brand payment-paypal">PayPal</span>
+                        <span class="payment-brand payment-visa">VISA</span>
+                        <span class="payment-brand payment-mastercard">Mastercard</span>
+                        <span class="payment-brand payment-apple">Apple Pay</span>
+                        <span class="payment-brand payment-google">Google Pay</span>
+                        <span class="payment-more">Cards and local methods</span>
+                    </div>
+                    <p class="payment-methods-copy"><strong>Payment options at checkout</strong>Processed by Lemon Squeezy, our merchant of record. LuckyTools is independent; this page is not operated by Lemon Squeezy. Wallets and local methods vary by browser, device and location. <a href="https://docs.lemonsqueezy.com/help/checkout/payment-methods" target="_blank" rel="noopener">Details</a></p>
+                </div>
+
+                <div class="copyright-text">
+                    <p>&copy; 2026 LUCKYTOOLS. ALL RIGHTS RESERVED. <br>DESIGNED FOR THE NEXT GENERATION OF EDITORS.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="requirementsModal" class="req-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="requirementsTitle">
+        <div class="req-modal-content" role="document">
+            <div class="req-modal-header">
+                <span class="req-modal-alert" aria-hidden="true">!</span>
+                <div class="req-modal-heading">
+                    <h3 id="requirementsTitle">Before purchasing LuckyTools</h3>
+                    <p>Please confirm that your setup meets these requirements.</p>
+                </div>
+            </div>
+            <div class="req-modal-body">
+                <ul class="req-modal-list">
+                    <li><strong>Adobe Premiere Pro 2026 (v26+) is required.</strong></li>
+                    <li><strong>Windows only.</strong> LuckyTools is not currently available for macOS.</li>
+                    <li><strong>Your purchase includes 1 full year of updates</strong>, keeping your tools fresh at the start of every new year. After this period, you will no longer receive new updates<span data-license-summary>... <button class="req-inline-link" type="button" data-license-more>Read more</button></span><span data-license-details hidden>, but you can still continue using the final version released during your 1-year period without any issues for as long as you want. You can always add another year at a reduced price compared to your initial purchase, subject to the current pricing on our website. <a href="licenses.html">More info</a>.</span></li>
+                    <li><strong>Premiere Pro language must be English or Spanish.</strong></li>
+                </ul>
+            </div>
+            <div class="req-modal-footer">
+                <button class="req-btn-cancel" id="cancelPurchase" type="button">Cancel</button>
+                <a class="req-btn-confirm" id="proceedPurchase" href="https://luckytpr.lemonsqueezy.com/checkout/buy/10dc8a74-bb2e-49f5-bf88-4897ba0bfe36">
+                    Proceed to checkout <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/luckysuite.js?v=1"></script>
+    <script src="assets/js/purchase-modal.js?v=1"></script>
+</body>
+</html>

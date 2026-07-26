@@ -1,0 +1,1213 @@
+/* LuckyTools interior pages — same editorial system as Index and LuckySuite. */
+.interior-page {
+    --accent-color: #ff9d00;
+    --accent-glow: rgba(255,157,0,.22);
+    --refresh-purple: #8174ff;
+    --refresh-black: #090909;
+    --refresh-ink: #111;
+    --refresh-line: #dedede;
+    background: var(--refresh-black);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Exact navigation language used by the refreshed index. */
+.interior-page > header {
+    width: 100%;
+    min-height: 74px;
+    padding: 0 clamp(22px, 4vw, 66px);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    background: #050505;
+    box-shadow: none;
+    position: relative;
+    z-index: 1000;
+}
+.interior-page > header .logo {
+    color: #fff;
+    font: 700 22px/1 'Outfit', sans-serif;
+    letter-spacing: -.04em;
+    text-transform: none;
+}
+.interior-page > header .logo a { gap: 10px !important; }
+.interior-page > header .header-logo { width: 32px !important; height: 32px !important; object-fit: contain; border-radius: 0; transform: none !important; }
+.interior-page > header nav { display: flex; align-items: center; gap: clamp(20px, 2.7vw, 42px); }
+.interior-page > header nav > a,
+.interior-page > header .nav-eco-link { margin-left: 0 !important; }
+.interior-page > header nav a { margin-left: 0; color: #aaa; font-size: 13px; font-weight: 600; opacity: 1; }
+.interior-page > header nav a:hover { color: #fff; }
+.interior-page > header nav a::after { background: #ff9d00; }
+.interior-page .free-badge { background: var(--refresh-purple); border-radius: 6px; }
+
+.interior-page main { padding-top: 0; background: var(--refresh-black); }
+.interior-page .container { width: min(100% - 44px, 1320px); max-width: 1320px; padding-left: 0; padding-right: 0; }
+.interior-page h1, .interior-page h2, .interior-page h3 { font-family: 'Outfit', sans-serif; }
+.interior-page p { font-family: 'Inter', sans-serif; }
+.interior-page .bg-blobs { display: none; }
+
+/* Every interior page opens with a real, spacious product-style hero. */
+.interior-page .page-header-v2,
+.interior-page .releases-hero,
+.interior-page .guide-hero {
+    min-height: clamp(430px, 58vh, 650px);
+    margin: 0;
+    padding: clamp(90px, 11vw, 150px) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    background: radial-gradient(circle at 18% 24%, #202020 0, #0e0e0e 34%, #090909 68%);
+}
+.interior-page .page-header-v2 h1,
+.interior-page .releases-hero h1,
+.interior-page .guide-hero h1 {
+    max-width: 1050px;
+    margin: 0 0 30px;
+    color: #fff;
+    font: 700 clamp(58px, 8vw, 112px)/.9 'Outfit', sans-serif;
+    letter-spacing: -.07em;
+}
+.interior-page .page-header-v2 h1 span,
+.interior-page .releases-hero h1 span,
+.interior-page .guide-hero h1 span { color: #ff9d00 !important; }
+.interior-page .page-header-v2 > p,
+.interior-page .releases-hero-copy > p,
+.interior-page .guide-hero-copy > p {
+    max-width: 720px;
+    margin: 0;
+    color: #a9a9a9;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 1.7;
+}
+
+/* Shared editorial surfaces. */
+.interior-page .glass-card-v2,
+.interior-page .release-entry,
+.interior-page .guide-module,
+.interior-page .panel-lab,
+.interior-page .guide-path,
+.interior-page .workflow-card,
+.interior-page .step-card,
+.interior-page .key-card,
+.interior-page .feature-card {
+    border: 1px solid #292929;
+    border-radius: 20px;
+    background: #141414;
+    box-shadow: none;
+}
+.interior-page .btn-download,
+.interior-page .btn-plugin,
+.interior-page .release-action,
+.interior-page .lab-jump,
+.interior-page .command-btn,
+.interior-page .social-item-v2 {
+    border: 1px solid #ff9d00 !important;
+    border-radius: 10px !important;
+    color: #0a0a0a !important;
+    background: #ff9d00 !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    box-shadow: none;
+}
+.interior-page .btn-download:hover,
+.interior-page .btn-plugin:hover,
+.interior-page .release-action:hover,
+.interior-page .lab-jump:hover,
+.interior-page .command-btn:hover,
+.interior-page .social-item-v2:hover { color: #0a0a0a !important; background: #ffad28 !important; transform: translateY(-2px); }
+
+/* ABOUT — black hero, white story, dark community, large FAQ. */
+.interior-about .inner-page-main { padding: 0 0 120px; }
+.interior-about .about-grid-v2 {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: clamp(80px, 10vw, 150px) max(22px, calc((100vw - 1240px) / 2));
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    gap: clamp(60px, 8vw, 120px);
+    align-items: center;
+    color: #111;
+    background: #fff;
+}
+.interior-about .about-content-v2 .glass-card-v2 { max-width: none; padding: 0; border: 0; border-radius: 0; color: #111; background: transparent; backdrop-filter: none; }
+.interior-about .about-content-v2 h2 { margin-bottom: 30px !important; color: #111 !important; font-size: clamp(42px, 5vw, 72px) !important; line-height: .98; letter-spacing: -.06em; }
+.interior-about .about-content-v2 p { color: #414141; font-size: 16px; line-height: 1.75; }
+.interior-about .about-content-v2 strong { color: #111; }
+.interior-about .about-content-v2 .glass-card-v2 > div { border: 1px solid #ddd !important; border-radius: 16px !important; background: #f7f7f7 !important; }
+.interior-about .about-content-v2 .glass-card-v2 > div h3 { color: #111 !important; }
+.interior-about .about-links { margin-top: 30px; }
+.interior-about .about-links .social-item-v2:not(:first-child) { color: #111 !important; border-color: #d6d6d6 !important; background: #fff !important; }
+.interior-about .about-visual-v2 { padding: 0; }
+.interior-about .about-visual-v2 img { width: 100%; border-radius: 24px; box-shadow: 0 30px 80px rgba(0,0,0,.16); }
+.interior-about .about-info-grid { display: block; margin-top: 0; }
+.interior-about .community-roots { width: 100vw; max-width: none; margin: 0 0 0 calc(50% - 50vw); padding: clamp(90px, 10vw, 150px) max(22px, calc((100vw - 1240px) / 2)); border: 0; border-radius: 0; background: #0b0b0b; }
+.interior-about .community-roots-heading { max-width: 900px; margin: 0 0 70px; text-align: left; }
+.interior-about .community-roots-kicker { color: #ff9d00; }
+.interior-about .community-roots-heading h2 { margin: 14px 0 22px; color: #fff; font-size: clamp(48px, 6.2vw, 88px); line-height: .95; letter-spacing: -.06em; }
+.interior-about .community-roots-heading p { max-width: 700px; color: #999; font-size: 17px; }
+.interior-about .clover-feature { display: grid; grid-template-columns: 240px 1fr; gap: 70px; align-items: center; padding: 50px; border: 1px solid #303030; border-radius: 22px; background: #151515; }
+.interior-about .clover-portrait-wrap { width: 220px; }
+.interior-about .clover-portrait { width: 82%; border-radius: 50%; }
+.interior-about .clover-copy h3 { font-size: 54px; }
+.interior-about .clover-copy > p { max-width: 700px; color: #aaa; font-size: 15px; }
+.interior-about .clover-values { display: flex; gap: 8px; margin-top: 20px; }
+.interior-about .clover-values span, .interior-about .clover-badge { padding: 8px 12px; border: 1px solid #3a3a3a; border-radius: 999px; color: #ff9d00; background: #1b1b1b; }
+.interior-about .key-contributors { margin-top: 22px; padding: 30px; border: 1px solid #303030; border-radius: 18px; background: #111; }
+.interior-about .key-contributors-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+.interior-about .key-contributor-card { padding: 14px; display: flex; align-items: center; gap: 14px; border: 1px solid #2d2d2d; border-radius: 12px; background: #181818; }
+.interior-about .key-contributor-card img { width: 58px; height: 58px; object-fit: cover; border-radius: 10px; }
+.interior-about .influence-heading { margin: 80px 0 24px; display: flex; justify-content: space-between; align-items: end; gap: 30px; }
+.interior-about .influence-heading h3 { font-size: 42px; }
+.interior-about .influence-heading p { max-width: 420px; color: #888; }
+.interior-about .influence-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+.interior-about .influence-card { padding: 12px; display: flex; align-items: center; gap: 12px; border: 1px solid #292929; border-radius: 14px; background: #141414; }
+.interior-about .influence-card img { width: 54px; height: 54px; object-fit: cover; border-radius: 10px; }
+.interior-about .community-crowd { margin-top: 16px; padding: 28px; border: 1px solid #292929; border-radius: 16px; background: #111; }
+.interior-about .faq-section { max-width: 1080px; margin: 110px auto 0 !important; }
+.interior-about .faq-section > h2 { color: #fff; font-size: clamp(42px, 5vw, 68px) !important; text-align: left !important; }
+.interior-about .faq-accordion { gap: 0; border-top: 1px solid #333; }
+.interior-about .faq-item { margin: 0; border: 0; border-bottom: 1px solid #333; border-radius: 0; background: transparent; }
+.interior-about .faq-question { min-height: 78px; padding: 22px 4px; font-size: 18px; }
+.interior-about .faq-answer { padding: 0 4px; }
+.interior-about .faq-item.open { border-color: #ff9d00; }
+.interior-about .faq-item.open .faq-question, .interior-about .faq-item.open .faq-question i { color: #ff9d00; }
+
+/* CONTACT — one clean white support surface instead of a tiny floating card. */
+.interior-contact .inner-page-main { padding: 0 0 120px; }
+.interior-contact .glass-card-v2 {
+    width: 100vw;
+    max-width: none;
+    min-height: 520px;
+    margin-left: calc(50% - 50vw);
+    padding: clamp(80px, 10vw, 140px) max(22px, calc((100vw - 1100px) / 2));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left !important;
+    color: #111;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+}
+.interior-contact .glass-card-v2 .hero-icon { color: #ff9d00; }
+.interior-contact .glass-card-v2 h2 { color: #111; font-size: clamp(52px, 6vw, 82px) !important; letter-spacing: -.06em; }
+.interior-contact .glass-card-v2 > p { margin: 20px 0 40px !important; color: #555 !important; font-size: 17px; text-align: left; }
+.interior-contact .glass-card-v2 > div { justify-content: flex-start !important; }
+
+/* LICENSES — large intro, white three-column explanation, clear privacy footer. */
+.interior-licenses .licenses-main { padding: 0 0 100px; }
+.interior-licenses .license-info-section { width: min(100% - 44px,1320px); min-height: 540px; margin: 0 auto !important; padding: 100px 0; display: flex; align-items: center; text-align: left !important; }
+.interior-licenses .license-info-section .glass-card-v2 { max-width: 920px !important; margin: 0 !important; padding: 0 !important; border: 0; background: transparent; }
+.interior-licenses .license-info-section h2 { margin-bottom: 30px !important; color: #fff !important; font-size: clamp(58px, 7vw, 96px) !important; line-height: .92; letter-spacing: -.07em; }
+.interior-licenses .license-info-section p { max-width: 760px; color: #aaa !important; font-size: 17px !important; line-height: 1.75 !important; }
+.interior-licenses .licensing-section { width: 100%; max-width: none; padding: clamp(90px,10vw,150px) max(22px,calc((100vw - 1240px)/2)); color: #111; background: #fff; }
+.interior-licenses .licensing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; }
+.interior-licenses .license-card { min-height: 370px; padding: 45px 36px; color: #111; border: 0; border-right: 1px solid #ddd; border-radius: 0; background: #fff; }
+.interior-licenses .license-card:last-child { border-right: 0; }
+.interior-licenses .license-card:hover { transform: none; box-shadow: none; }
+.interior-licenses .license-icon { width: 52px; height: 52px; margin-bottom: 70px; display: grid; place-items: center; border-radius: 12px; color: #111; background: #ff9d00; }
+.interior-licenses .license-card h3 { margin-bottom: 18px; color: #111; font-size: 30px; }
+.interior-licenses .license-card p { color: #555; font-size: 14px; line-height: 1.7; }
+.interior-licenses .cta-section { padding: 100px 22px 60px !important; }
+.interior-licenses .cta-section h2 { font-size: 52px !important; }
+.interior-licenses .privacy-section { max-width: 1100px; margin-top: 60px !important; padding: 60px 0 !important; }
+.interior-licenses .privacy-section h2 { font-size: 42px; }
+
+/* ECOSYSTEM — generous hero, useful search, editorial cards. */
+.interior-ecosystem .inner-page-main { padding: 0 0 130px; }
+.interior-ecosystem .ecosystem-browser { margin: 0 0 34px; padding: 18px; display: flex; align-items: center; justify-content: space-between; border: 1px solid #2b2b2b; border-radius: 16px; background: #121212; }
+.interior-ecosystem .ecosystem-search { width: min(100%,520px); border-radius: 10px; }
+.interior-ecosystem .ecosystem-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+.interior-ecosystem .plugin-card { overflow: hidden; display: flex; flex-direction: column; border: 1px solid #ddd; border-radius: 18px; color: #111; background: #fff; box-shadow: none; }
+.interior-ecosystem .plugin-card:hover { transform: translateY(-4px); box-shadow: 0 22px 55px rgba(0,0,0,.22); }
+.interior-ecosystem .plugin-cover { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: #ececec; }
+.interior-ecosystem .plugin-info { padding: 28px; display: flex; flex-direction: column; flex: 1; }
+.interior-ecosystem .plugin-title { color: #111; font-size: 29px; letter-spacing: -.04em; }
+.interior-ecosystem .plugin-desc { color: #555; font-size: 13px; line-height: 1.65; }
+.interior-ecosystem .plugin-creator { margin-top: auto; color: #666; }
+.interior-ecosystem .btn-plugin { margin-top: 22px; }
+
+/* UPDATES — retain every release note but use a readable editorial timeline. */
+.interior-releases .releases-main { padding-top: 0; }
+.interior-releases .releases-hero { width: min(100% - 44px,1320px); margin: 0 auto; display: grid; grid-template-columns: 1fr .9fr; align-items: center; gap: 70px; }
+.interior-releases .releases-hero-copy { align-self: center; }
+.interior-releases .release-timeline { width: 100%; max-width: none; padding: clamp(90px,10vw,150px) max(22px,calc((100vw - 1240px)/2)); color: #111; background: #fff; }
+.interior-releases .release-entry { margin-bottom: 28px; padding: clamp(34px,5vw,64px); color: #111; border: 1px solid #ddd; border-radius: 22px; background: #fff; }
+.interior-releases .release-entry h2, .interior-releases .release-entry h3 { color: #111; }
+.interior-releases .release-entry p, .interior-releases .release-entry li { color: #555; }
+.interior-releases .release-entry-featured { border-color: #ff9d00; box-shadow: 0 22px 60px rgba(255,157,0,.09); }
+.interior-releases .release-marker, .interior-releases .release-status-pill, .interior-releases .release-badge { color: #111; border-color: #ff9d00; background: #ff9d00; }
+.interior-releases .release-action { display: inline-flex; }
+
+/* GUIDE — same hierarchy, less dashboard chrome. */
+.interior-guide .guide-main { padding-top: 0; }
+.interior-guide .guide-hero { width: min(100% - 44px,1320px); margin: 0 auto; }
+.interior-guide .guide-paths { padding: 40px max(22px,calc((100vw - 1240px)/2)) 100px; grid-template-columns: repeat(3,1fr); }
+.interior-guide .guide-path { min-height: 220px; padding: 30px; }
+.interior-guide .guide-path-number, .interior-guide .guide-eyebrow, .interior-guide .module-kicker { color: #ff9d00; }
+.interior-guide .panel-lab { width: min(100% - 44px,1240px); margin: 0 auto 100px; border-radius: 22px; }
+.interior-guide .guide-layout { width: min(100% - 44px,1320px); margin: 0 auto; }
+.interior-guide .guide-module { margin-bottom: 24px; border-radius: 20px; }
+.interior-guide .module-icon { color: #111; border-color: #ff9d00; background: #ff9d00; }
+
+/* Footer is quiet and consistent everywhere. */
+.interior-page .site-footer { border-top: 1px solid #262626; background: #070707; }
+.interior-page .footer-logo { color: #fff; letter-spacing: -.04em; text-transform: none; }
+.interior-page .footer-logo i, .interior-page .social-links a:hover, .interior-page .footer-nav a:hover, .interior-page .footer-support a:hover { color: #ff9d00; }
+
+@media (max-width: 980px) {
+    .interior-page > header { min-height: 66px; padding: 0 20px; }
+    .interior-page > header .logo { font-size: 19px; }
+    .interior-page > header .header-logo { width: 30px !important; height: 30px !important; }
+    .interior-about .about-grid-v2, .interior-releases .releases-hero { grid-template-columns: 1fr; }
+    .interior-about .about-visual-v2 { order: -1; max-width: 640px; }
+    .interior-about .clover-feature { grid-template-columns: 1fr; }
+    .interior-about .influence-grid { grid-template-columns: repeat(2,1fr); }
+    .interior-licenses .licensing-grid, .interior-ecosystem .ecosystem-grid, .interior-guide .guide-paths { grid-template-columns: 1fr 1fr; }
+    .interior-licenses .license-card { border-right: 0; border-bottom: 1px solid #ddd; }
+}
+
+@media (max-width: 640px) {
+    .interior-page .container { width: min(100% - 32px,1320px); }
+    .interior-page .page-header-v2, .interior-page .releases-hero, .interior-page .guide-hero { min-height: 480px; padding: 75px 0; }
+    .interior-page .page-header-v2 h1, .interior-page .releases-hero h1, .interior-page .guide-hero h1 { font-size: 52px; }
+    .interior-about .about-grid-v2, .interior-about .community-roots, .interior-contact .glass-card-v2, .interior-licenses .licensing-section, .interior-releases .release-timeline { padding-left: 20px; padding-right: 20px; }
+    .interior-about .about-content-v2 h2 { font-size: 44px !important; }
+    .interior-about .clover-feature { padding: 28px 20px; }
+    .interior-about .key-contributors-grid, .interior-about .influence-grid, .interior-licenses .licensing-grid, .interior-ecosystem .ecosystem-grid, .interior-guide .guide-paths { grid-template-columns: 1fr; }
+    .interior-about .influence-heading { display: block; }
+    .interior-contact .glass-card-v2 h2 { font-size: 48px !important; }
+    .interior-licenses .license-info-section { min-height: 500px; width: calc(100% - 40px); }
+    .interior-licenses .license-info-section h2 { font-size: 54px !important; }
+    .interior-ecosystem .ecosystem-browser { align-items: stretch; flex-direction: column; gap: 12px; }
+    .interior-guide .guide-layout { width: calc(100% - 28px); }
+}
+
+/* =========================================================
+   Precision pass: compact editorial layout and full-bleed light
+   ========================================================= */
+
+/* Match Index navigation exactly on every interior page. */
+.interior-page > header {
+    height: 74px;
+    min-height: 74px;
+    padding: 0 clamp(22px, 4vw, 66px);
+}
+.interior-page > header .free-badge { top: 35px; font-size: 11px; padding: 4px 10px; }
+
+/* Heroes must paint the whole viewport; the copy stays aligned to 1240px. */
+.interior-about .page-header-v2,
+.interior-ecosystem .page-header-v2,
+.interior-contact .page-header-v2,
+.interior-releases .releases-hero,
+.interior-guide .guide-hero {
+    width: 100vw;
+    min-height: 410px;
+    margin: 0 0 0 calc(50% - 50vw);
+    padding: 72px max(22px, calc((100vw - 1240px) / 2));
+    overflow: visible;
+    background: radial-gradient(ellipse 70% 85% at 24% 18%, #202020 0%, #111 48%, #090909 78%);
+}
+.interior-page .page-header-v2 h1,
+.interior-page .releases-hero h1,
+.interior-page .guide-hero h1 { font-size: clamp(56px, 6.5vw, 88px); }
+
+/* About: fewer containers, denser reading rhythm. */
+.interior-about .about-grid-v2 { padding-top: 64px; padding-bottom: 64px; gap: 64px; }
+.interior-about .about-content-v2 h2 { margin-bottom: 22px !important; font-size: clamp(40px, 4.2vw, 58px) !important; }
+.interior-about .about-content-v2 p { font-size: 14px; line-height: 1.65; }
+.interior-about .about-content-v2 .glass-card-v2 > div { margin-bottom: 18px !important; padding: 18px !important; }
+.interior-about .about-content-v2 .glass-card-v2 > div img { width: 52px !important; height: 52px !important; }
+.interior-about .about-visual-v2 img { max-height: 430px; object-fit: cover; }
+.interior-about .community-roots { padding-top: 68px; padding-bottom: 68px; overflow: visible; }
+.interior-about .community-roots-heading { margin-bottom: 40px; }
+.interior-about .community-roots-heading h2 { max-width: 820px; font-size: clamp(44px, 5.1vw, 68px); line-height: .98; }
+.interior-about .community-roots-heading p { font-size: 15px; }
+.interior-about .clover-feature { grid-template-columns: 160px 1fr; gap: 42px; padding: 28px; }
+.interior-about .clover-portrait-wrap { width: 150px; height: 150px; aspect-ratio: 1 / 1; }
+.interior-about .clover-portrait {
+    width: 132px;
+    height: 132px;
+    aspect-ratio: 1 / 1;
+    display: block;
+    object-fit: cover;
+    border-radius: 50% !important;
+}
+.interior-about .clover-copy h3 { font-size: 40px; }
+.interior-about .clover-copy > p { font-size: 13px; }
+.interior-about .key-contributors { margin-top: 14px; padding: 22px 0 0; border: 0; border-radius: 0; border-top: 1px solid #292929; background: transparent; }
+.interior-about .influence-heading { margin-top: 48px; }
+.interior-about .influence-heading h3 { font-size: 34px; }
+.interior-about .community-crowd { padding: 20px; }
+
+/* About FAQ now follows the same two-column shell used on LuckySuite. */
+.interior-about .faq-section {
+    max-width: 1180px;
+    margin: 64px auto 0 !important;
+    padding: 56px;
+    display: grid;
+    grid-template-columns: .58fr 1.42fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 72px;
+    align-items: start;
+    border-radius: 28px;
+    background: #151515;
+}
+.interior-about .faq-section > h2 {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0 !important;
+    color: #fff;
+    font-size: clamp(56px, 6vw, 78px) !important;
+    line-height: .92;
+    text-align: left !important;
+    letter-spacing: -.06em;
+}
+.interior-about .faq-section-intro { grid-column: 1; grid-row: 2; max-width: 280px; margin: 24px 0 0; color: #888; font-size: 13px; line-height: 1.7; }
+.interior-about .faq-accordion { grid-column: 2; grid-row: 1 / span 2; border-top: 1px solid #343434; }
+.interior-about .faq-item { border-bottom: 1px solid #343434; }
+.interior-about .faq-question { min-height: 68px; padding: 18px 2px; font-size: 16px; }
+.interior-about .faq-answer p { padding: 0 0 22px; color: #999; font-size: 13px; line-height: 1.65; }
+
+/* Updates: restrained metadata and a clear support strip. */
+.interior-releases .releases-hero { grid-template-columns: 1fr .88fr; gap: 58px; }
+.interior-releases .releases-hero h1 span {
+    display: block;
+    margin-top: 16px;
+    color: #ff9d00 !important;
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: 1;
+    letter-spacing: -.03em;
+    white-space: normal;
+}
+.interior-releases .release-status-row { justify-content: flex-start; gap: 8px; margin-top: 22px; }
+.interior-releases .release-status-pill {
+    padding: 8px 11px;
+    border: 1px solid #303030;
+    border-radius: 8px;
+    color: #aaa;
+    background: #151515;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: .04em;
+}
+.interior-releases .release-status-pill i { color: #ff9d00; }
+.interior-releases .release-update-help {
+    max-width: 610px;
+    margin-top: 14px;
+    padding: 14px 16px;
+    justify-content: flex-start;
+    border: 0;
+    border-radius: 10px;
+    color: #555;
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+}
+.interior-releases .release-update-help i,
+.interior-releases .release-update-help a { color: #111; }
+.interior-releases .release-update-help a { text-decoration: underline; text-decoration-color: #ff9d00; text-underline-offset: 3px; }
+.interior-releases .release-preview-video { border-color: #292929; box-shadow: 0 18px 50px rgba(0,0,0,.32); }
+.interior-releases .release-timeline { padding-top: 64px; padding-bottom: 64px; }
+.interior-releases .release-timeline {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding-left: max(22px, calc((100vw - 1240px) / 2));
+    padding-right: max(22px, calc((100vw - 1240px) / 2));
+}
+.interior-releases .release-entry { margin-bottom: 16px; padding: 30px; }
+.interior-releases .release-badge {
+    padding: 6px 9px;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    background: #111;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: .08em;
+}
+.interior-releases .release-marker { width: 9px; height: 9px; background: #ff9d00; }
+.interior-releases #releaseHeroVideoToggle {
+    right: 12px !important;
+    width: 42px !important;
+    height: 42px !important;
+    border: 1px solid #4a4a4a !important;
+    color: #ff9d00 !important;
+    background: #151515 !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.35) !important;
+}
+.interior-releases #releaseHeroVideoToggle .release-hero-toggle-label {
+    bottom: calc(100% + 8px) !important;
+    padding: 7px 10px !important;
+    border: 1px solid #393939 !important;
+    border-radius: 7px !important;
+    color: #bbb !important;
+    background: #111 !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,.32) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 9px !important;
+}
+
+/* Licenses: remove the empty vertical bands. */
+.interior-licenses .license-info-section {
+    width: 100vw;
+    min-height: 340px;
+    margin: 0 0 0 calc(50% - 50vw) !important;
+    padding: 58px max(22px, calc((100vw - 1240px) / 2));
+    background: radial-gradient(ellipse 62% 100% at 23% 15%, #1c1c1c, #090909 72%);
+}
+.interior-licenses .license-info-section h2 { font-size: clamp(48px, 5.2vw, 70px) !important; }
+.interior-licenses .license-info-section p { max-width: 680px; font-size: 14px !important; }
+.interior-licenses .licensing-section { padding-top: 56px; padding-bottom: 56px; }
+.interior-licenses .license-card { min-height: 245px; padding: 26px 30px; }
+.interior-licenses .license-icon { margin-bottom: 30px; }
+.interior-licenses .license-card h3 { font-size: 24px; }
+.interior-licenses .license-card p { font-size: 12px; }
+.interior-licenses .cta-section { padding: 58px 22px 30px !important; }
+.interior-licenses .cta-section h2 { font-size: 38px !important; }
+.interior-licenses .privacy-section { margin-top: 28px !important; padding: 34px 0 !important; }
+
+/* Guide: separate the title, reduce chapter chrome and close excess gaps. */
+.interior-guide .guide-hero { min-height: 440px; }
+.interior-guide .guide-main { padding-bottom: 32px; }
+.interior-guide .guide-hero h1 { margin-bottom: 24px; }
+.interior-guide .guide-hero h1 span {
+    display: block;
+    margin-top: 14px;
+    color: #ff9d00 !important;
+    font-size: clamp(28px, 3.3vw, 42px);
+    line-height: 1;
+    letter-spacing: -.04em;
+    white-space: normal;
+}
+.interior-guide .guide-hero-copy { max-width: 760px; font-size: 16px; }
+.interior-guide .guide-hero-meta { margin-top: 20px; }
+.interior-guide .guide-command { margin-top: 20px; }
+.interior-guide .guide-paths { padding-top: 30px; padding-bottom: 54px; }
+.interior-guide .guide-path { min-height: 155px; padding: 22px; }
+.interior-guide .panel-lab { margin-bottom: 54px; }
+.interior-guide .manual-introduction { margin-bottom: 24px; padding: 22px 0; }
+.interior-guide .guide-layout { gap: 30px; }
+.interior-guide .guide-module { margin-bottom: 24px; }
+.interior-guide .module-head { padding: 24px 0 18px; }
+.interior-guide .module-head h2 { font-size: clamp(30px, 4vw, 38px); }
+.interior-guide .module-head p { font-size: 14px; line-height: 1.55; }
+.interior-guide .best-for { margin-top: 12px; padding: 8px 12px; }
+.interior-guide .best-for span { font-size: 12px; }
+.interior-guide .module-body { padding-top: 18px; }
+.interior-guide .quick-start-title h3,
+.interior-guide .feature-block h3,
+.interior-guide .guide-details summary h3 { font-size: 18px; }
+.interior-guide .step-card { padding: 10px 0; }
+.interior-guide .step-card strong { font-size: 14px; }
+.interior-guide .step-card p, .interior-guide .feature-card p { font-size: 12px; line-height: 1.55; }
+.interior-guide .feature-card { padding: 16px; }
+.interior-guide .guide-details summary { padding: 18px 0 9px; }
+.interior-guide .details-content { padding-bottom: 18px; font-size: 13px; line-height: 1.62; }
+.interior-guide .workflow-section { margin-top: 32px; padding-top: 24px; padding-bottom: 18px; }
+
+/* Ecosystem cards: consistent image boxes prevent narrow, runaway artwork. */
+.interior-ecosystem .ecosystem-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; align-items: stretch; }
+.interior-ecosystem .plugin-card { min-width: 0; width: 100%; }
+.interior-ecosystem .plugin-cover { width: 100% !important; height: auto !important; max-height: 250px; aspect-ratio: 16 / 10; object-fit: cover !important; }
+.interior-ecosystem .plugin-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; max-height: 130px; overflow: hidden; }
+.interior-ecosystem .plugin-gallery img { width: 100%; height: 130px; object-fit: cover; }
+.interior-ecosystem .plugin-info { padding: 22px; }
+.interior-ecosystem .plugin-title { font-size: 24px; }
+
+/* One compact footer for every tab — roughly a quarter of the former height. */
+.interior-page .site-footer { margin-top: 0; }
+.interior-page .footer-glow { display: none; }
+.interior-page .footer-bottom { padding: 38px 0 18px; border-top: 1px solid #242424; background: #070707; backdrop-filter: none; }
+.interior-page .footer-content {
+    grid-template-columns: 1.2fr .9fr .55fr;
+    gap: 38px;
+    margin-bottom: 18px;
+    padding-bottom: 24px;
+    text-align: left;
+}
+.interior-page .footer-logo { margin-bottom: 10px; justify-content: flex-start; font-size: 20px; }
+.interior-page .footer-brand p { max-width: 360px; margin: 0 0 14px; font-size: 12px; line-height: 1.5; }
+.interior-page .social-links { justify-content: flex-start; gap: 8px; }
+.interior-page .social-links a { width: 34px; height: 34px; border-radius: 8px; font-size: 14px; }
+.interior-page .footer-nav h4,
+.interior-page .footer-support h4 { margin-bottom: 12px; font-size: 11px; }
+.interior-page .footer-nav ul { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; }
+.interior-page .footer-nav li,
+.interior-page .footer-support li { margin: 0; }
+.interior-page .footer-nav a,
+.interior-page .footer-support a { font-size: 11px; }
+.interior-page .footer-copyright { font-size: 9px; }
+
+@media (max-width: 980px) {
+    .interior-releases .releases-hero { grid-template-columns: 1fr; }
+    .interior-about .faq-section { grid-template-columns: 1fr; row-gap: 26px; padding: 38px; }
+    .interior-about .faq-section-intro { grid-row: 2; }
+    .interior-about .faq-accordion { grid-column: 1; grid-row: 3; }
+    .interior-ecosystem .ecosystem-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 768px) {
+    .interior-page > header { height: 66px; min-height: 66px; }
+    .interior-about .page-header-v2,
+    .interior-ecosystem .page-header-v2,
+    .interior-contact .page-header-v2,
+    .interior-releases .releases-hero,
+    .interior-guide .guide-hero { min-height: 360px; padding: 55px 20px; }
+    .interior-about .clover-feature { grid-template-columns: 1fr; }
+    .interior-ecosystem .ecosystem-grid { grid-template-columns: 1fr !important; }
+    .interior-page .footer-content { grid-template-columns: 1fr; gap: 24px; }
+}
+
+@media (max-width: 560px) {
+    .interior-about .faq-section { padding: 30px 20px; border-radius: 20px; }
+    .interior-about .faq-section > h2 { font-size: 52px !important; }
+    .interior-licenses .licensing-section { padding-top: 34px; padding-bottom: 34px; }
+    .interior-licenses .license-card { min-height: 0; padding: 24px 0; }
+    .interior-guide .guide-hero h1 { font-size: 50px; }
+}
+
+/* =========================================================
+   Shared cleanup pass — identical navigation, tighter endings
+   ========================================================= */
+
+/* The generic .container rule must never constrain the navigation bar. */
+.interior-page > header.container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 clamp(22px, 4vw, 66px) !important;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+.interior-page > header.container nav { margin-left: auto; }
+.interior-page > header.container .nav-eco-link > a {
+    color: #aaa !important;
+}
+.interior-page > header.container .nav-eco-link > a:hover,
+.interior-page > header.container .nav-eco-link > a:focus-visible { color: #fff !important; }
+
+/* Contact: the white support surface now meets the footer directly. */
+.interior-contact .inner-page-main { padding-bottom: 0 !important; }
+.interior-contact .glass-card-v2 { margin-bottom: 0 !important; }
+
+/* Licenses: useful information and the creator video share the opening row. */
+.interior-licenses .licenses-main { padding-bottom: 0; }
+.interior-licenses .license-info-section {
+    min-height: 430px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+.interior-licenses .license-info-grid {
+    width: min(100%, 1240px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, .82fr);
+    gap: clamp(44px, 7vw, 96px);
+    align-items: center;
+}
+.interior-licenses .license-info-copy { text-align: left; }
+.interior-licenses .license-eyebrow {
+    display: block;
+    margin-bottom: 18px;
+    color: #ff9d00;
+    font: 800 11px/1 'Inter', sans-serif;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+.interior-licenses .license-info-copy h1 {
+    max-width: 650px;
+    margin: 0 0 24px;
+    color: #fff;
+    font: 700 clamp(52px, 6vw, 82px)/.91 'Outfit', sans-serif;
+    letter-spacing: -.065em;
+}
+.interior-licenses .license-info-copy p {
+    max-width: 620px;
+    margin: 0;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+.interior-licenses .license-info-copy a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    font-weight: 750;
+    text-decoration: underline;
+    text-decoration-color: #ff9d00;
+    text-underline-offset: 3px;
+}
+.interior-licenses .license-info-copy a i { color: #ffcf45; }
+.interior-licenses .license-video-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 255px;
+    display: block;
+    border: 1px solid #313131;
+    border-radius: 18px;
+    color: #fff;
+    background: #151515;
+    box-shadow: 0 22px 55px rgba(0,0,0,.32);
+}
+.interior-licenses .license-video-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 34%, rgba(0,0,0,.9) 100%);
+}
+.interior-licenses .license-video-card > img {
+    width: 100%;
+    height: 100%;
+    min-height: 255px;
+    display: block;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+.interior-licenses .license-video-card:hover > img { transform: scale(1.025); }
+.interior-licenses .license-video-play {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    z-index: 2;
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #090909;
+    background: #ff9d00;
+    transform: translate(-50%, -50%);
+}
+.interior-licenses .license-video-caption {
+    position: absolute;
+    z-index: 2;
+    right: 22px;
+    bottom: 20px;
+    left: 22px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+}
+.interior-licenses .license-video-caption small { color: #bbb; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
+.interior-licenses .license-video-caption strong { font-size: 13px; white-space: nowrap; }
+.interior-licenses .licensing-section { padding-top: 50px; padding-bottom: 50px; }
+.interior-licenses .license-card { min-height: 228px; }
+
+/* Updates: an editorial changelog with no uncontrolled media or loose portraits. */
+.interior-releases .releases-hero {
+    grid-template-columns: minmax(0, 760px);
+    justify-content: start;
+}
+.interior-releases .releases-hero-copy { max-width: 760px; }
+.interior-releases .release-timeline {
+    display: grid;
+    gap: 14px;
+}
+.interior-releases .release-entry { margin-bottom: 0; overflow: hidden; }
+.interior-releases .release-version-preview,
+.interior-releases .release-community-avatars { display: none !important; }
+.interior-releases .release-103-spotlights,
+.interior-releases .release-detail-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+.interior-releases .release-spotlight,
+.interior-releases .release-major-group,
+.interior-releases .release-note-group {
+    min-width: 0;
+    margin: 0;
+    padding: 22px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+.interior-releases .release-spotlight-kicker {
+    margin-bottom: 10px;
+    color: #ff8d00;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+.interior-releases .release-spotlight h3 { margin: 0 0 10px; font-size: 20px; line-height: 1.2; }
+.interior-releases .release-spotlight > p { margin: 0; font-size: 13px; line-height: 1.6; }
+.interior-releases .release-effect-chips { margin: 16px 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.interior-releases .release-effect-chips span {
+    padding: 6px 9px;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    color: #444;
+    background: #fafafa;
+    font-size: 10px;
+}
+.interior-releases .release-ultra-key,
+.interior-releases .release-busco-link,
+.interior-releases .release-tracking-grid > div {
+    margin-top: 14px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    color: #333;
+    background: #fafafa;
+}
+.interior-releases .release-busco-link {
+    align-items: flex-start;
+    text-decoration: none;
+}
+.interior-releases .release-busco-link:hover,
+.interior-releases .release-busco-link:focus-visible { text-decoration: none; }
+.interior-releases .release-busco-avatar {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    object-fit: cover;
+    border: 1px solid rgba(255,157,0,.42);
+    border-radius: 50%;
+}
+.interior-releases .release-community-copy { min-width: 0; }
+.interior-releases .release-ultra-key-icon { flex: 0 0 30px; color: #ff8d00; }
+.interior-releases .release-ultra-key span,
+.interior-releases .release-ultra-key strong,
+.interior-releases .release-community-copy small,
+.interior-releases .release-community-copy strong { display: block; }
+.interior-releases .release-ultra-key span,
+.interior-releases .release-community-copy small { margin-bottom: 4px; color: #777; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; }
+.interior-releases .release-ultra-key p,
+.interior-releases .release-community-copy em { display: block; margin-top: 6px; color: #666; font-size: 11px; line-height: 1.55; font-style: normal; }
+.interior-releases .release-busco-link > i { margin-left: auto; color: #111; }
+.interior-releases .release-tracking-grid { margin-top: 14px; display: grid; gap: 8px; }
+.interior-releases .release-tracking-grid > div { margin-top: 0; align-items: flex-start; }
+.interior-releases .release-tracking-grid i { color: #ff8d00; }
+.interior-releases .release-tracking-grid strong,
+.interior-releases .release-tracking-grid span { display: block; }
+.interior-releases .release-tracking-grid strong { color: #222; font-size: 12px; }
+.interior-releases .release-tracking-grid span { margin-top: 3px; color: #666; font-size: 11px; line-height: 1.45; }
+.interior-releases .release-notes ul { margin-top: 12px; padding-left: 18px; }
+.interior-releases .release-notes li { margin-bottom: 8px; font-size: 12px; line-height: 1.55; }
+
+@media (max-width: 880px) {
+    .interior-licenses .license-info-grid,
+    .interior-releases .release-103-spotlights,
+    .interior-releases .release-detail-columns { grid-template-columns: 1fr; }
+    .interior-licenses .license-video-card { min-height: 230px; }
+}
+
+@media (max-width: 768px) {
+    .interior-page > header.container { padding: 0 18px !important; }
+    .interior-licenses .license-info-section { padding-top: 50px; padding-bottom: 50px; }
+    .interior-licenses .license-info-copy h1 { font-size: 50px; }
+    .interior-licenses .license-video-caption { align-items: flex-start; flex-direction: column; gap: 5px; }
+}
+
+/* =========================================================
+   V2-informed refinement: compact licenses, dark updates,
+   and a guide that never overflows the viewport.
+   ========================================================= */
+
+/* Remove the inherited 8vh space between the license sections. */
+.interior-licenses .licenses-main {
+    gap: 0 !important;
+}
+.interior-licenses .licensing-section {
+    padding-top: 28px;
+    padding-bottom: 32px;
+}
+.interior-licenses .licensing-grid {
+    margin-top: 0 !important;
+}
+.interior-licenses .license-card {
+    min-height: 210px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+.interior-licenses .license-icon {
+    margin-bottom: 22px;
+}
+
+/* Give the video about ten percent more presence and align it farther right. */
+.interior-licenses .license-info-grid {
+    width: min(100%, 1320px);
+    grid-template-columns: minmax(0, 1.1fr) minmax(420px, .9fr);
+    gap: clamp(48px, 6vw, 88px);
+}
+.interior-licenses .license-video-card {
+    width: 110%;
+    max-width: 610px;
+    min-height: 280px;
+    justify-self: end;
+}
+.interior-licenses .license-video-card > img {
+    min-height: 280px;
+}
+
+/* Updates: preserve the V2 hierarchy inside restrained black cards. */
+.interior-releases .release-timeline {
+    max-width: none;
+    padding-top: 58px;
+    padding-bottom: 58px;
+    background: #f4f4f2;
+}
+.interior-releases .release-entry {
+    padding: clamp(24px, 3vw, 36px);
+    color: #fff;
+    border: 1px solid #2b2b2b;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #171717, #090909 74%);
+    box-shadow: 0 18px 48px rgba(0,0,0,.16);
+}
+.interior-releases .release-entry + .release-entry { margin-top: 0; }
+.interior-releases .release-entry-featured {
+    border-color: rgba(255,157,0,.72);
+    box-shadow: 0 20px 56px rgba(255,157,0,.12);
+}
+.interior-releases .release-entry::before {
+    background: rgba(117,103,255,.08);
+}
+.interior-releases .release-entry-header {
+    padding-right: 52px;
+    padding-bottom: 20px;
+    border-bottom-color: rgba(255,255,255,.1);
+}
+.interior-releases .release-entry:not([open]) .release-entry-header { padding-bottom: 0; }
+.interior-releases .release-entry-header::after {
+    border-color: #343434;
+    color: #ff9d00;
+    background: #151515;
+}
+.interior-releases .release-entry h2,
+.interior-releases .release-entry h3,
+.interior-releases .release-entry strong { color: #fff; }
+.interior-releases .release-entry p,
+.interior-releases .release-entry li { color: #b8b8b8; }
+.interior-releases .release-subtitle { max-width: 1080px; }
+.interior-releases .release-badge {
+    color: #0a0a0a;
+    background: #ff9d00;
+}
+.interior-releases .release-badge-muted {
+    border: 1px solid #3b3b3b;
+    color: #ddd;
+    background: #1d1d1d;
+}
+.interior-releases .release-notes {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 36px;
+    padding-top: 24px;
+}
+.interior-releases .release-103-spotlights {
+    grid-column: 1 / -1;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, .75fr);
+    gap: 16px;
+}
+.interior-releases .release-detail-columns {
+    grid-column: 1 / -1;
+    gap: 36px;
+}
+.interior-releases .release-detail-column {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 18px;
+}
+.interior-releases .release-spotlight {
+    position: relative;
+    overflow: hidden;
+    padding: 22px;
+    border: 1px solid #303030;
+    border-radius: 16px;
+    background: #121212;
+}
+.interior-releases .release-spotlight-effects {
+    border-color: rgba(255,157,0,.38);
+    background: linear-gradient(145deg, rgba(255,157,0,.11), rgba(117,103,255,.06) 52%, #0d0d0d);
+}
+.interior-releases .release-spotlight-kicker { color: #ffb437; }
+.interior-releases .release-spotlight h3 { color: #fff; }
+.interior-releases .release-spotlight > p { color: #c1c1c1; }
+.interior-releases .release-effect-chips span {
+    border-color: rgba(255,157,0,.3);
+    color: #ffd88c;
+    background: rgba(255,157,0,.08);
+}
+.interior-releases .release-ultra-key,
+.interior-releases .release-busco-link,
+.interior-releases .release-tracking-grid > div {
+    border-color: #333;
+    color: #ddd;
+    background: rgba(255,255,255,.035);
+}
+.interior-releases .release-ultra-key p,
+.interior-releases .release-community-copy em,
+.interior-releases .release-tracking-grid span { color: #aaa; }
+.interior-releases .release-community-copy small,
+.interior-releases .release-tracking-grid i { color: #ffb437; }
+.interior-releases .release-busco-link > i,
+.interior-releases .release-tracking-grid strong { color: #fff; }
+.interior-releases .release-major-group {
+    grid-column: 1 / -1;
+    padding: 18px 0 18px 20px;
+    border: 0;
+    border-left: 3px solid #7567ff;
+    border-radius: 0;
+    background: linear-gradient(90deg, rgba(117,103,255,.12), transparent 70%);
+}
+.interior-releases .release-major-group.release-103-highlights {
+    border-left-color: #ff9d00;
+    background: linear-gradient(90deg, rgba(255,157,0,.12), transparent 70%);
+}
+.interior-releases .release-note-group {
+    padding: 18px 0;
+    border-top-color: #2e2e2e;
+}
+.interior-releases .release-note-group li::before { background: #7567ff; }
+/* Guide: use its intended 1120px reading width and force every module to wrap. */
+.interior-guide .guide-main > .container {
+    width: min(calc(100% - 40px), 1120px);
+    max-width: 1120px;
+    overflow: visible;
+}
+.interior-guide .guide-layout {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 30px;
+}
+.interior-guide .guide-modules,
+.interior-guide .guide-module,
+.interior-guide .module-head,
+.interior-guide .module-head > div,
+.interior-guide .module-body,
+.interior-guide .feature-grid,
+.interior-guide .feature-card,
+.interior-guide .details-content {
+    min-width: 0;
+    max-width: 100%;
+}
+.interior-guide .guide-module {
+    overflow: hidden;
+}
+.interior-guide .module-head p,
+.interior-guide .module-body p,
+.interior-guide .module-body li,
+.interior-guide .details-content {
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+@media (max-width: 980px) {
+    .interior-licenses .license-info-grid { grid-template-columns: 1fr; }
+    .interior-licenses .license-video-card { width: 100%; max-width: 680px; justify-self: start; }
+    .interior-releases .release-103-spotlights,
+    .interior-releases .release-detail-columns,
+    .interior-releases .release-notes { grid-template-columns: 1fr; }
+    .interior-guide .guide-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .interior-licenses .licensing-section { padding-top: 18px; padding-bottom: 20px; }
+    .interior-licenses .license-video-card,
+    .interior-licenses .license-video-card > img { min-height: 225px; }
+    .interior-releases .release-entry { padding: 22px 18px; }
+    .interior-guide .guide-main > .container { width: calc(100% - 28px); }
+}
+
+/* =========================================================
+   Media restoration and final spacing corrections
+   ========================================================= */
+
+/* Contact: keep the white section, but start its content immediately. */
+.interior-contact .glass-card-v2 {
+    min-height: 0;
+    padding-top: 58px;
+    padding-bottom: 66px;
+    justify-content: flex-start;
+}
+.interior-contact .glass-card-v2 .hero-icon {
+    margin-bottom: 14px !important;
+}
+.interior-contact .glass-card-v2 h2 {
+    margin-bottom: 10px !important;
+}
+
+/* Current update: video returns to the right of the release summary. */
+.interior-releases .releases-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(420px, .9fr);
+    gap: clamp(48px, 6vw, 84px);
+    align-items: center;
+}
+.interior-releases .releases-hero-video {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    justify-self: end;
+    overflow: visible;
+    border: 1px solid #303030;
+    border-radius: 18px;
+    background: #111;
+    box-shadow: 0 24px 64px rgba(0,0,0,.42);
+}
+.interior-releases .release-hero-preview-video .release-hero-media {
+    border-radius: 18px !important;
+}
+
+/* Previous versions: compact local previews sit beside their highlights. */
+.interior-releases .release-version-preview {
+    display: block !important;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100% !important;
+    max-width: 440px !important;
+    aspect-ratio: 16 / 9 !important;
+    margin: 0 0 0 auto !important;
+    overflow: hidden;
+    align-self: start;
+    border: 1px solid #333;
+    border-radius: 14px;
+    background: #050505;
+    box-shadow: 0 14px 36px rgba(0,0,0,.32);
+}
+.interior-releases .release-version-preview video {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    object-fit: contain !important;
+    background: #000;
+}
+.interior-releases .release-entry-has-video .release-notes {
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+    align-items: start;
+}
+.interior-releases .release-entry-has-video .release-major-group {
+    grid-column: 1;
+    grid-row: 1;
+}
+.interior-releases .release-entry-has-video .release-detail-columns {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 980px) {
+    .interior-releases .releases-hero { grid-template-columns: 1fr; }
+    .interior-releases .releases-hero-video { justify-self: start; max-width: 680px; }
+    .interior-releases .release-entry-has-video .release-notes { grid-template-columns: 1fr; }
+    .interior-releases .release-entry-has-video .release-major-group,
+    .interior-releases .release-version-preview { grid-column: 1; grid-row: auto; }
+    .interior-releases .release-version-preview { margin-left: 0 !important; }
+}
+
+@media (max-width: 600px) {
+    .interior-contact .glass-card-v2 { padding-top: 42px; padding-bottom: 48px; }
+    .interior-releases .releases-hero { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Guide: at intermediate widths the contents rail becomes a compact row,
+   giving every chapter the full reading width instead of clipping its cards. */
+@media (max-width: 1280px) {
+    .interior-guide .guide-main > .container {
+        width: min(calc(100% - 36px), 1120px);
+    }
+    .interior-guide .guide-layout {
+        display: block;
+        width: 100%;
+    }
+    .interior-guide .guide-toc {
+        position: sticky;
+        top: 74px;
+        z-index: 40;
+        width: 100%;
+        max-height: none;
+        margin: 0 0 22px;
+        padding: 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border: 1px solid #29292f;
+        border-radius: 12px !important;
+        background: rgba(8, 8, 10, .94);
+    }
+    .interior-guide .toc-title { display: none; }
+    .interior-guide .guide-toc nav {
+        display: flex;
+        width: max-content;
+        min-width: 100%;
+        gap: 4px;
+    }
+    .interior-guide .guide-toc a { flex: 0 0 auto; white-space: nowrap; }
+    .interior-guide .guide-modules,
+    .interior-guide .guide-module { width: 100%; }
+}
+
+@media (max-width: 720px) {
+    .interior-guide .guide-main > .container { width: calc(100% - 28px); }
+    .interior-guide .feature-grid { grid-template-columns: 1fr; }
+}
+
+/* Guide modules need a real inner gutter: the previous flat spacing placed
+   headings and step numbers directly against the clipping edge. */
+.interior-guide .guide-main > .container {
+    width: min(calc(100% - 40px), 1240px);
+    max-width: 1240px;
+}
+.interior-guide .guide-layout {
+    grid-template-columns: 200px minmax(0, 1fr);
+}
+.interior-guide .guide-module {
+    width: 100%;
+    overflow: visible;
+    border: 1px solid #29292f;
+    border-radius: 16px !important;
+    background: #111113;
+}
+.interior-guide .module-head {
+    padding: 28px 30px 22px;
+}
+.interior-guide .module-body {
+    padding: 22px 30px 32px;
+}
+
+@media (max-width: 1280px) {
+    .interior-guide .guide-layout { display: block; }
+}
+
+@media (max-width: 720px) {
+    .interior-guide .guide-main > .container { width: calc(100% - 28px); }
+    .interior-guide .module-head { padding: 22px 18px 18px; }
+    .interior-guide .module-body { padding: 18px 18px 24px; }
+}
+
+/* Quick-start actions: individual, roomier cards instead of one rigid box. */
+.interior-guide .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 0 0 32px;
+}
+.interior-guide .step-card {
+    grid-template-columns: 44px minmax(0, 1fr);
+    min-height: 82px;
+    padding: 18px 20px;
+    border: 1px solid #303036;
+    border-radius: 12px !important;
+    background: #151517;
+}
+.interior-guide .step-card strong {
+    font-size: 15px;
+}
+.interior-guide .step-card p {
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .interior-guide .step-card {
+        min-height: 76px;
+        padding: 16px;
+    }
+}

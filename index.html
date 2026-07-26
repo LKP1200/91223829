@@ -7,7 +7,7 @@
     <title>LuckyTools | Premium Premiere Pro Plugins</title>
     <link rel="icon" type="image/png" href="assets/images/favicon.png?v=7">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png?v=7">
-    <link rel="stylesheet" href="assets/css/style.css?v=49">
+    <link rel="stylesheet" href="css/style.css?v=104">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* GLOBAL SELECTION COLOR */
@@ -84,115 +84,6 @@
         .property-highlight span {
             text-transform: uppercase;
             letter-spacing: 1px;
-        }
-
-        /* Purchase Requirements Modal CSS */
-        .req-modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px);
-            display: none; /* Hidden by default */
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .req-modal-overlay.show {
-            display: flex;
-            opacity: 1;
-        }
-        .req-modal-content {
-            background: #151515;
-            border: 1px solid #333;
-            border-radius: 12px;
-            max-width: 600px;
-            width: 90%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
-            overflow: hidden;
-            font-family: 'Outfit', sans-serif;
-        }
-        .req-modal-overlay.show .req-modal-content {
-            transform: translateY(0);
-        }
-        .req-modal-header {
-            background: #090d2b;
-            border-bottom: 1px solid #333;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-        }
-        .req-modal-body {
-            padding: 20px 30px;
-        }
-        .req-modal-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .req-modal-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 12px;
-            font-size: 0.95em;
-            color: #ddd;
-            line-height: 1.4;
-        }
-        .req-modal-list li:before {
-            content: "\2022";
-            color: #64b4ff;
-            font-size: 1.5em;
-            position: absolute;
-            left: 0;
-            top: -5px;
-        }
-        .req-modal-list strong {
-            color: #9f70fd;
-        }
-        .req-modal-footer {
-            padding: 20px;
-            border-top: 1px solid #333;
-            display: flex;
-            justify-content: flex-end;
-            gap: 15px;
-        }
-        .req-btn-cancel {
-            background: transparent;
-            color: #aaa;
-            border: 1px solid #555;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-        .req-btn-cancel:hover {
-            background: rgba(255,255,255,0.1);
-            color: white;
-        }
-        .req-btn-confirm {
-            background: #8f88ff;
-            color: #000;
-            border: none;
-            padding: 10px 24px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            transition: all 0.2s;
-        }
-        .req-btn-confirm:hover {
-            background: #ffdb4d;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(143, 136, 255, 0.4);
         }
 
         /* ===== PANELS TABS SYSTEM ===== */
@@ -857,6 +748,12 @@
         }
 
     </style>
+    <link rel="stylesheet" href="css/index-refresh.css?v=15">
+    <link rel="stylesheet" href="css/inline-youtube.css?v=1">
+    <link rel="stylesheet" href="css/header-unified.css?v=3">
+    <link rel="stylesheet" href="css/purchase-modal.css?v=2">
+    <link rel="stylesheet" href="css/payment-methods.css?v=2">
+    <link rel="stylesheet" href="css/footer-unified.css?v=2">
 </head>
 
 <body data-templates-enabled="false">
@@ -878,10 +775,6 @@
         </div>
         <nav>
             <a href="about.html">About</a>
-            <div class="nav-eco-link" style="margin-left: 30px;">
-                <a href="ecosystem.html" style="margin-left: 0; opacity: 1; color: var(--accent-color);">Ecosystem</a>
-                <span class="free-badge">FREE PLUGINS!!</span>
-            </div>
             <a href="releases.html">Updates</a>
             <a href="contact.html">Contact</a>
             <a href="licenses.html">Licenses</a>
@@ -901,11 +794,6 @@
         <a href="index.html">Home</a>
         <div class="nav-overlay-divider"></div>
         <a href="about.html">About</a>
-        <div class="nav-overlay-divider"></div>
-        <div class="nav-eco-link" style="margin-left: 0; margin-bottom: 20px;">
-            <a href="ecosystem.html" style="margin-left: 0; opacity: 1; color: var(--accent-color); font-size: 24px;">Ecosystem</a>
-            <span class="free-badge" style="top: 40px;">FREE PLUGINS!!</span>
-        </div>
         <div class="nav-overlay-divider"></div>
         <a href="releases.html">Updates</a>
         <div class="nav-overlay-divider"></div>
@@ -1072,14 +960,98 @@
         </section>
         </div>
         
+        <!-- CURRENT MINIMAL HERO -->
+        <section class="hero-fullwidth" style="background:#080808;padding:60px 40px;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:40px;border-bottom:1px solid #1a1a1a;">
+            <div class="hero-text-minimal" style="flex:1;min-width:300px;max-width:600px;">
+                <div class="hero-platform-badges" aria-label="Compatibility">
+                    <span><img src="assets/images/premiere.png" alt=""> Premiere Pro 2026+</span>
+                    <span><img src="assets/images/windows.png" alt=""> Windows</span>
+                </div>
+
+                <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;align-items:center;">
+                    <div class="badge-pill hero-editor-proof" aria-label="Trusted by more than 9,000 editors">
+                        <span class="hero-editor-avatars" aria-hidden="true">
+                            <span class="hero-editor-avatar"><i class="fas fa-user"></i></span>
+                            <span class="hero-editor-avatar"><i class="fas fa-user"></i></span>
+                            <span class="hero-editor-avatar"><i class="fas fa-user"></i></span>
+                            <span class="hero-editor-avatar"><i class="fas fa-user"></i></span>
+                            <span class="hero-editor-count">+9k</span>
+                        </span>
+                        <span class="hero-editor-proof-copy">By Editors. For Editors.</span>
+                        <i class="fas fa-bolt hero-editor-bolt" aria-hidden="true"></i>
+                    </div>
+                    <a class="hero-support-busco" href="https://x.com/BuscoEditor" target="_blank" rel="noopener noreferrer">
+                        <img src="assets/images/busco.jpg" alt="Busco Editor"> Supported by Busco Editor
+                    </a>
+                </div>
+
+                <h1 translate="no" style="font-family:'Outfit',sans-serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:800;line-height:1.1;margin-bottom:20px;color:#fff;letter-spacing:-1px;">
+                    Premium editing <br><span style="color:var(--accent-color);">plugin. All-in-one.</span>
+                </h1>
+                <p style="font-size:1.1rem;color:#aaa;margin-bottom:30px;line-height:1.6;">
+                    Make your videos impossible to ignore. LuckyTools automates tedious tasks in Premiere Pro so you can focus on creativity.
+                </p>
+
+                <div class="hero-cta-block">
+                    <div class="hero-actions-minimal" style="display:flex;align-items:center;gap:20px;">
+                        <a href="#" class="btn-download" data-purchase-trigger>Buy Now <i class="fas fa-arrow-right"></i></a>
+                        <div class="price-box" style="font-family:'Outfit',sans-serif;">
+                            <span class="price-main-line"><span class="price-current" style="font-weight:800;color:#fff;">$230</span><span class="price-currency">USD</span></span>
+                            <small class="price-payment-label">One-time payment</small>
+                        </div>
+                    </div>
+                    <a href="luckysuite.html" class="hero-info-btn" aria-label="Learn more about LuckySuite">
+                        <i class="fas fa-circle-info" aria-hidden="true"></i> More Info
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-video-minimal" style="flex:1;min-width:300px;max-width:600px;">
+                <div class="video-stack">
+                    <div id="minimalVideoOne" class="premium-video-wrapper video-layer active inline-youtube-player" data-youtube-id="u5LMBOMJPqY" data-youtube-title="LuckySuite official promo" role="button" tabindex="0" aria-label="Play the LuckySuite official promo here">
+                        <img class="inline-youtube-cover" src="https://i.ytimg.com/vi/u5LMBOMJPqY/maxresdefault.jpg" alt="LuckySuite official promo video thumbnail">
+                        <span class="inline-youtube-hero-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                    </div>
+                    <div id="minimalVideoTwo" class="premium-video-wrapper video-layer background inline-youtube-player" data-youtube-id="Ssr-CmC9SNw" data-youtube-title="Complete LuckyTools feature explanation" role="button" tabindex="0" aria-label="Play the complete LuckyTools feature explanation here">
+                        <img class="inline-youtube-cover" src="https://i.ytimg.com/vi/Ssr-CmC9SNw/maxresdefault.jpg" alt="Complete LuckyTools feature explanation video thumbnail" loading="lazy">
+                        <span class="inline-youtube-hero-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                    </div>
+                    <button class="global-swap-btn" id="minimalVideoToggle" type="button" aria-controls="minimalVideoOne minimalVideoTwo" aria-pressed="false" aria-label="Show the complete feature explanation" onclick="swapMinimalHeroVideos()">
+                        <span class="swap-popup-cool">Next: Complete feature explanation</span>
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <script>
+            function swapMinimalHeroVideos() {
+                const first = document.getElementById('minimalVideoOne');
+                const second = document.getElementById('minimalVideoTwo');
+                const button = document.getElementById('minimalVideoToggle');
+                if (!first || !second || !button) return;
+                const showSecond = !second.classList.contains('active');
+                if (window.LuckyInlineYouTube) {
+                    window.LuckyInlineYouTube.stop(showSecond ? first : second);
+                }
+                first.className = 'premium-video-wrapper video-layer ' + (showSecond ? 'background' : 'active');
+                second.className = 'premium-video-wrapper video-layer ' + (showSecond ? 'active' : 'background');
+                first.classList.add('inline-youtube-player');
+                second.classList.add('inline-youtube-player');
+                button.setAttribute('aria-pressed', showSecond ? 'true' : 'false');
+                button.setAttribute('aria-label', showSecond ? 'Show the LuckySuite official promo' : 'Show the complete feature explanation');
+                const label = button.querySelector('.swap-popup-cool');
+                if (label) label.textContent = showSecond ? 'Next: LuckySuite official promo' : 'Next: Complete feature explanation';
+            }
+        </script>
+
         <!-- REVIEWS SECTION -->
         <section class="reviews-section container" id="community-reviews">
             <div class="reviews-header community-proof-header">
                 <div>
                     <span class="section-kicker">Community proof</span>
-                    <h2>Editors are already <span>testing LuckyTools</span></h2>
+                    <h2>Built with editors. <span>Proven in real workflows.</span></h2>
                 </div>
-                <p>Real comments and community videos from editors testing the program in their workflow.</p>
+                <p>Honest feedback and community videos from editors using LuckyTools in real projects.</p>
             </div>
 
             <div class="community-proof-layout">
@@ -1108,7 +1080,7 @@
                     <!-- Review 2 -->
                     <div class="review-card">
                         
-                        <p class="review-text">Hemos visto a editores top de la comunidad meti&eacute;ndole ca&ntilde;a a LuckyTools para llegar a tiempo a sus entregas. Es una inversi&oacute;n que se paga sola si valoras tu tiempo y tu salud mental.</p>
+                        <p class="review-text">We've seen top editors in the community push LuckyTools hard to meet their deadlines. It is an investment that pays for itself if you value your time and peace of mind.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/BuscoEditor" target="_blank" class="reviewer-profile-link">
                                 <img src="assets/images/busco.jpg" alt="Busco Editor" class="avatar">
@@ -1125,7 +1097,7 @@
                     <!-- Review 3 -->
                     <div class="review-card">
                         
-                        <p class="review-text">S&eacute; que no tenemos macros aqu&iacute;, lo cual es medio feo, pero ya que, para el laburo diario, me sobra y me basta. El control de keyframes es mil veces m&aacute;s fluido que el de Premiere nativo.</p>
+                        <p class="review-text">I know we do not have macros here, which is a bit of a drawback, but for everyday work it is more than enough. Keyframe control is a thousand times smoother than Premiere's native tools.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/Giovanni_0108" target="_blank" class="reviewer-profile-link">
                                 <img src="assets/images/oury.jpg" alt="Oury Editor" class="avatar">
@@ -1142,7 +1114,7 @@
                     <!-- Review 4 -->
                     <div class="review-card">
                         
-                        <p class="review-text">Lo del Anchor Point es quir&uacute;rgico, no hay con qu&eacute; darle. El Unnest ya procesa clips en lote, pero todav&iacute;a no se siente tan r&aacute;pido como me gustar&iacute;a. Al menos se nota que el proyecto est&aacute; vivo y el feedback siempre est&aacute; a la mano en la comunidad de Busco Editor.</p>
+                        <p class="review-text">The Anchor Point tool is surgical; there is nothing else like it. Unnest already processes clips in batches, though it still does not feel as fast as I would like. At least the project clearly feels alive, and feedback is always close at hand in the Busco Editor community.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/BlackBullAE" target="_blank" class="reviewer-profile-link">
                                 <img src="assets/images/blackbull.jpg" alt="BlackBull Designer" class="avatar">
@@ -1159,7 +1131,7 @@
                     <!-- Review 5 -->
                     <div class="review-card">
                         
-                        <p class="review-text">Un cambio total para mi flujo. Es un poco inc&oacute;modo no tener bot&oacute;n de deshacer en LuckySearch, pero ya ni modo, el tiempo que ahorro es incre&iacute;ble. &mdash;&iexcl;Esperando la v2.0!</p>
+                        <p class="review-text">A total change for my workflow. It is a little inconvenient that LuckySearch has no undo button, but the time I save is incredible. &mdash;Looking forward to v2.0!</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/YermacJ" target="_blank" class="reviewer-profile-link">
                                 <img src="assets/images/ermac.jpg" alt="Ermac" class="avatar">
@@ -1176,7 +1148,7 @@
                     <!-- Review 6 -->
                     <div class="review-card">
                         
-                        <p class="review-text">Ta' bueno, ahorra tiempo y "plata"; a&uacute;n le falta refinar varias cosas, pero si se sigue actualizando ir&aacute; bien. La personalizaci&oacute;n est&aacute; buena, pero est&aacute; demasiado centrado en ello m&aacute;s que en algunas funciones. Espero que lleguen m&aacute;s actualizaciones o, si no, me vuelvo pirata y lo publico gratis a todos.</p>
+                        <p class="review-text">It is good: it saves time and money. Several things still need refinement, but it will do well if updates continue. The customization is nice, although it feels more focused on that than on some features. I hope more updates arrive; otherwise I might just turn pirate and publish it for everyone.</p>
                         <div class="reviewer-info">
                             <a href="#" onclick="return false;" class="reviewer-profile-link">
                                 <img src="assets/images/marck.jpg?v=1" alt="Marck" class="avatar">
@@ -1213,7 +1185,7 @@
                     <!-- Review 8 -->
                     <div class="review-card">
                         
-                        <p class="review-text">He estado con LuckyTools desde sus primeras versiones y se nota una evoluci&oacute;n constante. Es una herramienta bien planteada para editores que buscan ahorrar tiempo y mantener un flujo de trabajo m&aacute;s ordenado.</p>
+                        <p class="review-text">I've been with LuckyTools since its earliest versions, and the steady evolution shows. It is a well-designed tool for editors who want to save time and keep a more organized workflow.</p>
                         <div class="reviewer-info">
                             <div class="reviewer-profile-link">
                                 <img src="assets/images/strike.png" alt="Strike" class="avatar">
@@ -1246,7 +1218,7 @@
                     <!-- Review 2 -->
                     <div class="review-card">
                         
-                        <p class="review-text">Hemos visto a editores top de la comunidad meti&eacute;ndole ca&ntilde;a a LuckyTools para llegar a tiempo a sus entregas. Es una inversi&oacute;n que se paga sola si valoras tu tiempo y tu salud mental.</p>
+                        <p class="review-text">We've seen top editors in the community push LuckyTools hard to meet their deadlines. It is an investment that pays for itself if you value your time and peace of mind.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/BuscoEditor" target="_blank" class="reviewer-profile-link">
                                 <img src="assets/images/busco.jpg" alt="Busco Editor" class="avatar">
@@ -1263,7 +1235,7 @@
                     <!-- Review 3 -->
                     <div class="review-card">
                         
-                        <p class="review-text">S&eacute; que no tenemos macros aqu&iacute;, lo cual es medio feo, pero ya que, para el laburo diario, me sobra y me basta. El control de keyframes es mil veces m&aacute;s fluido que el de Premiere nativo.</p>
+                        <p class="review-text">I know we do not have macros here, which is a bit of a drawback, but for everyday work it is more than enough. Keyframe control is a thousand times smoother than Premiere's native tools.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/Giovanni_0108" target="_blank" class="reviewer-profile-link">
                                 <img src="assets/images/oury.jpg" alt="Oury Editor" class="avatar">
@@ -1280,7 +1252,7 @@
                     <!-- Review 4 -->
                     <div class="review-card">
                         
-                        <p class="review-text">Lo del Anchor Point es quir&uacute;rgico, no hay con qu&eacute; darle. El Unnest ya procesa clips en lote, pero todav&iacute;a no se siente tan r&aacute;pido como me gustar&iacute;a. Al menos se nota que el proyecto est&aacute; vivo y el feedback siempre est&aacute; a la mano en la comunidad de Busco Editor.</p>
+                        <p class="review-text">The Anchor Point tool is surgical; there is nothing else like it. Unnest already processes clips in batches, though it still does not feel as fast as I would like. At least the project clearly feels alive, and feedback is always close at hand in the Busco Editor community.</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/BlackBullAE" target="_blank" class="reviewer-profile-link">
                                 <img src="assets/images/blackbull.jpg" alt="BlackBull Designer" class="avatar">
@@ -1297,7 +1269,7 @@
                     <!-- Review 5 -->
                     <div class="review-card">
                         
-                        <p class="review-text">Un cambio total para mi flujo. Es un poco inc&oacute;modo no tener bot&oacute;n de deshacer en LuckySearch, pero ya ni modo, el tiempo que ahorro es incre&iacute;ble. &mdash;&iexcl;Esperando la v2.0!</p>
+                        <p class="review-text">A total change for my workflow. It is a little inconvenient that LuckySearch has no undo button, but the time I save is incredible. &mdash;Looking forward to v2.0!</p>
                         <div class="reviewer-info">
                             <a href="https://x.com/YermacJ" target="_blank" class="reviewer-profile-link">
                                 <img src="assets/images/ermac.jpg" alt="Ermac" class="avatar">
@@ -1314,7 +1286,7 @@
                     <!-- Review 6 -->
                     <div class="review-card">
                         
-                        <p class="review-text">Ta' bueno, ahorra tiempo y "plata"; a&uacute;n le falta refinar varias cosas, pero si se sigue actualizando ir&aacute; bien. La personalizaci&oacute;n est&aacute; buena, pero est&aacute; demasiado centrado en ello m&aacute;s que en algunas funciones. Espero que lleguen m&aacute;s actualizaciones o, si no, me vuelvo pirata y lo publico gratis a todos.</p>
+                        <p class="review-text">It is good: it saves time and money. Several things still need refinement, but it will do well if updates continue. The customization is nice, although it feels more focused on that than on some features. I hope more updates arrive; otherwise I might just turn pirate and publish it for everyone.</p>
                         <div class="reviewer-info">
                             <a href="#" onclick="return false;" class="reviewer-profile-link">
                                 <img src="assets/images/marck.jpg?v=1" alt="Marck" class="avatar">
@@ -1351,7 +1323,7 @@
                     <!-- Review 8 -->
                     <div class="review-card">
                         
-                        <p class="review-text">He estado con LuckyTools desde sus primeras versiones y se nota una evoluci&oacute;n constante. Es una herramienta bien planteada para editores que buscan ahorrar tiempo y mantener un flujo de trabajo m&aacute;s ordenado.</p>
+                        <p class="review-text">I've been with LuckyTools since its earliest versions, and the steady evolution shows. It is a well-designed tool for editors who want to save time and keep a more organized workflow.</p>
                         <div class="reviewer-info">
                             <div class="reviewer-profile-link">
                                 <img src="assets/images/strike.png" alt="Strike" class="avatar">
@@ -1431,13 +1403,13 @@
             <div id="plugins-section">
                 <div id="plugin-cover-container">
                     <article class="template-card plugin-product-card">
-                        <button class="plugin-cover-trigger" type="button" onclick="revealPanels()" aria-label="Explore the panels included in LuckySuite">
+                        <a class="plugin-cover-trigger" href="luckysuite.html" aria-label="Open the complete LuckySuite product page">
                             <img src="assets/images/LuckySuitev1.png" alt="LuckyTools Suite Plugin Cover">
                             <span class="plugin-click-hint" aria-hidden="true">
                                 <i class="fas fa-hand-pointer"></i>
-                                <span>Click here</span>
+                                <span>View details</span>
                             </span>
-                        </button>
+                        </a>
                         <div class="template-card-footer plugin-card-footer">
                             <div class="template-name">
                                 <span>Premiere Pro Plugin Suite</span>
@@ -1451,7 +1423,7 @@
                     </article>
                 </div>
                 
-                <div id="plugin-panels-container">
+                <div id="plugin-panels-container" hidden aria-hidden="true">
                     <div class="panels-tabs-layout">
                 <!-- LEFT SIDEBAR NAV -->
                 <div class="panels-sidebar">
@@ -2558,8 +2530,8 @@
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About</a></li>
-                            <li><a href="ecosystem.html">Ecosystem</a></li>
                             <li><a href="releases.html">Updates</a></li>
+                            <li><a href="guide.html">Guide</a></li>
                             <li><a href="contact.html">Contact</a></li>
                             <li><a href="licenses.html">Licenses</a></li>
                         </ul>
@@ -2574,6 +2546,18 @@
                     </div>
                 </div>
                 
+                <div class="payment-methods" aria-label="Payment methods">
+                    <div class="payment-brands">
+                        <span class="payment-brand payment-paypal">PayPal</span>
+                        <span class="payment-brand payment-visa">VISA</span>
+                        <span class="payment-brand payment-mastercard">Mastercard</span>
+                        <span class="payment-brand payment-apple">Apple Pay</span>
+                        <span class="payment-brand payment-google">Google Pay</span>
+                        <span class="payment-more">Cards and local methods</span>
+                    </div>
+                    <p class="payment-methods-copy"><strong>Payment options at checkout</strong>Processed by Lemon Squeezy, our merchant of record. LuckyTools is independent; this page is not operated by Lemon Squeezy. Wallets and local methods vary by browser, device and location. <a href="https://docs.lemonsqueezy.com/help/checkout/payment-methods" target="_blank" rel="noopener">Details</a></p>
+                </div>
+
                 <div class="copyright-text">
                     <p>&copy; 2026 LUCKYTOOLS. ALL RIGHTS RESERVED. <br>DESIGNED FOR THE NEXT GENERATION OF EDITORS.</p>
                 </div>
@@ -2929,63 +2913,33 @@
 
 
     <!-- PURCHASE REQUIREMENTS MODAL -->
-    <div id="requirementsModal" class="req-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="requirementsTitle">
+    <div id="requirementsModal" class="req-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="requirementsTitle">
         <div class="req-modal-content" role="document">
             <div class="req-modal-header">
-                <i class="fas fa-exclamation-triangle" style="color: #ffd43b; font-size: 1.5em; margin-right: 15px;"></i>
-                <div>
-                    <h3 id="requirementsTitle" style="margin: 0; color: #fff; font-size: 1.2rem;">Before purchasing LuckyTools</h3>
-                    <p style="margin: 4px 0 0; color: #8d8d8d; font-size: 0.82rem;">Please confirm that your setup meets these requirements.</p>
+                <span class="req-modal-alert" aria-hidden="true">!</span>
+                <div class="req-modal-heading">
+                    <h3 id="requirementsTitle">Before purchasing LuckyTools</h3>
+                    <p>Please confirm that your setup meets these requirements.</p>
                 </div>
             </div>
             <div class="req-modal-body">
                 <ul class="req-modal-list">
                     <li><strong>Adobe Premiere Pro 2026 (v26+) is required.</strong></li>
                     <li><strong>Windows only.</strong> LuckyTools is not currently available for macOS.</li>
-                    <li><strong>Your purchase includes 1 full year of updates</strong>, keeping your tools fresh at the start of every new year. After this period, you will no longer receive new updates<span id="lic-dots">... <a href="#" onclick="document.getElementById('lic-more').style.display='inline'; document.getElementById('lic-dots').style.display='none'; return false;" style="color: #a291ff; text-decoration: underline;">Read more</a></span><span id="lic-more" style="display: none;">, but you can still continue using the final version released during your 1-year period without any issues for as long as you want. You can always add another year at a reduced price compared to your initial purchase, subject to the current pricing on our website. <a href="licenses.html" style="color: #a291ff; text-decoration: underline;">More info</a>.</span></li>
+                    <li><strong>Your purchase includes 1 full year of updates</strong>, keeping your tools fresh at the start of every new year. After this period, you will no longer receive new updates<span data-license-summary>... <button class="req-inline-link" type="button" data-license-more>Read more</button></span><span data-license-details hidden>, but you can still continue using the final version released during your 1-year period without any issues for as long as you want. You can always add another year at a reduced price compared to your initial purchase, subject to the current pricing on our website. <a href="licenses.html">More info</a>.</span></li>
                     <li><strong>Premiere Pro language must be English or Spanish.</strong></li>
                 </ul>
             </div>
             <div class="req-modal-footer">
                 <button class="req-btn-cancel" id="cancelPurchase" type="button">Cancel</button>
                 <a class="req-btn-confirm" id="proceedPurchase" href="https://luckytpr.lemonsqueezy.com/checkout/buy/10dc8a74-bb2e-49f5-bf88-4897ba0bfe36">
-                    Proceed to checkout <i class="fas fa-arrow-right" style="margin-left: 9px;"></i>
+                    Proceed to checkout <span aria-hidden="true">→</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <script>
-        (function() {
-            const modal = document.getElementById('requirementsModal');
-            const cancelButton = document.getElementById('cancelPurchase');
-            const purchaseTriggers = document.querySelectorAll('[data-purchase-trigger]');
-
-            if (!modal || !cancelButton || !purchaseTriggers.length) return;
-
-            function openPurchaseModal(event) {
-                event.preventDefault();
-                event.stopPropagation();
-                modal.classList.add('show');
-                document.body.style.overflow = 'hidden';
-                cancelButton.focus();
-            }
-
-            function closePurchaseModal() {
-                modal.classList.remove('show');
-                document.body.style.overflow = '';
-            }
-
-            purchaseTriggers.forEach(trigger => trigger.addEventListener('click', openPurchaseModal));
-            cancelButton.addEventListener('click', closePurchaseModal);
-            modal.addEventListener('click', event => {
-                if (event.target === modal) closePurchaseModal();
-            });
-            document.addEventListener('keydown', event => {
-                if (event.key === 'Escape' && modal.classList.contains('show')) closePurchaseModal();
-            });
-        })();
-    </script>
+    <script src="assets/js/purchase-modal.js?v=1"></script>
     <script>
         (function() {
             const screenshotButtons = document.querySelectorAll('[data-install-panel]');
@@ -3090,5 +3044,6 @@
             });
         })();
     </script>
+    <script src="assets/js/inline-youtube.js?v=1"></script>
 </body>
 </html>

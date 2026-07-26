@@ -1,0 +1,73 @@
+/* Licenses hero: full-width shell with a stable two-column reading layout. */
+.interior-licenses .license-info-section.container {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 538px;
+    margin: 0 !important;
+    padding: 72px max(24px, calc((100vw - 1544px) / 2)) 82px !important;
+    box-sizing: border-box;
+}
+
+.interior-licenses .license-info-grid {
+    width: 100%;
+    max-width: 1544px;
+    margin: 0 auto;
+    grid-template-columns: minmax(0, 1fr) minmax(480px, .94fr);
+    gap: clamp(56px, 6vw, 104px);
+}
+
+.interior-licenses .license-info-copy {
+    min-width: 0;
+    max-width: 690px;
+}
+
+.interior-licenses .license-info-copy h1 {
+    max-width: 690px;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+.interior-licenses .license-info-copy p {
+    max-width: 680px;
+}
+
+.interior-licenses .license-video-card {
+    width: 100%;
+    max-width: 640px;
+    min-width: 0;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+    justify-self: end;
+}
+
+.interior-licenses .license-video-card > img {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+}
+
+@media (max-width: 1120px) {
+    .interior-licenses .license-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interior-licenses .license-info-copy {
+        max-width: 720px;
+    }
+
+    .interior-licenses .license-video-card {
+        width: 100%;
+        max-width: 720px;
+        justify-self: start;
+    }
+}
+
+@media (max-width: 640px) {
+    .interior-licenses .license-info-section.container {
+        min-height: 0;
+        padding: 48px 20px 54px !important;
+    }
+
+    .interior-licenses .license-info-copy h1 {
+        font-size: clamp(46px, 15vw, 62px);
+    }
+}
