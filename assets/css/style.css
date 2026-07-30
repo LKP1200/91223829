@@ -3261,20 +3261,20 @@ body.nav-open {
     background: #000;
 }
 
-.release-entry-103 {
+.release-entry-latest {
     border-color: rgba(255, 196, 61, 0.42);
     box-shadow: 0 28px 86px rgba(0, 0, 0, 0.46), 0 0 52px rgba(255, 184, 47, 0.09);
 }
 
-.release-entry-103 .release-notes {
+.release-entry-latest .release-notes {
     gap: 22px 36px;
 }
 
-.release-entry-103 .release-version h2 {
+.release-entry-latest .release-version h2 {
     font-size: clamp(27px, 3vw, 35px);
 }
 
-.release-entry-103 .release-subtitle {
+.release-entry-latest .release-subtitle {
     font-size: 13px;
     line-height: 1.5;
 }
@@ -3293,7 +3293,7 @@ body.nav-open {
     gap: 22px;
 }
 
-.release-entry-103 .release-marker {
+.release-entry-latest .release-marker {
     background: #ffc43d;
     box-shadow: 0 0 0 4px rgba(255, 196, 61, 0.16), 0 0 24px rgba(255, 196, 61, 0.72);
 }
@@ -3605,20 +3605,20 @@ body.nav-open {
     line-height: 1.45;
 }
 
-.release-entry-103 .release-major-list strong {
+.release-entry-latest .release-major-list strong {
     font-size: 16px;
 }
 
-.release-entry-103 .release-major-list li {
+.release-entry-latest .release-major-list li {
     font-size: 12.5px;
     line-height: 1.45;
 }
 
-.release-entry-103 .release-note-group h3 {
+.release-entry-latest .release-note-group h3 {
     font-size: 14px;
 }
 
-.release-entry-103 .release-note-group li {
+.release-entry-latest .release-note-group li {
     margin-bottom: 4px;
     font-size: 13px;
     line-height: 1.38;
