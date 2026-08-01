@@ -379,8 +379,29 @@ body > .site-footer .copyright-text p { font-size: 9px; line-height: 1.6; }
     letter-spacing: .035em;
     white-space: nowrap;
 }
+.hero-cta-block .hero-sale-price {
+    min-width: 190px;
+    transform: none;
+}
+.price-offer-label {
+    margin-bottom: 7px;
+    color: #ff9d00;
+    font: 800 9.5px/1 'Inter', sans-serif;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.price-original-sale {
+    margin-left: 4px;
+    color: #777;
+    font: 700 16px/1 'Outfit', sans-serif;
+    letter-spacing: -.02em;
+    text-decoration: line-through;
+    text-decoration-color: #ff9d00;
+    text-decoration-thickness: 2px;
+}
 
 @media (max-width: 560px) {
-    .hero-actions-minimal { width: 100%; }
+    .hero-actions-minimal { width: 100%; flex-wrap: wrap; align-items: flex-start !important; }
     .hero-info-btn { width: 142px; }
 }
