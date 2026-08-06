@@ -166,7 +166,7 @@
             object-fit: contain !important;
         }
     </style>
-    <link rel="stylesheet" href="assets/css/site-refresh.css?v=10">
+    <link rel="stylesheet" href="assets/css/site-refresh.css?v=11">
     <link rel="stylesheet" href="css/header-unified.css?v=3">
     <link rel="stylesheet" href="css/payment-methods.css?v=2">
     <link rel="stylesheet" href="css/footer-unified.css?v=2">
@@ -221,10 +221,10 @@
             <section class="releases-hero">
                 <div class="releases-hero-copy">
                     <div class="releases-eyebrow">Product updates</div>
-                    <h1>Version 1.0.4 <span style="color: var(--accent-color);">Latest Stable</span></h1>
-                    <p>More dependable Squash &amp; Stretch anchors, visual clip reordering, a dedicated Labels panel, restored LuckyZoom Grow compatibility, and stronger preset reliability.</p>
+                    <h1>Version 1.0.5 <span style="color: var(--accent-color);">Latest Stable</span></h1>
+                    <p>A faster LuckyPod with real-time preview, the new CopyCuts tool, clearer LuckyCut and LuckySearch workflows, and more reliable licensing.</p>
                     <div class="release-status-row">
-                        <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.4</span>
+                        <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.5</span>
                         <span class="release-status-pill"><i class="fab fa-windows"></i> Windows</span>
                         <span class="release-status-pill"><i class="fas fa-video"></i> Premiere Pro 2026+</span>
                     </div>
@@ -238,28 +238,100 @@
                     </div>
                 </div>
 
-                <div class="release-preview-video releases-hero-video release-hero-preview-video" aria-label="LuckyTools Version 1.0.4 update video">
-                    <video autoplay loop muted playsinline controls preload="metadata" aria-label="Version 1.0.4 feature preview">
-                        <source src="assets/videos/1.0.4.mp4" type="video/mp4">
+                <div class="release-preview-video releases-hero-video release-hero-preview-video" aria-label="LuckyTools Version 1.0.5 update video">
+                    <video autoplay loop muted playsinline controls preload="metadata" aria-label="Version 1.0.5 feature preview">
+                        <source src="assets/videos/1.0.5.mp4" type="video/mp4">
                     </video>
                 </div>
 
             </section>
 
             <section class="release-timeline" aria-label="Update history">
-                <details class="release-entry release-entry-featured release-entry-latest release-entry-104" open>
+                <details class="release-entry release-entry-featured release-entry-latest release-entry-105" open>
+                    <span class="release-marker" aria-hidden="true"></span>
+                    <summary class="release-entry-header">
+                        <div>
+                            <div class="release-version">
+                                <h2>Version 1.0.5</h2>
+                                <span class="release-badge">Latest stable</span>
+                            </div>
+                            <p class="release-subtitle">A major LuckyPod rebuild with faster cutting and real-time preview, the new CopyCuts workflow, clearer tools, and stronger license stability.</p>
+                        </div>
+                    </summary>
+
+                    <div class="release-notes release-notes-expanded">
+                        <div class="release-detail-columns">
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-podcast"></i> LuckyPod</h3>
+                                    <ul>
+                                        <li>LuckyPod has been restructured around an improved cutting engine for significantly faster processing.</li>
+                                        <li>The workflow order has been updated, with <strong>Preview</strong> now presented as the second option.</li>
+                                        <li>Configuration labels and loading messages now use clearer, easier-to-understand language.</li>
+                                        <li>New real-time preview shows a simulation of the resulting cuts before anything is applied.</li>
+                                        <li>You can now preview the multicamera result before committing the edit.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-copy"></i> CopyCuts</h3>
+                                    <ul>
+                                        <li>Added <strong>CopyCuts</strong>, a new tool for copying the cuts from one clip to other selected clips.</li>
+                                        <li>The clip with the greatest number of cuts is automatically used as the source.</li>
+                                        <li>Select the destination clips and CopyCuts completes the transfer automatically.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-scissors"></i> LuckyCut</h3>
+                                    <ul>
+                                        <li>Reordered the tools to make the workflow easier to follow.</li>
+                                        <li>Simplified labels and terminology for quicker understanding.</li>
+                                        <li>Updated the loading screen for clearer progress feedback.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-magnifying-glass"></i> LuckySearch</h3>
+                                    <ul>
+                                        <li>Removed search-bar customization in favor of greater speed and stability.</li>
+                                        <li>Recent and favorite effects now display their full names without abbreviations to prevent confusion.</li>
+                                        <li>The recent and favorite item limit has been adjusted from 12 to 10.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-key"></i> Licenses</h3>
+                                    <ul>
+                                        <li>Improved license-system stability to address cases where an active license could be revoked unexpectedly.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="release-entry release-entry-104">
                     <span class="release-marker" aria-hidden="true"></span>
                     <summary class="release-entry-header">
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.4</h2>
-                                <span class="release-badge">Latest stable</span>
+                                <span class="release-badge release-badge-muted">Previous stable</span>
                             </div>
                             <p class="release-subtitle">A focused motion workflow update with corrected animated anchor compensation, visual clip reordering, a dedicated Labels panel, improved preset stability, and Premiere Pro 26.2.3 compatibility.</p>
                         </div>
                     </summary>
 
                     <div class="release-notes release-notes-expanded">
+                        <figure class="release-version-preview">
+                            <video loop muted playsinline controls preload="metadata" data-version-preview aria-label="Version 1.0.4 feature preview">
+                                <source src="assets/videos/1.0.4.mp4" type="video/mp4">
+                            </video>
+                        </figure>
+
                         <div class="release-detail-columns">
                             <div class="release-detail-column">
                                 <div class="release-note-group">
@@ -314,7 +386,7 @@
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.3</h2>
-                                <span class="release-badge release-badge-muted">Previous stable</span>
+                                <span class="release-badge release-badge-muted">Earlier release</span>
                             </div>
                             <p class="release-subtitle">A workflow update led by Better Effects, tracking from LuckySearch, configurable Paste storage, dependable transitions, more flexible Ladder modes, and faster timeline tools.</p>
                         </div>
@@ -579,7 +651,7 @@
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.1</h2>
-                                <span class="release-badge release-badge-muted">Previous stable</span>
+                                <span class="release-badge release-badge-muted">Earlier release</span>
                             </div>
                             <p class="release-subtitle">More Curves Updated! A bigger motion, audio, search, and framing update for faster everyday editing.</p>
                         </div>
