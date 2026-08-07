@@ -998,9 +998,9 @@
                 <div class="hero-cta-block">
                     <div class="hero-actions-minimal" style="display:flex;align-items:center;gap:20px;">
                         <a href="#" class="btn-download" data-purchase-trigger>Buy Now <i class="fas fa-arrow-right"></i></a>
-                        <div class="price-box hero-sale-price" style="font-family:'Outfit',sans-serif;" aria-label="Limited-time offer: 80 US dollars, previously 230 US dollars">
-                            <small class="price-offer-label">Limited-time offer</small>
-                            <span class="price-main-line"><span class="price-current" style="font-weight:800;color:#fff;">$80</span><span class="price-currency">USD</span><span class="price-original-sale">$230</span></span>
+                        <div class="price-box hero-sale-price" id="minimalDealPriceBox" style="font-family:'Outfit',sans-serif;" aria-label="Regular price: 230 US dollars">
+                            <small class="price-offer-label" id="minimalDealLabel" hidden data-deal-hidden="true">Limited-time offer</small>
+                            <span class="price-main-line"><span class="price-current" id="minimalDealCurrentPrice" data-regular-price="$230" data-deal-price="$80" style="font-weight:800;color:#fff;">$230</span><span class="price-currency">USD</span><span class="price-original-sale" id="minimalDealOriginalPrice" hidden data-deal-hidden="true">$230</span></span>
                             <small class="price-payment-label">One-time payment</small>
                         </div>
                     </div>
@@ -2766,9 +2766,9 @@
             });
         }
 
-        // --- LIMITED TIME DEAL TIMER (change startDate to reactivate later) ---
+        // --- LIMITED TIME DEAL TIMER (set enabled to true and update startDate to reactivate later) ---
         const limitedTimeDeal = {
-            enabled: true,
+            enabled: false,
             startDate: '2026-07-19T16:55:28-06:00',
             durationDays: 5
         };
@@ -2778,11 +2778,19 @@
             const originalPrice = document.getElementById('dealOriginalPrice');
             const currentPrice = document.getElementById('dealCurrentPrice');
             const discountBox = document.getElementById('discountBox');
+            const minimalPriceBox = document.getElementById('minimalDealPriceBox');
+            const minimalDealLabel = document.getElementById('minimalDealLabel');
+            const minimalOriginalPrice = document.getElementById('minimalDealOriginalPrice');
+            const minimalCurrentPrice = document.getElementById('minimalDealCurrentPrice');
 
             if (dealBadge) dealBadge.hidden = true;
             if (originalPrice) originalPrice.hidden = true;
             if (discountBox) discountBox.hidden = true;
             if (currentPrice) currentPrice.textContent = currentPrice.dataset.regularPrice || '$230';
+            if (minimalDealLabel) minimalDealLabel.hidden = true;
+            if (minimalOriginalPrice) minimalOriginalPrice.hidden = true;
+            if (minimalCurrentPrice) minimalCurrentPrice.textContent = minimalCurrentPrice.dataset.regularPrice || '$230';
+            if (minimalPriceBox) minimalPriceBox.setAttribute('aria-label', 'Regular price: 230 US dollars');
         }
 
         function showLimitedTimeDeal() {
@@ -2790,11 +2798,19 @@
             const originalPrice = document.getElementById('dealOriginalPrice');
             const currentPrice = document.getElementById('dealCurrentPrice');
             const discountBox = document.getElementById('discountBox');
+            const minimalPriceBox = document.getElementById('minimalDealPriceBox');
+            const minimalDealLabel = document.getElementById('minimalDealLabel');
+            const minimalOriginalPrice = document.getElementById('minimalDealOriginalPrice');
+            const minimalCurrentPrice = document.getElementById('minimalDealCurrentPrice');
 
             if (dealBadge) dealBadge.hidden = false;
             if (originalPrice) originalPrice.hidden = false;
             if (discountBox) discountBox.hidden = false;
             if (currentPrice) currentPrice.textContent = currentPrice.dataset.dealPrice || '$80';
+            if (minimalDealLabel) minimalDealLabel.hidden = false;
+            if (minimalOriginalPrice) minimalOriginalPrice.hidden = false;
+            if (minimalCurrentPrice) minimalCurrentPrice.textContent = minimalCurrentPrice.dataset.dealPrice || '$80';
+            if (minimalPriceBox) minimalPriceBox.setAttribute('aria-label', 'Limited-time offer: 80 US dollars, previously 230 US dollars');
         }
 
         function updateDealTimer() {
