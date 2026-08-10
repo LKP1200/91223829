@@ -161,7 +161,7 @@
 .interior-about .influence-heading { margin: 80px 0 24px; display: flex; justify-content: space-between; align-items: end; gap: 30px; }
 .interior-about .influence-heading h3 { font-size: 42px; }
 .interior-about .influence-heading p { max-width: 420px; color: #888; }
-.interior-about .influence-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+.interior-about .influence-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
 .interior-about .influence-card { padding: 12px; display: flex; align-items: center; gap: 12px; border: 1px solid #292929; border-radius: 14px; background: #141414; }
 .interior-about .influence-card img { width: 54px; height: 54px; object-fit: cover; border-radius: 10px; }
 .interior-about .community-crowd { margin-top: 16px; padding: 28px; border: 1px solid #292929; border-radius: 16px; background: #111; }
