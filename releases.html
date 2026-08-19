@@ -224,10 +224,10 @@
             <section class="releases-hero">
                 <div class="releases-hero-copy">
                     <div class="releases-eyebrow">Product updates</div>
-                    <h1>Version 1.0.5 <span style="color: var(--accent-color);">Latest Stable</span></h1>
-                    <p>A faster LuckyPod with real-time preview, the new CopyCuts tool, clearer LuckyCut and LuckySearch workflows, and more reliable licensing.</p>
+                    <h1>Version 1.0.6 <span style="color: var(--accent-color);">Coming Soon</span></h1>
+                    <p>Smarter multi-clip transitions, more powerful silence cutting, flexible tables in LuckyNotes, direct panel access, and a cleaner LuckyCurves workflow.</p>
                     <div class="release-status-row">
-                        <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.5</span>
+                        <span class="release-status-pill"><i class="fas fa-clock"></i> Coming soon: 1.0.6</span>
                         <span class="release-status-pill"><i class="fab fa-windows"></i> Windows</span>
                         <span class="release-status-pill"><i class="fas fa-video"></i> Premiere Pro 2026+</span>
                     </div>
@@ -241,16 +241,87 @@
                     </div>
                 </div>
 
-                <div class="release-preview-video releases-hero-video release-hero-preview-video" aria-label="LuckyTools Version 1.0.5 update video">
-                    <video autoplay loop muted playsinline controls preload="metadata" aria-label="Version 1.0.5 feature preview">
-                        <source src="assets/videos/1.0.5.mp4" type="video/mp4">
-                    </video>
+                <div
+                    class="release-preview-video releases-hero-video release-hero-preview-video inline-youtube-player"
+                    data-youtube-id="RsRSAi3Hxgw"
+                    data-youtube-title="LuckyTools Version 1.0.6 update video"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Play the LuckyTools Version 1.0.6 update video here">
+                    <img src="https://i.ytimg.com/vi/RsRSAi3Hxgw/maxresdefault.jpg" alt="LuckyTools Version 1.0.6 video thumbnail">
+                    <span class="release-hero-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                    <span class="release-hero-caption"><small>Version 1.0.6</small><strong>Play update video</strong></span>
                 </div>
 
             </section>
 
             <section class="release-timeline" aria-label="Update history">
-                <details class="release-entry release-entry-featured release-entry-latest release-entry-105" open>
+                <details class="release-entry release-entry-featured release-entry-latest release-entry-106" open>
+                    <span class="release-marker" aria-hidden="true"></span>
+                    <summary class="release-entry-header">
+                        <div>
+                            <div class="release-version">
+                                <h2>Version 1.0.6</h2>
+                                <span class="release-badge">Coming soon</span>
+                            </div>
+                            <p class="release-subtitle">A transition-focused update with batch placement across selected clips, faster and more precise LuckyCut analysis, richer LuckyNotes tables, easier panel access, and a keyframe fix for LuckyCurves.</p>
+                        </div>
+                    </summary>
+
+                    <div class="release-notes release-notes-expanded">
+                        <div class="release-detail-columns">
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-arrows-left-right-to-line"></i> Multi-clip transitions</h3>
+                                    <ul>
+                                        <li>Apply the same transition to a group of <strong>three or more selected clips</strong> in a single action.</li>
+                                        <li>Place the playhead at the start of the first selected clip to add the transition to the beginning of every selected clip.</li>
+                                        <li>Place the playhead on an edit point between two clips to repeat the transition at every intersection across the selection.</li>
+                                        <li>Place the playhead at the end of the last selected clip to add an ending transition to every selected clip, rather than transitions at their intersections.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-scissors"></i> LuckyCut</h3>
+                                    <ul>
+                                        <li>Improved processing power for faster silence analysis and cutting.</li>
+                                        <li>Disabling a track no longer locks it or prevents LuckyCut from editing it.</li>
+                                        <li>Disabled tracks are now excluded from silence detection but still receive the resulting cuts. For example, analyze only a voice track while keeping the gameplay video and its audio cut in sync; incidental sounds on the ignored gameplay track will no longer preserve sections that are silent in the voice.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-table"></i> LuckyNotes</h3>
+                                    <ul>
+                                        <li>Added tables for organizing notes, references, production details, and structured information.</li>
+                                        <li>Add or remove rows and columns as your layout evolves.</li>
+                                        <li>Resize the space inside each table to fit different kinds of content.</li>
+                                        <li>Delete an entire table when it is no longer needed.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-window-restore"></i> Panel access</h3>
+                                    <ul>
+                                        <li>LuckyTools panels can now be opened directly from the <strong>Panels</strong> category in LuckyTools Settings.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-wave-square"></i> LuckyCurves &amp; Transform</h3>
+                                    <ul>
+                                        <li>Fixed an issue where adding another Transform effect could automatically create keyframes after LuckyCurves had been applied to an existing Transform effect.</li>
+                                        <li>Additional Transform effects now remain clean and ready to configure without unwanted animation data.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="release-entry release-entry-105">
                     <span class="release-marker" aria-hidden="true"></span>
                     <summary class="release-entry-header">
                         <div>
@@ -263,6 +334,12 @@
                     </summary>
 
                     <div class="release-notes release-notes-expanded">
+                        <figure class="release-version-preview">
+                            <video loop muted playsinline controls preload="metadata" data-version-preview aria-label="Version 1.0.5 feature preview">
+                                <source src="assets/videos/1.0.5.mp4" type="video/mp4">
+                            </video>
+                        </figure>
+
                         <div class="release-detail-columns">
                             <div class="release-detail-column">
                                 <div class="release-note-group">
@@ -322,7 +399,7 @@
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.4</h2>
-                                <span class="release-badge release-badge-muted">Previous stable</span>
+                                <span class="release-badge release-badge-muted">Earlier release</span>
                             </div>
                             <p class="release-subtitle">A focused motion workflow update with corrected animated anchor compensation, visual clip reordering, a dedicated Labels panel, improved preset stability, and Premiere Pro 26.2.3 compatibility.</p>
                         </div>
