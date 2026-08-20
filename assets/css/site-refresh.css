@@ -1102,6 +1102,13 @@
     margin: 0 auto !important;
 }
 
+.interior-releases .release-entry-105 .release-version-preview {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    justify-self: center;
+    margin: 0 auto !important;
+}
+
 @media (max-width: 980px) {
     .interior-releases .releases-hero { grid-template-columns: 1fr; }
     .interior-releases .releases-hero-video { justify-self: start; max-width: 680px; }
