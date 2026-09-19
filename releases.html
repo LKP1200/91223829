@@ -93,8 +93,8 @@
 
         .release-hero-caption strong { font-size: 13px; }
 
-        /* Version 1.0.7 has no launch video yet; this preserves the hero composition. */
-        .release-hero-coming-soon {
+        /* Keep the release hero balanced until a version 1.0.7 video is available. */
+        .release-hero-release-card {
             position: relative;
             width: 100%;
             min-height: 330px;
@@ -111,20 +111,20 @@
             isolation: isolate;
         }
 
-        .release-hero-coming-soon::before,
-        .release-hero-coming-soon::after {
+        .release-hero-release-card::before,
+        .release-hero-release-card::after {
             content: '';
             position: absolute;
             pointer-events: none;
         }
 
-        .release-hero-coming-soon::before {
+        .release-hero-release-card::before {
             inset: 18px;
             border: 1px solid rgba(255, 255, 255, 0.09);
             border-radius: 11px;
         }
 
-        .release-hero-coming-soon::after {
+        .release-hero-release-card::after {
             width: 230px;
             height: 230px;
             border: 1px solid rgba(255, 157, 0, 0.2);
@@ -133,7 +133,7 @@
             transform: translate(84%, -74%);
         }
 
-        .release-coming-soon-content {
+        .release-hero-release-content {
             position: relative;
             z-index: 1;
             display: grid;
@@ -143,7 +143,7 @@
             text-align: center;
         }
 
-        .release-coming-soon-content i {
+        .release-hero-release-content i {
             display: grid;
             width: 62px;
             height: 62px;
@@ -156,7 +156,7 @@
             transform: rotate(-8deg);
         }
 
-        .release-coming-soon-content small {
+        .release-hero-release-content small {
             color: #ffb13a;
             font-family: 'IBM Plex Mono', 'Courier New', monospace;
             font-size: 11px;
@@ -165,14 +165,14 @@
             text-transform: uppercase;
         }
 
-        .release-coming-soon-content strong {
+        .release-hero-release-content strong {
             color: #fff;
             font-family: 'Outfit', sans-serif;
             font-size: clamp(28px, 3vw, 42px);
             line-height: 1;
         }
 
-        .release-coming-soon-content span {
+        .release-hero-release-content span {
             max-width: 290px;
             color: #c7c7c7;
             font: 600 13px/1.55 'IBM Plex Mono', 'Courier New', monospace;
@@ -234,8 +234,8 @@
                 font-size: 10px !important;
             }
 
-            .release-hero-coming-soon { min-height: 265px; }
-            .release-coming-soon-content { padding: 28px; }
+            .release-hero-release-card { min-height: 265px; }
+            .release-hero-release-content { padding: 28px; }
         }
 
         /* Keep release videos as true thumbnails, even with stale or mobile CSS. */
@@ -312,10 +312,10 @@
             <section class="releases-hero">
                 <div class="releases-hero-copy">
                     <div class="releases-eyebrow">Product updates</div>
-                    <h1>Version 1.0.7 <span style="color: var(--accent-color);">Coming Soon</span></h1>
+                    <h1>Version 1.0.7 <span style="color: var(--accent-color);">Latest Stable</span></h1>
                     <p>A bug-fix update focused on reliable presets, smarter silence detection, dependable curves, and a more stable LuckyZoom workflow.</p>
                     <div class="release-status-row">
-                        <span class="release-status-pill"><i class="fas fa-clock"></i> Coming soon: 1.0.7</span>
+                        <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.7</span>
                         <span class="release-status-pill"><i class="fab fa-windows"></i> Windows</span>
                         <span class="release-status-pill"><i class="fas fa-video"></i> Premiere Pro 2026+</span>
                     </div>
@@ -329,12 +329,12 @@
                     </div>
                 </div>
 
-                <div class="release-hero-coming-soon" role="img" aria-label="LuckyTools Version 1.0.7 coming soon">
-                    <div class="release-coming-soon-content">
+                <div class="release-hero-release-card" role="img" aria-label="LuckyTools Version 1.0.7 latest stable release">
+                    <div class="release-hero-release-content">
                         <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
-                        <small>LuckyTools update</small>
+                        <small>Latest stable update</small>
                         <strong>Version 1.0.7</strong>
-                        <span>Bug fixes and stability improvements are on the way.</span>
+                        <span>Bug fixes and stability improvements for everyday editing.</span>
                     </div>
                 </div>
 
@@ -347,7 +347,7 @@
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.7</h2>
-                                <span class="release-badge">Coming soon</span>
+                                <span class="release-badge">Latest stable</span>
                             </div>
                             <p class="release-subtitle">A stability-focused update that fixes preset and curve behavior, improves LuckyCut control, and makes LuckyZoom favorites more dependable.</p>
                         </div>
@@ -504,7 +504,7 @@
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.5</h2>
-                                <span class="release-badge release-badge-muted">Previous stable</span>
+                                <span class="release-badge release-badge-muted">Earlier release</span>
                             </div>
                             <p class="release-subtitle">A major LuckyPod rebuild with faster cutting and real-time preview, the new CopyCuts workflow, clearer tools, and stronger license stability.</p>
                         </div>
