@@ -93,6 +93,91 @@
 
         .release-hero-caption strong { font-size: 13px; }
 
+        /* Version 1.0.7 has no launch video yet; this preserves the hero composition. */
+        .release-hero-coming-soon {
+            position: relative;
+            width: 100%;
+            min-height: 330px;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            border: 1px solid rgba(255, 157, 0, 0.42);
+            border-radius: 16px;
+            background:
+                radial-gradient(circle at 22% 20%, rgba(255, 157, 0, 0.20), transparent 31%),
+                radial-gradient(circle at 81% 78%, rgba(143, 136, 255, 0.18), transparent 37%),
+                linear-gradient(145deg, #19130b, #090909 58%, #11101a);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.52), 0 0 48px rgba(255, 204, 0, 0.12);
+            isolation: isolate;
+        }
+
+        .release-hero-coming-soon::before,
+        .release-hero-coming-soon::after {
+            content: '';
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .release-hero-coming-soon::before {
+            inset: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 11px;
+        }
+
+        .release-hero-coming-soon::after {
+            width: 230px;
+            height: 230px;
+            border: 1px solid rgba(255, 157, 0, 0.2);
+            border-radius: 50%;
+            box-shadow: 0 0 0 38px rgba(255, 157, 0, 0.035), 0 0 0 76px rgba(143, 136, 255, 0.025);
+            transform: translate(84%, -74%);
+        }
+
+        .release-coming-soon-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            justify-items: center;
+            gap: 14px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .release-coming-soon-content i {
+            display: grid;
+            width: 62px;
+            height: 62px;
+            place-items: center;
+            border: 1px solid rgba(255, 157, 0, 0.48);
+            border-radius: 18px;
+            background: rgba(255, 157, 0, 0.12);
+            color: #ffab24;
+            font-size: 28px;
+            transform: rotate(-8deg);
+        }
+
+        .release-coming-soon-content small {
+            color: #ffb13a;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .release-coming-soon-content strong {
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(28px, 3vw, 42px);
+            line-height: 1;
+        }
+
+        .release-coming-soon-content span {
+            max-width: 290px;
+            color: #c7c7c7;
+            font: 600 13px/1.55 'IBM Plex Mono', 'Courier New', monospace;
+        }
+
         #releaseHeroVideoToggle {
             position: absolute !important;
             top: 50% !important;
@@ -148,6 +233,9 @@
                 padding: 7px 10px !important;
                 font-size: 10px !important;
             }
+
+            .release-hero-coming-soon { min-height: 265px; }
+            .release-coming-soon-content { padding: 28px; }
         }
 
         /* Keep release videos as true thumbnails, even with stale or mobile CSS. */
@@ -224,10 +312,10 @@
             <section class="releases-hero">
                 <div class="releases-hero-copy">
                     <div class="releases-eyebrow">Product updates</div>
-                    <h1>Version 1.0.6 <span style="color: var(--accent-color);">Latest Stable</span></h1>
-                    <p>Smarter multi-clip transitions, more powerful silence cutting, flexible tables in LuckyNotes, direct panel access, and a cleaner LuckyCurves workflow.</p>
+                    <h1>Version 1.0.7 <span style="color: var(--accent-color);">Coming Soon</span></h1>
+                    <p>A bug-fix update focused on reliable presets, smarter silence detection, dependable curves, and a more stable LuckyZoom workflow.</p>
                     <div class="release-status-row">
-                        <span class="release-status-pill"><i class="fas fa-circle-check"></i> Latest stable: 1.0.6</span>
+                        <span class="release-status-pill"><i class="fas fa-clock"></i> Coming soon: 1.0.7</span>
                         <span class="release-status-pill"><i class="fab fa-windows"></i> Windows</span>
                         <span class="release-status-pill"><i class="fas fa-video"></i> Premiere Pro 2026+</span>
                     </div>
@@ -241,34 +329,105 @@
                     </div>
                 </div>
 
-                <div
-                    class="release-preview-video releases-hero-video release-hero-preview-video inline-youtube-player"
-                    data-youtube-id="RsRSAi3Hxgw"
-                    data-youtube-title="LuckyTools Version 1.0.6 update video"
-                    role="button"
-                    tabindex="0"
-                    aria-label="Play the LuckyTools Version 1.0.6 update video here">
-                    <img src="https://i.ytimg.com/vi/RsRSAi3Hxgw/maxresdefault.jpg" alt="LuckyTools Version 1.0.6 video thumbnail">
-                    <span class="release-hero-play" aria-hidden="true"><i class="fas fa-play"></i></span>
-                    <span class="release-hero-caption"><small>Version 1.0.6</small><strong>Play update video</strong></span>
+                <div class="release-hero-coming-soon" role="img" aria-label="LuckyTools Version 1.0.7 coming soon">
+                    <div class="release-coming-soon-content">
+                        <i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>
+                        <small>LuckyTools update</small>
+                        <strong>Version 1.0.7</strong>
+                        <span>Bug fixes and stability improvements are on the way.</span>
+                    </div>
                 </div>
 
             </section>
 
             <section class="release-timeline" aria-label="Update history">
-                <details class="release-entry release-entry-featured release-entry-latest release-entry-106" open>
+                <details class="release-entry release-entry-featured release-entry-latest release-entry-107" open>
+                    <span class="release-marker" aria-hidden="true"></span>
+                    <summary class="release-entry-header">
+                        <div>
+                            <div class="release-version">
+                                <h2>Version 1.0.7</h2>
+                                <span class="release-badge">Coming soon</span>
+                            </div>
+                            <p class="release-subtitle">A stability-focused update that fixes preset and curve behavior, improves LuckyCut control, and makes LuckyZoom favorites more dependable.</p>
+                        </div>
+                    </summary>
+
+                    <div class="release-notes release-notes-expanded">
+                        <div class="release-detail-columns">
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-bug"></i> Presets &amp; configuration</h3>
+                                    <ul>
+                                        <li>Fixed an issue when applying a preset from Premiere's <strong>Effects</strong> panel that contained multiple Transform effects.</li>
+                                        <li>Fixed a sound-preset issue that could cause presets to be duplicated automatically.</li>
+                                        <li>Configuration properties now accept direct numeric values for faster, more precise setup.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-scissors"></i> LuckyCut</h3>
+                                    <ul>
+                                        <li>Added <strong>Ignore Brief Sounds</strong>, giving you more control when short incidental audio should not interrupt a silence cut.</li>
+                                        <li>Fixed an issue affecting LuckyCut workflows with <strong>three POVs</strong>.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-up-right-and-down-left-from-center"></i> Grow</h3>
+                                    <ul>
+                                        <li>Fixed Grow so it now preserves the selected custom curve when applied.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="release-detail-column">
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-magnifying-glass-plus"></i> LuckyZoom favorites</h3>
+                                    <ul>
+                                        <li>Favorites linked to LuckyCurves can now be applied directly from LuckySearch and retain their linked curves.</li>
+                                        <li>Fixed favorite previews so LuckyZoom shows the exact frame at the selected moment.</li>
+                                        <li>The LuckyZoom panel can now be made narrower without cutting off zoom options.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="release-note-group">
+                                    <h3><i class="fas fa-shield-heart"></i> Stability improvements</h3>
+                                    <ul>
+                                        <li>Resolved a range of errors that could reduce stability across LuckyTools workflows.</li>
+                                        <li>Includes additional fixes and reliability improvements throughout the extension.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="release-entry release-entry-106">
                     <span class="release-marker" aria-hidden="true"></span>
                     <summary class="release-entry-header">
                         <div>
                             <div class="release-version">
                                 <h2>Version 1.0.6</h2>
-                                <span class="release-badge">Latest stable</span>
+                                <span class="release-badge release-badge-muted">Previous stable</span>
                             </div>
                             <p class="release-subtitle">A transition-focused update with batch placement across selected clips, faster and more precise LuckyCut analysis, richer LuckyNotes tables, easier panel access, and a keyframe fix for LuckyCurves.</p>
                         </div>
                     </summary>
 
                     <div class="release-notes release-notes-expanded">
+                        <figure
+                            class="release-version-preview inline-youtube-player"
+                            data-youtube-id="RsRSAi3Hxgw"
+                            data-youtube-title="LuckyTools Version 1.0.6 update video"
+                            role="button"
+                            tabindex="0"
+                            aria-label="Play the LuckyTools Version 1.0.6 update video">
+                            <img src="https://i.ytimg.com/vi/RsRSAi3Hxgw/maxresdefault.jpg" alt="LuckyTools Version 1.0.6 update video thumbnail">
+                            <span class="inline-youtube-hero-play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                            <span class="release-hero-caption"><small>Version 1.0.6</small><strong>Play update video</strong></span>
+                        </figure>
+
                         <div class="release-detail-columns">
                             <div class="release-detail-column">
                                 <div class="release-note-group">
