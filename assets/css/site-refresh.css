@@ -410,6 +410,39 @@
 .interior-releases .release-update-help i,
 .interior-releases .release-update-help a { color: #111; }
 .interior-releases .release-update-help a { text-decoration: underline; text-decoration-color: #ff9d00; text-underline-offset: 3px; }
+.interior-releases .release-library-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 18px;
+    padding: 13px 18px;
+    border: 1px solid #ffad24;
+    border-radius: 12px;
+    color: #111;
+    background: #ffad24;
+    box-shadow: 0 12px 32px rgba(255, 157, 0, .18);
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.interior-releases .release-library-download:hover {
+    color: #111;
+    background: #ffc15c;
+    box-shadow: 0 16px 38px rgba(255, 157, 0, .27);
+    transform: translateY(-2px);
+}
+.interior-releases .release-library-download:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+}
+.interior-releases .release-library-download > span { display: grid; gap: 2px; text-align: left; }
+.interior-releases .release-library-download strong { font-size: 14px; line-height: 1.2; }
+.interior-releases .release-library-download small { font-size: 10px; line-height: 1.3; }
+.interior-releases .release-library-download > i { flex: none; font-size: 16px; }
+.interior-releases .release-library-download > i:last-child { margin-left: 4px; font-size: 12px; }
 .interior-releases .release-preview-video { border-color: #292929; box-shadow: 0 18px 50px rgba(0,0,0,.32); }
 .interior-releases .release-timeline { padding-top: 64px; padding-bottom: 64px; }
 .interior-releases .release-timeline {
