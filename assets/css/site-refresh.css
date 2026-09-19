@@ -1109,6 +1109,13 @@
     margin: 0 auto !important;
 }
 
+.interior-releases .release-entry-106 .release-version-preview {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    place-self: start end !important;
+    margin: 0 !important;
+}
+
 @media (max-width: 980px) {
     .interior-releases .releases-hero { grid-template-columns: 1fr; }
     .interior-releases .releases-hero-video { justify-self: start; max-width: 680px; }
@@ -1116,6 +1123,11 @@
     .interior-releases .release-entry-has-video .release-major-group,
     .interior-releases .release-version-preview { grid-column: 1; grid-row: auto; }
     .interior-releases .release-version-preview { margin-left: 0 !important; }
+    .interior-releases .release-entry-106 .release-version-preview {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        place-self: start !important;
+    }
 }
 
 @media (max-width: 600px) {
