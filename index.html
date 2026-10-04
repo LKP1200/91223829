@@ -772,7 +772,7 @@
         }
 
     </style>
-    <link rel="stylesheet" href="css/index-refresh.css?v=16">
+    <link rel="stylesheet" href="css/index-refresh.css?v=19">
     <link rel="stylesheet" href="css/inline-youtube.css?v=1">
     <link rel="stylesheet" href="css/header-unified.css?v=3">
     <link rel="stylesheet" href="css/purchase-modal.css?v=2">
@@ -1023,9 +1023,24 @@
                     <div class="hero-actions-minimal" style="display:flex;align-items:center;gap:20px;">
                         <a href="#" class="btn-download" data-purchase-trigger>Buy Now <i class="fas fa-arrow-right"></i></a>
                         <div class="price-box hero-sale-price" id="minimalDealPriceBox" style="font-family:'Outfit',sans-serif;" aria-label="Regular price: 230 US dollars">
-                            <small class="price-offer-label" id="minimalDealLabel" hidden data-deal-hidden="true">Limited-time offer</small>
+                            <small class="price-offer-label" id="minimalDealLabel" hidden data-deal-hidden="true">9-day limited-time offer</small>
                             <span class="price-main-line"><span class="price-current" id="minimalDealCurrentPrice" data-regular-price="$230" data-deal-price="$80" style="font-weight:800;color:#fff;">$230</span><span class="price-currency">USD</span><span class="price-original-sale" id="minimalDealOriginalPrice" hidden data-deal-hidden="true">$230</span></span>
                             <small class="price-payment-label">One-time payment</small>
+                        </div>
+                    </div>
+                    <div class="hero-deal-notice" id="minimalDealNotice" hidden data-deal-hidden="true">
+                        <div class="deal-coupon-heading"><span>YOUR EXCLUSIVE CODE</span><span class="deal-savings">SAVE $150</span></div>
+                        <button type="button" class="deal-coupon" id="minimalDealCopy" aria-label="Copy discount code BUSCOEDITOR">
+                            <strong translate="no">BUSCOEDITOR</strong>
+                            <span class="deal-copy-action"><i class="far fa-copy" aria-hidden="true"></i><span id="minimalDealCopyLabel">Copy code</span></span>
+                        </button>
+                        <span class="deal-coupon-hint" id="minimalDealCopyStatus" role="status">Apply at checkout to unlock the $80 price.</span>
+                        <div class="deal-countdown-heading"><span><i class="far fa-clock" aria-hidden="true"></i> OFFER ENDS IN</span><span>9-day offer</span></div>
+                        <div class="hero-deal-countdown" id="minimalDealTimer" role="timer" aria-label="9 days remaining">
+                            <span class="deal-time-unit"><strong id="minimalDealDays">09</strong><span>Days</span></span>
+                            <span class="deal-time-unit"><strong id="minimalDealHours">00</strong><span>Hours</span></span>
+                            <span class="deal-time-unit"><strong id="minimalDealMinutes">00</strong><span>Minutes</span></span>
+                            <span class="deal-time-unit"><strong id="minimalDealSeconds">00</strong><span>Seconds</span></span>
                         </div>
                     </div>
                     <a href="luckysuite.html" class="hero-info-btn" aria-label="Learn more about LuckySuite">
@@ -2818,14 +2833,41 @@
             });
         }
 
+        const minimalDealCopy = document.getElementById('minimalDealCopy');
+        if (minimalDealCopy) {
+            let copyFeedbackTimeout;
+            minimalDealCopy.addEventListener('click', async () => {
+                const label = document.getElementById('minimalDealCopyLabel');
+                const status = document.getElementById('minimalDealCopyStatus');
+                clearTimeout(copyFeedbackTimeout);
+                try {
+                    await navigator.clipboard.writeText('BUSCOEDITOR');
+                    label.textContent = 'Copied!';
+                    status.textContent = 'Code copied. Paste it at checkout for $80.';
+                    minimalDealCopy.classList.add('is-copied');
+                } catch {
+                    label.textContent = 'Copy code';
+                    status.textContent = 'Enter BUSCOEDITOR at checkout for $80.';
+                    minimalDealCopy.classList.remove('is-copied');
+                }
+                copyFeedbackTimeout = setTimeout(() => {
+                    label.textContent = 'Copy code';
+                    status.textContent = 'Apply at checkout to unlock the $80 price.';
+                    minimalDealCopy.classList.remove('is-copied');
+                }, 2500);
+            });
+        }
+
         // --- LIMITED TIME DEAL TIMER (set enabled to true and update startDate to reactivate later) ---
         const limitedTimeDeal = {
-            enabled: false,
-            startDate: '2026-07-19T16:55:28-06:00',
-            durationDays: 5
+            enabled: true,
+            startDate: '2026-10-04T10:14:35-06:00',
+            durationDays: 9
         };
 
         function hideLimitedTimeDeal() {
+            const minimalDealNotice = document.getElementById('minimalDealNotice');
+            if (minimalDealNotice) minimalDealNotice.hidden = true;
             const dealBadge = document.getElementById('dealBadge');
             const originalPrice = document.getElementById('dealOriginalPrice');
             const currentPrice = document.getElementById('dealCurrentPrice');
@@ -2846,6 +2888,8 @@
         }
 
         function showLimitedTimeDeal() {
+            const minimalDealNotice = document.getElementById('minimalDealNotice');
+            if (minimalDealNotice) minimalDealNotice.hidden = false;
             const dealBadge = document.getElementById('dealBadge');
             const originalPrice = document.getElementById('dealOriginalPrice');
             const currentPrice = document.getElementById('dealCurrentPrice');
@@ -2862,12 +2906,13 @@
             if (minimalDealLabel) minimalDealLabel.hidden = false;
             if (minimalOriginalPrice) minimalOriginalPrice.hidden = false;
             if (minimalCurrentPrice) minimalCurrentPrice.textContent = minimalCurrentPrice.dataset.dealPrice || '$80';
-            if (minimalPriceBox) minimalPriceBox.setAttribute('aria-label', 'Limited-time offer: 80 US dollars, previously 230 US dollars');
+            if (minimalPriceBox) minimalPriceBox.setAttribute('aria-label', '9-day limited-time offer: 80 US dollars with code BUSCOEDITOR, previously 230 US dollars');
         }
 
         function updateDealTimer() {
             const timerElement = document.getElementById('dealTimer');
-            if (!timerElement || !limitedTimeDeal.enabled) {
+            const minimalTimerElement = document.getElementById('minimalDealTimer');
+            if (!limitedTimeDeal.enabled) {
                 hideLimitedTimeDeal();
                 return false;
             }
@@ -2888,7 +2933,15 @@
             const minutes = Math.floor((remainingMs % (60 * 60 * 1000)) / (60 * 1000));
             const seconds = Math.floor((remainingMs % (60 * 1000)) / 1000);
 
-            timerElement.textContent = `${days}d ${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
+            const countdown = `${days}d ${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
+            if (timerElement) timerElement.textContent = countdown;
+            if (minimalTimerElement) {
+                minimalTimerElement.setAttribute('aria-label', `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds remaining`);
+                for (const [id, value] of [['minimalDealDays', days], ['minimalDealHours', hours], ['minimalDealMinutes', minutes], ['minimalDealSeconds', seconds]]) {
+                    const unit = document.getElementById(id);
+                    if (unit) unit.textContent = String(value).padStart(2, '0');
+                }
+            }
             return true;
         }
         
