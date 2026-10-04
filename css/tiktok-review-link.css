@@ -1,0 +1,102 @@
+.community-review-video .community-tiktok-preview,
+.community-video-embed-card a.community-tiktok-preview {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0;
+    padding: 24px;
+    color: #fff;
+    background:
+        radial-gradient(circle at 50% 42%, rgba(255, 60, 130, .15), transparent 40%),
+        radial-gradient(circle at 30% 75%, rgba(0, 235, 235, .12), transparent 45%),
+        #131116;
+    text-decoration: none;
+    border: 0;
+    transition: background-color .2s ease;
+}
+
+.community-review-video .community-tiktok-preview {
+    position: absolute;
+    inset: 0;
+}
+
+.community-video-embed-card a.community-tiktok-preview {
+    height: clamp(660px, 43vw, 760px);
+}
+
+.community-review-video .community-tiktok-preview:hover,
+.community-video-embed-card a.community-tiktok-preview:hover {
+    background-color: #201b25;
+}
+
+.community-tiktok-preview:focus-visible {
+    outline: 3px solid #ff4f8b;
+    outline-offset: -5px;
+}
+
+.community-review-video .community-tiktok-preview span,
+.community-video-embed-card .community-tiktok-preview span {
+    display: flex;
+    min-width: 0;
+}
+
+.community-tiktok-preview-brand {
+    align-items: center;
+    gap: 8px;
+    font: 700 15px/1.2 'Outfit', sans-serif;
+}
+
+.community-tiktok-preview-brand i { font-size: 23px; }
+
+.community-tiktok-preview-center {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.community-tiktok-preview-play {
+    width: 74px;
+    height: 74px;
+    margin-bottom: 22px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, .75);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .13);
+    box-shadow: -5px 4px 0 rgba(0, 235, 235, .35), 5px -4px 0 rgba(255, 60, 130, .35);
+    font-size: 24px;
+    transition: transform .2s ease;
+}
+
+.community-tiktok-preview:hover .community-tiktok-preview-play { transform: scale(1.08); }
+
+.community-tiktok-preview-center strong {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font: 700 clamp(21px, 3vw, 30px)/1.15 'Outfit', sans-serif;
+}
+
+.community-tiktok-preview-center small {
+    margin-top: 10px;
+    color: #c9c5cf;
+    font: 500 12px/1.4 'Inter', sans-serif;
+}
+
+.community-tiktok-preview-cta {
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 18px;
+    border-radius: 999px;
+    color: #111;
+    background: #fff;
+    font: 800 13px/1.2 'Inter', sans-serif;
+}
+
+@media (max-width: 620px) {
+    .community-video-embed-card a.community-tiktok-preview { height: 500px; }
+    .community-tiktok-preview-play { width: 62px; height: 62px; font-size: 20px; }
+}
