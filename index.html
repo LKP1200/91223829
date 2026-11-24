@@ -926,9 +926,9 @@
                         <div class="hero-actions">
                             <div class="main-actions">
                                 <div class="price-box" id="dealPriceBox">
-                                    <div class="coming-soon bounce-anim" id="dealBadge" translate="no" hidden data-deal-hidden="true">Limited Time Deal <span id="dealTimer">9d 00h 00m</span></div>
+                                    <div class="coming-soon bounce-anim" id="dealBadge" translate="no" hidden data-deal-hidden="true">Black Friday ends in <span id="dealTimer">9d 00h 00m</span></div>
                                     <span class="price-strikethrough" id="dealOriginalPrice" hidden data-deal-hidden="true">$230</span>
-                                    <span class="price-current" id="dealCurrentPrice" data-regular-price="$230" data-deal-price="$80">$230</span>
+                                    <span class="price-current" id="dealCurrentPrice" data-regular-price="$230" data-deal-price="$69.99">$230</span>
                                 </div>
                                 <a href="#" id="buyNowBtn" class="btn-download" data-purchase-trigger>
                                     <i class="fas fa-shopping-cart"></i> Buy Now
@@ -938,7 +938,7 @@
                                 <i class="fas fa-check-circle"></i> One-time payment. Perpetual access. <a href="licenses.html" class="more-info-link">1 year of maintenance included.</a>
                             </div>
                             <div class="discount-code" id="discountBox" title="Click to copy code" translate="no" hidden data-deal-hidden="true">
-                                Use code: <span class="code-highlight" id="promoCode">BUSCOEDITOR</span> to get this deal!
+                                Use code: <span class="code-highlight" id="promoCode">LUCKYFRIDAY</span> to get this deal!
                             </div>
                         </div>
                     </div>
@@ -1024,19 +1024,19 @@
                     <div class="hero-actions-minimal" style="display:flex;align-items:center;gap:20px;">
                         <a href="#" class="btn-download" data-purchase-trigger>Buy Now <i class="fas fa-arrow-right"></i></a>
                         <div class="price-box hero-sale-price" id="minimalDealPriceBox" style="font-family:'Outfit',sans-serif;" aria-label="Regular price: 230 US dollars">
-                            <small class="price-offer-label" id="minimalDealLabel" hidden data-deal-hidden="true">9-day limited-time offer</small>
-                            <span class="price-main-line"><span class="price-current" id="minimalDealCurrentPrice" data-regular-price="$230" data-deal-price="$80" style="font-weight:800;color:#fff;">$230</span><span class="price-currency">USD</span><span class="price-original-sale" id="minimalDealOriginalPrice" hidden data-deal-hidden="true">$230</span></span>
+                            <small class="price-offer-label" id="minimalDealLabel" hidden data-deal-hidden="true">Black Friday offer</small>
+                            <span class="price-main-line"><span class="price-current" id="minimalDealCurrentPrice" data-regular-price="$230" data-deal-price="$69.99" style="font-weight:800;color:#fff;">$230</span><span class="price-currency">USD</span><span class="price-original-sale" id="minimalDealOriginalPrice" hidden data-deal-hidden="true">$230</span></span>
                             <small class="price-payment-label">One-time payment</small>
                         </div>
                     </div>
                     <div class="hero-deal-notice" id="minimalDealNotice" hidden data-deal-hidden="true">
-                        <div class="deal-coupon-heading"><span>YOUR EXCLUSIVE CODE</span><span class="deal-savings">SAVE $150</span></div>
-                        <button type="button" class="deal-coupon" id="minimalDealCopy" aria-label="Copy discount code BUSCOEDITOR">
-                            <strong translate="no">BUSCOEDITOR</strong>
+                        <div class="deal-coupon-heading"><span>YOUR BLACK FRIDAY CODE</span><span class="deal-savings">SAVE $160.01</span></div>
+                        <button type="button" class="deal-coupon" id="minimalDealCopy" aria-label="Copy discount code LUCKYFRIDAY">
+                            <strong translate="no">LUCKYFRIDAY</strong>
                             <span class="deal-copy-action"><i class="far fa-copy" aria-hidden="true"></i><span id="minimalDealCopyLabel">Copy code</span></span>
                         </button>
-                        <span class="deal-coupon-hint" id="minimalDealCopyStatus" role="status">Apply at checkout to unlock the $80 price.</span>
-                        <div class="deal-countdown-heading"><span><i class="far fa-clock" aria-hidden="true"></i> OFFER ENDS IN</span><span>9-day offer</span></div>
+                        <span class="deal-coupon-hint" id="minimalDealCopyStatus" role="status">Apply at checkout to unlock the $69.99 price.</span>
+                        <div class="deal-countdown-heading"><span><i class="far fa-clock" aria-hidden="true"></i> BLACK FRIDAY ENDS IN</span><span>December 3, 2026</span></div>
                         <div class="hero-deal-countdown" id="minimalDealTimer" role="timer" aria-label="9 days remaining">
                             <span class="deal-time-unit"><strong id="minimalDealDays">09</strong><span>Days</span></span>
                             <span class="deal-time-unit"><strong id="minimalDealHours">00</strong><span>Hours</span></span>
@@ -2842,28 +2842,27 @@
                 const status = document.getElementById('minimalDealCopyStatus');
                 clearTimeout(copyFeedbackTimeout);
                 try {
-                    await navigator.clipboard.writeText('BUSCOEDITOR');
+                    await navigator.clipboard.writeText('LUCKYFRIDAY');
                     label.textContent = 'Copied!';
-                    status.textContent = 'Code copied. Paste it at checkout for $80.';
+                    status.textContent = 'Code copied. Paste it at checkout for $69.99.';
                     minimalDealCopy.classList.add('is-copied');
                 } catch {
                     label.textContent = 'Copy code';
-                    status.textContent = 'Enter BUSCOEDITOR at checkout for $80.';
+                    status.textContent = 'Enter LUCKYFRIDAY at checkout for $69.99.';
                     minimalDealCopy.classList.remove('is-copied');
                 }
                 copyFeedbackTimeout = setTimeout(() => {
                     label.textContent = 'Copy code';
-                    status.textContent = 'Apply at checkout to unlock the $80 price.';
+                    status.textContent = 'Apply at checkout to unlock the $69.99 price.';
                     minimalDealCopy.classList.remove('is-copied');
                 }, 2500);
             });
         }
 
-        // --- LIMITED TIME DEAL TIMER (set enabled to true and update startDate to reactivate later) ---
+        // --- BLACK FRIDAY TIMER (expires at the end of December 3, Mexico City time) ---
         const limitedTimeDeal = {
             enabled: true,
-            startDate: '2026-10-04T10:14:35-06:00',
-            durationDays: 9
+            endDate: '2026-12-04T00:00:00-06:00'
         };
 
         function hideLimitedTimeDeal() {
@@ -2903,11 +2902,11 @@
             if (dealBadge) dealBadge.hidden = false;
             if (originalPrice) originalPrice.hidden = false;
             if (discountBox) discountBox.hidden = false;
-            if (currentPrice) currentPrice.textContent = currentPrice.dataset.dealPrice || '$80';
+            if (currentPrice) currentPrice.textContent = currentPrice.dataset.dealPrice || '$69.99';
             if (minimalDealLabel) minimalDealLabel.hidden = false;
             if (minimalOriginalPrice) minimalOriginalPrice.hidden = false;
-            if (minimalCurrentPrice) minimalCurrentPrice.textContent = minimalCurrentPrice.dataset.dealPrice || '$80';
-            if (minimalPriceBox) minimalPriceBox.setAttribute('aria-label', '9-day limited-time offer: 80 US dollars with code BUSCOEDITOR, previously 230 US dollars');
+            if (minimalCurrentPrice) minimalCurrentPrice.textContent = minimalCurrentPrice.dataset.dealPrice || '$69.99';
+            if (minimalPriceBox) minimalPriceBox.setAttribute('aria-label', 'Black Friday offer: 69.99 US dollars with code LUCKYFRIDAY, previously 230 US dollars');
         }
 
         function updateDealTimer() {
@@ -2918,11 +2917,10 @@
                 return false;
             }
 
-            const startTime = new Date(limitedTimeDeal.startDate).getTime();
-            const durationMs = limitedTimeDeal.durationDays * 24 * 60 * 60 * 1000;
-            const remainingMs = startTime + durationMs - Date.now();
+            const endTime = new Date(limitedTimeDeal.endDate).getTime();
+            const remainingMs = endTime - Date.now();
 
-            if (!Number.isFinite(startTime) || remainingMs <= 0) {
+            if (!Number.isFinite(endTime) || remainingMs <= 0) {
                 hideLimitedTimeDeal();
                 return false;
             }
